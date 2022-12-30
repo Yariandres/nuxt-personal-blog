@@ -1,5 +1,8 @@
 <template>
-  <h1>Welcome to my blog</h1>
+  <center>
+    <h1>Welcome to my blog</h1>
+  </center>
+  <hr />
   <NuxtPage />
 </template>
 

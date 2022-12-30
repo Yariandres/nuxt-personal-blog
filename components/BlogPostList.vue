@@ -7,7 +7,7 @@ const { data: equalQuery } = await useAsyncData("equal", () => {
 <template>
   <section>
     <div v-for="post in equalQuery" :key="post._path">
-      <NuxtLink to="/">
+      <NuxtLink :to="post._path">
         <section>
           <h3>
             {{ post.title }}
