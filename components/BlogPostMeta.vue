@@ -20,7 +20,7 @@ const formattedDate = computed(() => {
 
 <template>
   <div>
-    <span class="tag is-rounded" :class="`is-${color}`">{{ author }}</span>
-    <span class="tag is-rounded">{{ formattedDate }}</span>
+    <span>{{ author }}</span>
+    <span>{{ formattedDate }}</span>
   </div>
 </template>

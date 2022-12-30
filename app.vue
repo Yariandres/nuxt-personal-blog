@@ -9,7 +9,6 @@ useHead({
   title: "Home",
   meta: [
     {
-      hid: "description",
       name: "description",
       content: "Home page",
     },
