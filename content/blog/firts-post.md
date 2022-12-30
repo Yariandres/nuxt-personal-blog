@@ -4,6 +4,7 @@ author: "@Natalia"
 date: 
   published: "2022-12-30"
 description: "A basic description for blog post 1"
+category: "general"
 ---
 
 # Sample Markdown
