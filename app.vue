@@ -1,7 +1,8 @@
 <template>
-  <NavMenu/>
-  <hr />
-  <NuxtPage />
+  <div class="container">
+    <NavMenu/>
+    <NuxtPage />
+  </div>
 </template>
 
 
@@ -14,5 +15,31 @@ useHead({
       content: "Home page",
     },
   ],
+  link: [
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap'
+      }
+    ]
 });
 </script>
+<!-- simple css reset -->
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Coda', sans-serif;
+}
+
+.container {
+  padding: 0 2.1rem;
+}
+</style>

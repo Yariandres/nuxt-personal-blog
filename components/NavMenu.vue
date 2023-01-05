@@ -1,30 +1,40 @@
 <template>
   <nav>
+    <div class="nav">
+      <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/blog">Blog</NuxtLink>
+      <NuxtLink to="/awards">Awards</NuxtLink>
+      <NuxtLink to="/projects">Projects</NuxtLink>
+      <NuxtLink to="/contact">Contacts</NuxtLink>
+    </div>
     <Logo/>
-    <ul>
-      <li>
-        <NuxtLink to="/">Home</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/blog">Blog</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/awards">Awards</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/projects">Projects</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/contact">Contacts</NuxtLink>
-      </li>
-    </ul>
   </nav>
 </template>
 
-<script setup>
+<style lang="scss">
 
-</script>
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.7rem;
+  margin-top: 5.6rem;
+  margin-bottom: 2.1rem;
 
-<style lang="scss" scoped>
+  a {
+    font-size: 1.8rem;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
 
+    :visited {
+      color: black;
+    }
+
+  };
+
+  .router-link-exact-active {
+    text-decoration: underline;
+  }
+}
 </style>
