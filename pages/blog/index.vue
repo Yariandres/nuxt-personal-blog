@@ -1,5 +1,5 @@
 <template>
-  <h1>Blog Page</h1>
+  <BlogPostList />
 </template>
 
 <script setup>
