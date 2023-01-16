@@ -11,8 +11,29 @@
       </div>
     </div>
 
-    <div>
-      blog items 
+    <div class="main__right">
+      <div class="card">
+        <figure class="card__figure">
+          <img class="card__image" src="https://placeholder.pics/svg/248x298" alt="ramdom image">
+        </figure>
+
+          <div class="card__body">
+            <p class="card__body--date">APR, 2022</p>
+            <h2 class="card__body--title">Loose and tight coupling in Software Design</h2>
+            <button class="card__body--button">Read</button>
+          </div>
+      </div>
+      <div class="card">
+        <figure class="card__figure">
+          <img class="card__image" src="https://placeholder.pics/svg/248x298" alt="ramdom image">
+        </figure>
+
+        <div class="card__body">
+          <p class="card__body--date">APR, 2022</p>
+          <h2 class="card__body--title">Loose and tight coupling in Software Design</h2>
+          <button class="card__body--button">Read</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -25,7 +46,6 @@
   .main {
     display: grid;
     grid-template-columns: 3fr 3fr;
-
     margin-top: 2rem;
     background-color: #D0CBC5;
     border-radius: 1rem;
@@ -62,6 +82,59 @@
         }
         &--text.margin-left {
           margin-left: 2.4rem;
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      gap: 7.6rem;
+      padding: 5.6rem 0;
+      .card {
+        display: flex;
+        gap: 2.9rem;
+
+
+        &__image {
+          border-radius: 5px 5px 0 0;
+        }
+
+
+        &__body {
+          padding: 1.6rem 0;
+          width: 15.9rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1.6rem;
+
+          &--date {
+            font-size: 1.2rem;
+            font-weight: 100;
+          }
+  
+          &--title {
+            font-size: 2.6rem;
+            font-weight: 100;
+          }
+  
+          &--button {
+            background-color: #000;
+            border: none;
+            border-radius: 2rem;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            padding: 0.9rem 2rem;
+            transition: box-shadow 0.3s, background-color 0.3s ease-in-out, color 0.2s ease-in-out;
+            
+            &:hover {
+              background-color: #ffffff;
+              color: #000;
+              box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.2);
+            }
+          }
         }
       }
     }
