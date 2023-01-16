@@ -18,6 +18,10 @@ useHead({
   link: [
       {
         rel: 'preconnect',
+        href: 'https://fonts.gstatic.com'
+      },
+      {
+        rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap'
       }
     ]
@@ -36,7 +40,7 @@ html {
 }
 
 body {
-  font-family: 'Coda', sans-serif;
+  font-family: 'Coda' , sans-serif;
 }
 
 .container {
