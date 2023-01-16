@@ -4,7 +4,7 @@
       <p class="main__left--header">BL</p>
       <p class="main__left--header margin-left">OG-</p>
       <p class="main__left--header">NEW</p>
-      <p class="main__left--header">S</p>
+      <p class="main__left--header light">S</p>
       <div class="main__left__absolute">
         <p class="main__left__absolute--text">Latest news</p>
         <p class="main__left__absolute--text margin-left">and updates</p>
@@ -34,16 +34,21 @@
       display: flex;
       flex-direction: column;
       border-radius: 1rem;
+   
       padding: 8rem 7.2rem;
       position: relative;
 
       &--header {
-        font-size: 10.8rem;
+        font-size: 11.8rem;
         font-weight: regular;
         line-height: 8rem;
       }
       &--header.margin-left {
         margin-left: 2.4rem;
+        color: #ffffff;
+      }
+      &--header.light{
+        color: #ffffff;
       }
 
       &__absolute {
