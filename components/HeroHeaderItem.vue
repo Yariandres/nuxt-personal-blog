@@ -1,6 +1,11 @@
 <template>
   <div :class="$style['container']">
-    <p :class="$style['header']">{{ textOne }}</p>
+    <p 
+      :class="$style['header']"  
+      @mouseover="handleShow"
+    >
+        {{ textOne }}
+    </p>
     <p :class="[$style['header'], $style['margin-left']]">{{ textTwo }}-</p>
     <p :class="$style['header']">{{ textThree }}</p>
     <p :class="[$style['header'], $style['light']]">{{ textFour }}</p>
@@ -13,6 +18,10 @@
 
 <script setup lang="ts">
 
+const emit = defineEmits<{
+  event: any;
+}>();
+
 defineProps<{
   textOne?: string;
   textTwo?: string;
@@ -21,6 +30,10 @@ defineProps<{
   textFive?: string;
   textSix?: string;
 }>();
+
+const handleShow = (event: any) => {
+  emit('showIcon', event.target.innerText);
+};
 
 </script>
 

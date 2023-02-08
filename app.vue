@@ -29,21 +29,5 @@ useHead({
 </script>
 <!-- simple css reset -->
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: 'Coda' , sans-serif;
-}
-
-.container {
-  padding: 0 2.1rem;
-}
+@import url(./theme/index.module.css);
 </style>

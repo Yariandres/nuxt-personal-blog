@@ -1,5 +1,5 @@
 <template>
-  <MainWrapper>
+  <MainWrapper :bgColor="'#D0CBC5'">
     <div :class="$style['left']">
       <HeroHeaderItem 
         :text-one="'BL'" 
