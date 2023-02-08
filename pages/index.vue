@@ -1,6 +1,9 @@
 <template>
  <MainWrapper :bgColor="'#D0CBC5'">
-    <section :class="$style['section']">
+    <section :class="$style['row']">
+      <div :class="$style['left']">some text</div>
+
+      <div>
         <p 
           :class="$style['text']" 
           @mouseenter="icons.react = true" 
@@ -42,16 +45,15 @@
           @mouseleave="icons.ts = false">
           IDEAS
         </p>
+      </div>
 
-      <div :class="$style['list']">
-        <div :class="$style['list__icons']">
-          <ReactLogo :width="80" :height="80"  :opacity="icons.react ? 1 : 0.1"/>
-          <NextLogo :width="80" :height="80" :opacity="icons.next ? 1 : 0.1"/>
-          <VueLogo :width="80" :height="80" :opacity="icons.vue ? 1 : 0.1"/>
-          <NuxtLogo :width="80" :height="80" :opacity="icons.nuxt ? 1 : 0.1"/>
-          <ViteLogo :width="80" :height="80" :opacity="icons.vite ? 1 : 0.1"/>
-          <TsLogo :width="80" :height="80" :opacity="icons.ts ? 1 : 0.1"/>
-        </div>
+      <div :class="$style['right']">
+        <ReactLogo :width="80" :height="80"  :opacity="icons.react ? 1 : 0"/>
+        <NextLogo :width="80" :height="80" :opacity="icons.next ? 1 : 0"/>
+        <VueLogo :width="80" :height="80" :opacity="icons.vue ? 1 : 0"/>
+        <NuxtLogo :width="80" :height="80" :opacity="icons.nuxt ? 1 : 0"/>
+        <ViteLogo :width="80" :height="80" :opacity="icons.vite ? 1 : 0"/>
+        <TsLogo :width="80" :height="80" :opacity="icons.ts ? 1 : 0"/>
       </div>
     </section>
   </MainWrapper>
@@ -86,10 +88,11 @@ const icons = ref<Icons>({
 </script>
 
 <style lang="scss" module>
-.section {
-  margin-inline: 13.6rem;
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding-block: 3.8rem;
-  position: relative;
 
   .text {
     font-size: 6rem;
@@ -99,24 +102,24 @@ const icons = ref<Icons>({
     
     &:hover {
       cursor: pointer;
-      opacity: 0.3;
       -webkit-text-stroke: 1px black;
-      transition: color, opacity 0.3s ease;
+      -webkit-text-fill-color: transparent;
     }
   }
 
-  .list {
-    position: absolute;
-    top: 4.1rem;
-    right: 0;
-    padding: 2.3rem;
+  .left {
+    @extend .text;
+    writing-mode: vertical-rl;
+    align-self: center;
+  }
 
-    &__icons {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2.2rem;
   }
 }
+
 </style>

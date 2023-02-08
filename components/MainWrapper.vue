@@ -8,8 +8,6 @@
 defineProps<{
   bgColor?: string;
 }>();
-
-  // const bgColor = ref<string>('#D0CBC5');
 </script>
 
 <style lang="scss" module>
