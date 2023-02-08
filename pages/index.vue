@@ -4,7 +4,8 @@
         <p 
           :class="$style['text']" 
           @mouseenter="icons.react = true" 
-          @mouseleave="icons.react = false">
+          @mouseleave="icons.react = false"
+        >
           
           POWERFULL
         </p>
@@ -43,13 +44,14 @@
         </p>
 
       <div :class="$style['list']">
-        <ReactLogo v-if="icons.react"  :width="400" :height="400"/>
-        <NextLogo v-else-if="icons.next"  :width="400" :height="400"/>
-        <VueLogo v-else-if="icons.vue"  :width="400" :height="400"/>
-        <NuxtLogo v-else-if="icons.nuxt"  :width="400" :height="400"/>
-        <ViteLogo v-else-if="icons.vite"  :width="400" :height="400"/>
-        <TsLogo v-else-if="icons.ts"  :width="400" :height="400"/>
-        <div v-else> else div</div>
+        <div :class="$style['list__icons']">
+          <ReactLogo :width="80" :height="80"  :opacity="icons.react ? 1 : 0.1"/>
+          <NextLogo :width="80" :height="80" :opacity="icons.next ? 1 : 0.1"/>
+          <VueLogo :width="80" :height="80" :opacity="icons.vue ? 1 : 0.1"/>
+          <NuxtLogo :width="80" :height="80" :opacity="icons.nuxt ? 1 : 0.1"/>
+          <ViteLogo :width="80" :height="80" :opacity="icons.vite ? 1 : 0.1"/>
+          <TsLogo :width="80" :height="80" :opacity="icons.ts ? 1 : 0.1"/>
+        </div>
       </div>
     </section>
   </MainWrapper>
@@ -85,7 +87,7 @@ const icons = ref<Icons>({
 
 <style lang="scss" module>
 .section {
-  margin-inline: 20rem;
+  margin-inline: 13.6rem;
   padding-block: 3.8rem;
   position: relative;
 
@@ -94,14 +96,12 @@ const icons = ref<Icons>({
     font-weight: 900;
     color: black;
     max-width: fit-content;
-
+    
     &:hover {
       cursor: pointer;
-      color: rgb(255, 255, 255);
       opacity: 0.3;
-      transition: background-color 0.6s ease;
       -webkit-text-stroke: 1px black;
-      -webkit-text-fill-color: rgb(255, 255, 255);
+      transition: color, opacity 0.3s ease;
     }
   }
 
@@ -109,12 +109,14 @@ const icons = ref<Icons>({
     position: absolute;
     top: 4.1rem;
     right: 0;
-    opacity: 0.5;
-    background-color: rgba(255, 255, 255);
     padding: 2.3rem;
-    border-radius: var(--radius-1);
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+
+    &__icons {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
-
 </style>
