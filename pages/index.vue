@@ -97,13 +97,37 @@ const icons = ref<Icons>({
   .text {
     font-size: 6rem;
     font-weight: 900;
-    color: black;
+    color: #000;
     max-width: fit-content;
+    position: relative;
+    z-index: 1;
     
     &:hover {
       cursor: pointer;
-      -webkit-text-stroke: 1px black;
-      -webkit-text-fill-color: transparent;
+      color: aliceblue;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+     
+      
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 200ms; 
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      cursor: pointer;
+      // transform-origin: left;
+
     }
   }
 
