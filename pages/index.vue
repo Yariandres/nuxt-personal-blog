@@ -6,42 +6,37 @@
         <p 
           :class="$style['text']" 
           @mouseenter="[icons.react = true, dynamicText = 'REACT']"
-          @mouseleave="icons.react = false"
         >
-          
           POWERFULL
         </p>
         <p 
           :class="$style['text']"
           @mouseenter="[icons.next = true, dynamicText = 'NEXT'] " 
-          @mouseleave="icons.next = false"
         >
         TECHNOLOGIES
         </p>
         <p 
           :class="$style['text']"
           @mouseenter="[icons.vue = true, dynamicText = 'VUE']" 
-          @mouseleave="icons.vue = false"
         >
           TO
         </p>
         <p 
           :class="$style['text']"
           @mouseenter="[icons.nuxt = true, dynamicText = 'NUXT']" 
-          @mouseleave="icons.nuxt = false"
         >
           LAUNCH
         </p>
         <p 
           :class="$style['text']" 
           @mouseenter="[icons.vite = true, dynamicText = 'VITE']" 
-          @mouseleave="icons.vite = false">
+        >
           YOUR
         </p>
         <p 
           :class="$style['text']" 
           @mouseenter="[icons.ts = true, dynamicText = 'TYPESCRIPT']" 
-          @mouseleave="icons.ts = false">
+        >
           IDEAS
         </p>
       </div>
@@ -97,6 +92,17 @@ const dynamicText = ref<string>('CODIGO');
   justify-content: space-between;
   padding-block: 3.8rem;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding-block: 1.8rem;
+    gap: 1.8rem;
+
+    .left {
+      writing-mode: horizontal-tb;
+    }
+  }
+
   .text {
     font-size: 6rem;
     font-weight: 900;
@@ -104,6 +110,10 @@ const dynamicText = ref<string>('CODIGO');
     max-width: fit-content;
     position: relative;
     z-index: 1;
+
+    @media (max-width: 768px) {
+      font-size: 5rem;
+    }
     
     &:hover {
       cursor: pointer;
@@ -139,15 +149,22 @@ const dynamicText = ref<string>('CODIGO');
     font-weight: 800;
     writing-mode: vertical-rl;
     align-self: center;
+
+    @media (max-width: 768px) {
+      writing-mode: horizontal-tb;
+    }
   }
 
   .bg {
-    background-image: linear-gradient(90deg, #d0cbc5 30%, #08000054 100%);
+    background-image: linear-gradient(90deg, #d0cbc5 30%, #0800005e 100%);
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 
+    @media (max-width: 768px) {
+      background-image: linear-gradient(360deg, #d0cbc5 30%, #080000aa 100%);
+    }
   }
 
   .right {
@@ -156,6 +173,10 @@ const dynamicText = ref<string>('CODIGO');
     justify-content: space-between;
     align-items: center;
     margin-right: 2.2rem;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
 
