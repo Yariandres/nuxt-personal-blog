@@ -1,48 +1,42 @@
 <template>
  <MainWrapper :bgColor="'#D0CBC5'">
     <section :class="$style['row']">
-      <div :class="$style['left']">some text</div>
-
+      <div :class="[$style['left'], $style['bg']]">{{ dynamicText }}</div>
       <div>
         <p 
           :class="$style['text']" 
-          @mouseenter="icons.react = true" 
-          @mouseleave="icons.react = false"
+          @mouseenter="[icons.react = true, dynamicText = 'REACT']"
         >
-          
           POWERFULL
         </p>
         <p 
           :class="$style['text']"
-          @mouseenter="icons.next = true" 
-          @mouseleave="icons.next = false"
+          @mouseenter="[icons.next = true, dynamicText = 'NEXT'] " 
         >
         TECHNOLOGIES
         </p>
         <p 
           :class="$style['text']"
-          @mouseenter="icons.vue = true" 
-          @mouseleave="icons.vue = false"
+          @mouseenter="[icons.vue = true, dynamicText = 'VUE']" 
         >
           TO
         </p>
         <p 
           :class="$style['text']"
-          @mouseenter="icons.nuxt = true" 
-          @mouseleave="icons.nuxt = false"
+          @mouseenter="[icons.nuxt = true, dynamicText = 'NUXT']" 
         >
           LAUNCH
         </p>
         <p 
           :class="$style['text']" 
-          @mouseenter="icons.vite = true" 
-          @mouseleave="icons.vite = false">
+          @mouseenter="[icons.vite = true, dynamicText = 'VITE']" 
+        >
           YOUR
         </p>
         <p 
           :class="$style['text']" 
-          @mouseenter="icons.ts = true" 
-          @mouseleave="icons.ts = false">
+          @mouseenter="[icons.ts = true, dynamicText = 'TYPESCRIPT']" 
+        >
           IDEAS
         </p>
       </div>
@@ -85,32 +79,92 @@ const icons = ref<Icons>({
   ts: false
 });
 
+const dynamicText = ref<string>('CODIGO');
+
+
 </script>
 
 <style lang="scss" module>
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-block: 3.8rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding-block: 1.8rem;
+    gap: 1.8rem;
+
+    .left {
+      writing-mode: horizontal-tb;
+    }
+  }
 
   .text {
     font-size: 6rem;
     font-weight: 900;
-    color: black;
+    color: #000;
     max-width: fit-content;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      font-size: 5rem;
+    }
     
     &:hover {
       cursor: pointer;
-      -webkit-text-stroke: 1px black;
-      -webkit-text-fill-color: transparent;
+      color: aliceblue;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+     
+      
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 200ms; 
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      cursor: pointer;
+      // transform-origin: left;
+
     }
   }
 
   .left {
-    @extend .text;
+    font-size: 6rem;
+    font-weight: 800;
     writing-mode: vertical-rl;
     align-self: center;
+
+    @media (max-width: 768px) {
+      writing-mode: horizontal-tb;
+    }
+  }
+
+  .bg {
+    background-image: linear-gradient(90deg, #d0cbc5 30%, #0800005e 100%);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    @media (max-width: 768px) {
+      background-image: linear-gradient(360deg, #d0cbc5 30%, #080000aa 100%);
+    }
   }
 
   .right {
@@ -119,6 +173,10 @@ const icons = ref<Icons>({
     justify-content: space-between;
     align-items: center;
     margin-right: 2.2rem;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
 
