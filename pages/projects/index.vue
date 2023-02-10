@@ -1,13 +1,13 @@
 <template>
-  <h1>
-    Projecs page
-  </h1>
+  <MainWrapper :bgColor="'#D0CBC5'">
+    <h1>Project page under construction, <br/> come back soon!</h1>
+  </MainWrapper>
 </template>
 
 <script setup>
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 
 </style>

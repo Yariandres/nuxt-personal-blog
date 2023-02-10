@@ -1,6 +1,7 @@
 <template>
   <MainWrapper :bgColor="'#D0CBC5'">
-    <div :class="$style['left']">
+    <h1>Blog page under construction,<br/> come back soon!</h1>
+    <!-- <div :class="$style['left']">
       <HeroHeaderItem 
         :text-one="'BL'" 
         :text-two="'OG'" 
@@ -9,9 +10,9 @@
         :text-five="'Latest news'"
         :text-six="'and updates'"
       />
-    </div>
+    </div> -->
 
-    <div :class="$style['right']">
+    <!-- <div :class="$style['right']">
       <BlogCardItem v-for="post in equalQuery" :key="post._path"
         :to="post._path"
         :title="post.title"
@@ -19,7 +20,7 @@
         :image="post.image"
         :description="post.description"
       />
-    </div>
+    </div> -->
   </MainWrapper>
 </template>
 
@@ -30,17 +31,20 @@
 </script>
 
 <style lang="scss" module>
-.left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
+// .left {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   align-items: center;
+// }
 
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 7.6rem;
-  padding: 5.6rem 0;
-}
+// .right {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 7.6rem;
+//   padding: 5.6rem 0;
+// } 
+
+// TEMP
+
 </style>
