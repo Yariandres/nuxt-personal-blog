@@ -2,7 +2,7 @@
  <MainWrapper :bgColor="'#D0CBC5'">
     <section :class="$style['row']">
       <div :class="[$style['left'], $style['bg']]">{{ dynamicText }}</div>
-      <div>
+      <div :class="$style['middle']">
         <p 
           :class="$style['text']" 
           @mouseenter="[icons.react = true, dynamicText = 'REACT']"
@@ -13,25 +13,25 @@
           :class="$style['text']"
           @mouseenter="[icons.next = true, dynamicText = 'NEXT'] " 
         >
-        TECHNOLOGIES
+          MODERN
         </p>
         <p 
           :class="$style['text']"
           @mouseenter="[icons.vue = true, dynamicText = 'VUE']" 
         >
-          TO
+          TECHNOLOGIES
         </p>
         <p 
           :class="$style['text']"
           @mouseenter="[icons.nuxt = true, dynamicText = 'NUXT']" 
         >
-          LAUNCH
+          FOR
         </p>
         <p 
           :class="$style['text']" 
           @mouseenter="[icons.vite = true, dynamicText = 'VITE']" 
         >
-          YOUR
+          INNOVATIVE
         </p>
         <p 
           :class="$style['text']" 
@@ -91,6 +91,7 @@ const dynamicText = ref<string>('CODIGO');
   flex-wrap: wrap;
   justify-content: space-between;
   padding-block: 3.8rem;
+  align-items: center;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -153,6 +154,12 @@ const dynamicText = ref<string>('CODIGO');
     @media (max-width: 768px) {
       writing-mode: horizontal-tb;
     }
+  }
+
+  .middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .bg {
