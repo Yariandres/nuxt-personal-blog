@@ -30,6 +30,9 @@
  .card {
     display: flex;
     gap: 2.9rem;
+    background: var(--brown-300);
+    border-radius: var(--radius-1);
+    padding: 1.6rem;
 
     &__image {
       border-radius: 5px 5px 0 0;
@@ -37,7 +40,7 @@
 
     &__body {
       padding: 1.6rem 0;
-      width: 15.9rem;
+      // width: 15.9rem;
       display: flex;
       flex-direction: column;
       gap: 1.6rem;
@@ -49,11 +52,11 @@
 
       &--title {
         font-size: 2.6rem;
-        font-weight: 100;
+        font-weight: 500;
       }
 
       &--button {
-        background-color: #000;
+        background-color: var(--blue-800);
         border: none;
         border-radius: 2rem;
         color: #ffffff;

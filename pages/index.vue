@@ -1,5 +1,5 @@
 <template>
- <MainWrapper :bgColor="'#D0CBC5'">
+ <MainWrapper :bgColor="'var(--blue-1000)'">
     <section :class="$style['row']">
       <div :class="[$style['left'], $style['bg']]">{{ dynamicText }}</div>
       <div :class="$style['middle']">
@@ -107,7 +107,7 @@ const dynamicText = ref<string>('CODIGO');
   .text {
     font-size: 6rem;
     font-weight: 900;
-    color: #000;
+    color: rgb(255, 255, 255);
     max-width: fit-content;
     position: relative;
     z-index: 1;
@@ -118,7 +118,6 @@ const dynamicText = ref<string>('CODIGO');
     
     &:hover {
       cursor: pointer;
-      color: aliceblue;
     }
 
     &::after {
@@ -128,8 +127,10 @@ const dynamicText = ref<string>('CODIGO');
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.2);
-     
+      background:  var(--brown-800);
+      border-radius: var(--radius-2);
+      
+        
       
       z-index: -1;
       transform: scaleX(0);
@@ -140,8 +141,6 @@ const dynamicText = ref<string>('CODIGO');
     &:hover::after {
       transform: scaleX(1);
       cursor: pointer;
-      // transform-origin: left;
-
     }
   }
 
@@ -163,14 +162,15 @@ const dynamicText = ref<string>('CODIGO');
   }
 
   .bg {
-    background-image: linear-gradient(90deg, #d0cbc5 30%, #0800005e 100%);
+    background-image: linear-gradient(90deg, var(--brown-700) 50%, rgb(255, 255, 255) 100%);
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 
+
     @media (max-width: 768px) {
-      background-image: linear-gradient(360deg, #d0cbc5 30%, #080000aa 100%);
+      // background-image: linear-gradient(360deg, #e3f1ed 30.3%, #080000aa 100%);
     }
   }
 

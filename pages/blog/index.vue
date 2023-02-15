@@ -1,25 +1,6 @@
 <template>
-  <MainWrapper :bgColor="'#E3F1ED'">
-    <!-- <div :class="$style['left']">
-      <HeroHeaderItem 
-        :text-one="'BL'" 
-        :text-two="'OG'" 
-        :text-three="'NEW'" 
-        :text-four="'S'"
-        :text-five="'Latest news'"
-        :text-six="'and updates'"
-      />
-    </div> -->
+  <MainWrapper :bgColor="'var(--blue-1000)'">
 
-    <!-- <div :class="$style['right']">
-      <BlogCardItem v-for="post in equalQuery" :key="post._path"
-        :to="post._path"
-        :title="post.title"
-        :date="post.date.published || post.date.created"
-        :image="post.image"
-        :description="post.description"
-      />
-    </div> -->
     <div :class="$style['container']">
       <nav>
         <h1 :class="$style['header']">Categories</h1>
@@ -32,7 +13,7 @@
 
       <div :class="$style['row']">
         <section :class="$style['section']">
-          <h1 :class="$style['section__header']">Posts</h1>
+          <h1 :class="$style['section__header']">Latest posts</h1>
           <BlogCardItem v-for="post in equalQuery" :key="post._path"
           :to="post._path"
           :title="post.title"
@@ -41,7 +22,9 @@
           :description="post.description"
         />
         </section>
-        <aside :class="$style['aside']">jklfjldksfjkdsfjklkj</aside>
+        <aside :class="$style['aside']">
+          <h2 :class="$style['aside__header']">Featured post</h2>
+        </aside>
       </div>
     </div>
 
@@ -67,8 +50,7 @@
     text-align: center;
     letter-spacing: 2px;
     padding-block: 1.6rem;
-    // text outline
-    -webkit-text-stroke: 1px #0000002b;
+    color: #FFF;
   }
   
   .list {
@@ -81,16 +63,18 @@
     align-items: center;
     justify-content: space-between;
     padding-inline: 3.2rem;
-    background-color: #FFF;  
+    color: var(--blue-50);
+    border-bottom: 1px solid var(--brown-500);
   
     li {
-      margin: 1rem 0;
+      margin: 2.3rem 0;
       font-size: 2.2rem;
       font-weight: 500;
       cursor: pointer;
       &:hover {
         color: #000000;
         text-decoration: underline;
+        color: var(--brown-500);
       }
     }
   } 
@@ -99,22 +83,36 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.6rem;
   
     .section {
-      background: #fff;
       flex: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 3.6rem;
   
       &__header {
+        margin-top: 4.8rem;
         font-size: 2.4rem;
         font-weight: 100;
         text-align: center;
+        color: #FFF;
       }
     }
   
     .aside {
       flex: 2;
       background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      &__header {
+        margin-top: 4.8rem;
+        font-size: 2.4rem;
+        font-weight: 100;
+        text-align: center;
+      }
     }
   }
 }
