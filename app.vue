@@ -27,7 +27,6 @@ useHead({
     ]
 });
 </script>
-<!-- simple css reset -->
-<style>
-@import url(./theme/index.module.css);
+<style lang="scss">
+@import url(./theme/index.css);
 </style>
