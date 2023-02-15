@@ -127,7 +127,7 @@ const dynamicText = ref<string>('CODIGO');
       left: 0;
       width: 100%;
       height: 100%;
-      background:  var(--brown-800);
+      background:  var(--red-800);
       border-radius: var(--radius-2);
       
         
@@ -162,7 +162,7 @@ const dynamicText = ref<string>('CODIGO');
   }
 
   .bg {
-    background-image: linear-gradient(90deg, var(--brown-700) 50%, rgb(255, 255, 255) 100%);
+    background-image: linear-gradient(90deg, var(--red-700) 50%, var(--yell-500) 100%);
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
