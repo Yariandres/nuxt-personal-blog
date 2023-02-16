@@ -13,6 +13,5 @@ defineProps<{
 <style lang="scss" module>
 .main {
     background-color: v-bind(bgColor);
-    border-radius: var(--radius-1);
 }
 </style>

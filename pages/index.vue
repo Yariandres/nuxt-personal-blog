@@ -1,53 +1,60 @@
 <template>
  <MainWrapper :bgColor="'var(--blue-1000)'">
     <section :class="$style['row']">
-      <div :class="[$style['left'], $style['bg']]">{{ dynamicText }}</div>
-      <div :class="$style['middle']">
+      <div :class="$style['left']">
         <p 
           :class="$style['text']" 
           @mouseenter="[icons.react = true, dynamicText = 'REACT']"
+          @mouseleave="icons.react = false"
         >
           POWERFULL
         </p>
         <p 
           :class="$style['text']"
-          @mouseenter="[icons.next = true, dynamicText = 'NEXT'] " 
+          @mouseenter="[icons.next = true, dynamicText = 'NEXT'] "
+          @mouseleave="icons.next = false" 
         >
           MODERN
         </p>
         <p 
           :class="$style['text']"
-          @mouseenter="[icons.vue = true, dynamicText = 'VUE']" 
+          @mouseenter="[icons.vue = true, dynamicText = 'VUE']"
+          @mouseleave="icons.vue = false"
         >
           TECHNOLOGIES
         </p>
         <p 
           :class="$style['text']"
-          @mouseenter="[icons.nuxt = true, dynamicText = 'NUXT']" 
+          @mouseenter="[icons.nuxt = true, dynamicText = 'NUXT']"
+          @mouseleave="icons.nuxt = false" 
         >
           FOR
         </p>
         <p 
           :class="$style['text']" 
-          @mouseenter="[icons.vite = true, dynamicText = 'VITE']" 
+          @mouseenter="[icons.vite = true, dynamicText = 'VITE']"
+          @mouseleave="icons.vite = false" 
         >
           INNOVATIVE
         </p>
         <p 
           :class="$style['text']" 
-          @mouseenter="[icons.ts = true, dynamicText = 'TYPESCRIPT']" 
+          @mouseenter="[icons.ts = true, dynamicText = 'TYPESCRIPT']"
+          @mouseleave="icons.ts = false" 
         >
           IDEAS
         </p>
       </div>
 
       <div :class="$style['right']">
-        <ReactLogo :width="80" :height="80"  :opacity="icons.react ? 1 : 0"/>
-        <NextLogo :width="80" :height="80" :opacity="icons.next ? 1 : 0"/>
-        <VueLogo :width="80" :height="80" :opacity="icons.vue ? 1 : 0"/>
-        <NuxtLogo :width="80" :height="80" :opacity="icons.nuxt ? 1 : 0"/>
-        <ViteLogo :width="80" :height="80" :opacity="icons.vite ? 1 : 0"/>
-        <TsLogo :width="80" :height="80" :opacity="icons.ts ? 1 : 0"/>
+        <ReactLogo v-if="icons.react" :width="580" :height="580"/>
+        <NextLogo v-if="icons.next"   :width="580" :height="580"/>
+        <VueLogo v-if="icons.vue"  :width="580" :height="580" />
+        <NuxtLogo v-if="icons.nuxt"  :width="580" :height="580" />
+        <ViteLogo v-if="icons.vite"  :width="580" :height="580" />
+        <TsLogo v-if="icons.ts"  :width="580" :height="580"/>
+  
+        <div :class="[$style['right__text'], $style['bg']]">{{ dynamicText }}</div>
       </div>
     </section>
   </MainWrapper>
@@ -68,6 +75,7 @@ interface Icons {
   nuxt: boolean;
   vite: boolean;
   ts: boolean;
+  codigo: boolean;
 }
 
 const icons = ref<Icons>({
@@ -76,7 +84,8 @@ const icons = ref<Icons>({
   vue: false,
   nuxt: false,
   vite: false,
-  ts: false
+  ts: false,
+  codigo: false
 });
 
 const dynamicText = ref<string>('CODIGO');
@@ -90,7 +99,6 @@ const dynamicText = ref<string>('CODIGO');
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-block: 3.8rem;
   align-items: center;
 
   @media (max-width: 768px) {
@@ -98,10 +106,6 @@ const dynamicText = ref<string>('CODIGO');
     align-items: center;
     padding-block: 1.8rem;
     gap: 1.8rem;
-
-    .left {
-      writing-mode: horizontal-tb;
-    }
   }
 
   .text {
@@ -127,10 +131,8 @@ const dynamicText = ref<string>('CODIGO');
       left: 0;
       width: 100%;
       height: 100%;
-      background:  var(--red-800);
+      background:  var(--red-300);
       border-radius: var(--radius-2);
-      
-        
       
       z-index: -1;
       transform: scaleX(0);
@@ -145,33 +147,12 @@ const dynamicText = ref<string>('CODIGO');
   }
 
   .left {
-    font-size: 6rem;
-    font-weight: 800;
-    writing-mode: vertical-rl;
-    align-self: center;
-
-    @media (max-width: 768px) {
-      writing-mode: horizontal-tb;
-    }
-  }
-
-  .middle {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .bg {
-    background-image: linear-gradient(90deg, var(--red-700) 50%, var(--yell-500) 100%);
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-
-
-    @media (max-width: 768px) {
-      // background-image: linear-gradient(360deg, #e3f1ed 30.3%, #080000aa 100%);
-    }
+    background-color: var(--blue-1000);
+    flex: 2;
+    padding-block: 9.3rem;
   }
 
   .right {
@@ -179,7 +160,37 @@ const dynamicText = ref<string>('CODIGO');
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-right: 2.2rem;
+    position: relative;
+    flex: 2;
+
+    svg {
+      position: absolute;
+      // absolute center
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .2;
+    }
+
+    &__text {
+    font-size: 8.3rem;
+    font-weight: 800;
+    align-self: center;
+    letter-spacing: .2rem;
+
+      @media (max-width: 768px) {
+        writing-mode: horizontal-tb;
+      }
+    }
+
+    .bg {
+      background-image: linear-gradient(90deg, var(--red-300) 50%, var(--green-300) 100%);
+      background-size: cover;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
 
     @media (max-width: 768px) {
       display: none;
