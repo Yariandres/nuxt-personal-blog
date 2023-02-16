@@ -10,6 +10,7 @@
       <NuxtLink :to="to">
         <span :class="$style['card__body--button']">Read</span>
       </NuxtLink>
+      <p :class="$style['card__body--author']">By - Yari Andres</p>
     </div>
   </div>
 </template>
@@ -30,9 +31,10 @@
  .card {
     display: flex;
     gap: 2.9rem;
-    background: var(--brown-300);
     border-radius: var(--radius-1);
-    padding: 1.6rem;
+    background: var(--blue-800);
+    padding: 1.6rem 3.2rem;
+    margin-left: 1.6rem;
 
     &__image {
       border-radius: 5px 5px 0 0;
@@ -40,23 +42,29 @@
 
     &__body {
       padding: 1.6rem 0;
-      // width: 15.9rem;
       display: flex;
       flex-direction: column;
-      gap: 1.6rem;
+      gap: 4.2rem;
 
       &--date {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         font-weight: 100;
+        color: var(--yell-200);
       }
 
       &--title {
         font-size: 2.6rem;
-        font-weight: 500;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: var(--yell-50);
+      }
+
+      a {
+        text-decoration: none;
       }
 
       &--button {
-        background-color: var(--blue-800);
+        background-color: var(--blue-1000);
         border: none;
         border-radius: 2rem;
         color: #ffffff;
@@ -67,10 +75,16 @@
         transition: box-shadow 0.3s, background-color 0.3s ease-in-out, color 0.2s ease-in-out;
         
         &:hover {
-          background-color: #ffffff;
-          color: #000;
+          background-color: var(--red-100);
+          color: var(--blue-1000);
           box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.2);
         }
+      }
+
+      &--author {
+        font-size: 1.6rem;
+        font-weight: 100;
+        color: var(--red-400);
       }
     }
   }

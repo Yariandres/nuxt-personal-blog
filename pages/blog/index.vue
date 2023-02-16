@@ -50,7 +50,7 @@
     text-align: center;
     letter-spacing: 2px;
     padding-block: 1.6rem;
-    color: #FFF;
+    color: var(--blue-50);
   }
   
   .list {
@@ -64,8 +64,9 @@
     justify-content: space-between;
     padding-inline: 3.2rem;
     color: var(--blue-50);
-    border-bottom: 1px solid var(--brown-500);
-  
+    border-bottom: .1rem solid var(--red-800);
+    border-top: .1rem solid var(--red-800);
+
     li {
       margin: 2.3rem 0;
       font-size: 2.2rem;
@@ -74,7 +75,7 @@
       &:hover {
         color: #000000;
         text-decoration: underline;
-        color: var(--brown-500);
+        color: var(--yell-500);
       }
     }
   } 
