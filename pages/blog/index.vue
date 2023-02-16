@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <aticle></aticle>
+    <article></article>
   </MainWrapper>
 </template>
 
