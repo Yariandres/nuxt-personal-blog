@@ -33,7 +33,7 @@
     gap: 2.9rem;
     border-radius: var(--radius-1);
     background: var(--blue-800);
-    padding: 1.6rem;
+    padding: 1.6rem 3.2rem;
     margin-left: 1.6rem;
 
     &__image {
