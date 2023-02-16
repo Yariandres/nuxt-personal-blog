@@ -75,6 +75,7 @@ interface Icons {
   nuxt: boolean;
   vite: boolean;
   ts: boolean;
+  codigo: boolean;
 }
 
 const icons = ref<Icons>({
@@ -83,7 +84,8 @@ const icons = ref<Icons>({
   vue: false,
   nuxt: false,
   vite: false,
-  ts: false
+  ts: false,
+  codigo: false
 });
 
 const dynamicText = ref<string>('CODIGO');
