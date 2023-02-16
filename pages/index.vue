@@ -100,22 +100,19 @@ const dynamicText = ref<string>('CODIGO');
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     padding-block: 1.8rem;
     gap: 1.8rem;
   }
-
   .text {
-    font-size: 6rem;
+    font-size: 6.3rem;
     font-weight: 900;
     color: rgb(255, 255, 255);
     max-width: fit-content;
     position: relative;
     z-index: 1;
-
     @media (max-width: 768px) {
       font-size: 5rem;
     }
@@ -123,7 +120,6 @@ const dynamicText = ref<string>('CODIGO');
     &:hover {
       cursor: pointer;
     }
-
     &::after {
       content: '';
       position: absolute;
@@ -139,22 +135,19 @@ const dynamicText = ref<string>('CODIGO');
       transform-origin: left;
       transition: transform 200ms; 
     }
-
     &:hover::after {
       transform: scaleX(1);
       cursor: pointer;
     }
   }
-
   .left {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--blue-1000);
     flex: 2;
-    padding-block: 9.3rem;
+    padding-block: 8rem;
   }
-
   .right {
     display: flex;
     flex-direction: column;
@@ -162,7 +155,6 @@ const dynamicText = ref<string>('CODIGO');
     align-items: center;
     position: relative;
     flex: 2;
-
     svg {
       position: absolute;
       // absolute center
@@ -171,18 +163,15 @@ const dynamicText = ref<string>('CODIGO');
       transform: translate(-50%, -50%);
       opacity: .2;
     }
-
     &__text {
     font-size: 8.3rem;
     font-weight: 800;
     align-self: center;
     letter-spacing: .2rem;
-
       @media (max-width: 768px) {
         writing-mode: horizontal-tb;
       }
     }
-
     .bg {
       background-image: linear-gradient(90deg, var(--red-300) 50%, var(--green-300) 100%);
       background-size: cover;
@@ -190,12 +179,11 @@ const dynamicText = ref<string>('CODIGO');
       -webkit-background-clip: text;
       color: transparent;
     }
-
-
     @media (max-width: 768px) {
       display: none;
     }
   }
 }
+
 
 </style>

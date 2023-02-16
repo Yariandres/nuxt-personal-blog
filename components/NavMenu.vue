@@ -1,37 +1,35 @@
 <template>
-  <nav class="nav">
-    <div class="left">
-      <Logo :fill="'var(--green-300)'" :width="100" :height="100"/>
-    </div>
+  <nav>
+    <div class="nav">
+      <div class="left">
+        <Logo :fill="'var(--green-300)'" :width="100" :height="100"/>
+      </div>
 
-    <div class="right">
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/blog">Blog</NuxtLink>
-      <NuxtLink to="/awards">Awards</NuxtLink>
-      <NuxtLink to="/projects">Projects</NuxtLink>
-      <NuxtLink to="/contact">Contacts</NuxtLink>
+      <div class="right">
+        <NuxtLink to="/">Home</NuxtLink>
+        <NuxtLink to="/blog">Blog</NuxtLink>
+        <NuxtLink to="/awards">Awards</NuxtLink>
+        <NuxtLink to="/projects">Projects</NuxtLink>
+        <NuxtLink to="/contact">Contacts</NuxtLink>
+      </div>
     </div>
   </nav>
 </template>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
 .center-items {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .nav {
   display: flex;
   justify-content: space-evenly;
-
   .left {
     background-color: var(--blue-1000);
     flex: 2;
     @extend .center-items;
   }
-
   .right {
     @extend .center-items;
     justify-content: space-around;
@@ -48,7 +46,6 @@
       :visited {
         color: black;
       }
-
     };
     .router-link-exact-active {
       text-decoration: underline;

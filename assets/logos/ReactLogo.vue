@@ -6,8 +6,8 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
-  width: number;
-  height: number;
-}>();
+  defineProps<{
+    width: number;
+    height: number;
+  }>();
 </script>
