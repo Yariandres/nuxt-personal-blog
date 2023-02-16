@@ -1,40 +1,58 @@
 <template>
-  <nav>
-    <div class="nav">
+  <nav class="nav">
+    <div class="left">
+      <Logo :fill="'var(--green-300)'" :width="100" :height="100"/>
+    </div>
+
+    <div class="right">
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/blog">Blog</NuxtLink>
       <NuxtLink to="/awards">Awards</NuxtLink>
       <NuxtLink to="/projects">Projects</NuxtLink>
       <NuxtLink to="/contact">Contacts</NuxtLink>
     </div>
-    <Logo/>
   </nav>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-.nav {
+.center-items {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3.7rem;
-  margin-top: 5.6rem;
-  margin-bottom: 2.1rem;
+}
 
-  a {
-    font-size: 1.8rem;
-    font-weight: normal;
-    text-decoration: none;
-    color: black;
+.nav {
+  display: flex;
+  justify-content: space-evenly;
 
-    :visited {
-      color: black;
+  .left {
+    background-color: var(--blue-1000);
+    flex: 2;
+    @extend .center-items;
+  }
+
+  .right {
+    @extend .center-items;
+    justify-content: space-around;
+    background-color: var(--blue-1000);
+    position: relative;
+    flex: 2;
+    
+    a {
+      font-size: 2.1rem;
+      font-weight: normal;
+      text-decoration: none;
+      color: var(--green-50);
+      
+      :visited {
+        color: black;
+      }
+
+    };
+    .router-link-exact-active {
+      text-decoration: underline;
     }
-
-  };
-
-  .router-link-exact-active {
-    text-decoration: underline;
   }
 }
 </style>

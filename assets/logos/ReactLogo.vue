@@ -9,6 +9,5 @@
 defineProps<{
   width: number;
   height: number;
-  opacity: number;
 }>();
 </script>
