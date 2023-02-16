@@ -105,7 +105,7 @@ const dynamicText = ref<string>('CODIGO');
     gap: 1.8rem;
   }
   .text {
-    font-size: 6rem;
+    font-size: 6.3rem;
     font-weight: 900;
     color: rgb(255, 255, 255);
     max-width: fit-content;
@@ -144,7 +144,7 @@ const dynamicText = ref<string>('CODIGO');
     align-items: center;
     background-color: var(--blue-1000);
     flex: 2;
-    padding-block: 9.3rem;
+    padding-block: 8rem;
   }
   .right {
     display: flex;
