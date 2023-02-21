@@ -1,6 +1,7 @@
 <template>
-  <NavMenu/>
-  <NuxtPage />
+  <WowMenu/>
+  <!-- <NavMenu/> -->
+  <!-- <NuxtPage /> -->
 </template>
 
 
