@@ -34,7 +34,6 @@
     border-radius: var(--radius-1);
     background: var(--blue-800);
     padding: 1.6rem 3.2rem;
-    margin-left: 1.6rem;
 
     &__image {
       border-radius: 5px 5px 0 0;
