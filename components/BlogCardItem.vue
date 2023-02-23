@@ -6,8 +6,8 @@
 
     <div :class="$style['card__body']">
       <p :class="$style['card__body--date']">{{ date }}</p>
-      <h2 :class="$style['card__body--title']">{{ title }}</h2>
-      <NuxtLink :to="to">
+      <NuxtLink :to="path" :class="$style['card__body--title']">{{ title }}</NuxtLink>
+      <NuxtLink :to="path">
         <span :class="$style['card__body--button']">Read</span>
       </NuxtLink>
       <p :class="$style['card__body--author']">By - Yari Andres</p>
@@ -18,7 +18,7 @@
 <script setup lang="ts">
   defineProps<
     {
-      to: string;
+      path: string;
       title: string;
       date: string;
       image?: string;

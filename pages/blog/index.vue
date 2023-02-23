@@ -3,7 +3,7 @@
       <div :class="$style['row']">
         <section :class="$style['section']">
           <BlogCardItem v-for="post in equalQuery" :key="post._path"
-          :to="post._path"
+          :path="post._path"
           :title="post.title"
           :date="post.date.published || post.date.created"
           :image="post.image"
