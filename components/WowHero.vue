@@ -76,7 +76,7 @@ onMounted(() => {
     background-size 800ms ease,
     background-position 800ms ease;
   }
-
+// TODO: PLaceholder image to be changed
   &-background-image {
     background-image: url('https://images.unsplash.com/photo-1496065187959-7f07b8353c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
     background-position: center 40%;
