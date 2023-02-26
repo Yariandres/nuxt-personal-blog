@@ -43,7 +43,7 @@ onMounted(() => {
   }
 
   &-items {
-    margin-left: clamp(4rem, 20vw, 48rem);
+    // margin-left: clamp(4rem, 20vw, 48rem);
     position: relative;
     z-index: 2;
   }

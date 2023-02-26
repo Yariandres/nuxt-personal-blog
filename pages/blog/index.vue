@@ -22,7 +22,6 @@
           </div>
         </aside>
       </div>
-
     <article></article>
   </MainWrapper>
 </template>
