@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-white">
     Blog page component
   </div>
 </template>

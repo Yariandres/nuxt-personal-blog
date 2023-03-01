@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-white">
     conatct page component
   </div>
 </template>
