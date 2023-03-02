@@ -1,0 +1,32 @@
+@import './variables.scss';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.light {
+  background-color: var(--bg-light-secondary);
+  color: var(--text-color-dark);
+}
+
+.dark {
+  background-color: var(--bg-dark-primary);
+  color: var(--text-color-light);
+}
+
+.light .base-container {
+  width: clamp(300px, 90%, 1200px);
+  background-color: var(--bg-light-primary);
+  margin-inline: auto;
+}
+
+.dark .base-container {
+  width: clamp(300px, 90%, 1200px);
+  background-color: var(--bg-dark-secondary);
+  margin-inline: auto;
+  border-left: 1px solid #474545;
+  border-right: 1px solid #474545;
+}

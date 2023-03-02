@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <header :class="$style['header']">
     <img src="~/assets/img/yari.jpeg" alt="thum nail" height="100" width="100" />
     <nav>
-      <ul>
+      <ul class="list">
         <li>
           <NuxtLink to="/">Home</NuxtLink>
         </li>
@@ -29,3 +29,9 @@ const switchColorMode = () => {
   mode.value = mode.value === 'dark' ? 'light' : 'dark';
 };
 </script>
+
+<style lang="scss" module>
+.header {
+  display: flex;
+}
+</style>
