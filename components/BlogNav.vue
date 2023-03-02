@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img src="~/assets/img/yari.jpeg"  alt="thum nail" height="100" width="100">
+    <img src="~/assets/img/yari.jpeg" alt="thum nail" height="100" width="100" />
     <nav>
       <ul>
         <li>
@@ -15,8 +15,8 @@
       </ul>
     </nav>
     <div>
-      <SunIcon role="button" @click="switchColorMode" v-if="mode === 'light'" :width="32" :height="32" />
-      <MoonIcon role="button" @click="switchColorMode" v-if="mode === 'dark'"  :width="32" :height="32" />
+      <SunIcon @click="switchColorMode" v-if="mode === 'light'" :width="32" :height="32" />
+      <MoonIcon @click="switchColorMode" v-if="mode === 'dark'" :width="32" :height="32" />
     </div>
   </header>
 </template>
@@ -28,5 +28,4 @@ const mode = useColorMode();
 const switchColorMode = () => {
   mode.value = mode.value === 'dark' ? 'light' : 'dark';
 };
-
 </script>
