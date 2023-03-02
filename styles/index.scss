@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -29,4 +33,8 @@ body {
   margin-inline: auto;
   border-left: 1px solid #474545;
   border-right: 1px solid #474545;
+}
+
+.router-link-active {
+  color: var(--text-color-active) !important;
 }
