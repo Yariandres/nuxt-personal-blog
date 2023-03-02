@@ -1,13 +1,26 @@
 <template>
-  <div class="container w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
-    <BlogNav />
-    <NuxtPage />
-  </div>
+  <BlogNav />
+  <NuxtPage />
 </template>
 
 <style>
-body {
-  background-color: #000000;
+
+:root {
+  --bg-color-light: #fff;
+  --text-color-dark: #000;
+
+  --bg-color-dark: #000;
+  --text-color-light: #fff;
+
 }
 
+.light {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-dark);
+}
+
+.dark {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-light);
+}
 </style>
