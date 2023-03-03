@@ -1,26 +1,26 @@
 <template>
   <header :class="$style['header']">
-    <img src="~/assets/img/yari.jpeg" alt="thum nail" height="100" width="100" />
+    <BaseLogo :fill="mode === 'dark' ? 'var(--text-color-light)' : 'var(--text-color-dark)'" :width="70" :height="70" />
+    <!-- <img src="~/assets/img/yari.jpeg" alt="thum nail" height="100" width="100" /> -->
     <nav :class="$style['nav']">
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/awards">Awards</NuxtLink>
       <NuxtLink to="/blog">Blog</NuxtLink>
       <NuxtLink to="/contact">Contact</NuxtLink>
     </nav>
-    <div>
-      <SunIcon @click="switchColorMode" v-if="mode === 'light'" :width="32" :height="32" />
-      <MoonIcon @click="switchColorMode" v-if="mode === 'dark'" :width="32" :height="32" />
-    </div>
+
+    <button :class="[
+      mode === 'light' ? $style['mode-btn-light'] : $style['mode-btn-dark']]"
+      @click="mode = mode === 'dark' ? 'light' : 'dark'">
+      <p v-if="mode === 'light'">🌙</p>
+      <p v-if="mode === 'dark'">☀️</p>
+    </button>
   </header>
 </template>
 
 <script setup lang="ts">
 import { useColorMode } from '@vueuse/core';
 const mode = useColorMode();
-
-const switchColorMode = () => {
-  mode.value = mode.value === 'dark' ? 'light' : 'dark';
-};
 </script>
 
 <style lang="scss" module>
@@ -30,7 +30,9 @@ const switchColorMode = () => {
   align-items: center;
 
   nav {
-    border: 1px solid red;
+    border: 1px solid var(--border-color-light);
+    padding-block: 1rem;
+    border-radius: 2rem;
     display: flex;
     gap: 1.6rem;
     padding-inline: 3.5rem;
@@ -47,6 +49,51 @@ const switchColorMode = () => {
         color: var(--color-primary);
       }
     }
+  }
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.mode-btn-light {
+  border: 2px solid var(--color-gray-400);
+  padding-inline: 2rem;
+  padding-block: .2rem;
+  border-radius: 50px;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--bg-dark-secondary);
+  }
+
+  transition: background-color .2s ease;
+
+  p {
+    color: var(--bg-dark-secondary);
+    font-size: 1.6rem;
+  }
+}
+
+.mode-btn-dark {
+  border: 1px solid var(--bg-dark-primary);
+  padding-inline: 2rem;
+  padding-block: .2rem;
+  border-radius: 50px;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--bg-light-secondary);
+  }
+
+  transition: background-color .2s ease;
+
+  p {
+    color: var(--text-color-light);
+    font-size: 1.6rem;
   }
 }
 </style>
