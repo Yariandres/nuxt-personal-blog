@@ -1,7 +1,6 @@
 <template>
   <header :class="$style['header']">
     <BaseLogo :fill="mode === 'dark' ? 'var(--text-color-light)' : 'var(--text-color-dark)'" :width="70" :height="70" />
-    <!-- <img src="~/assets/img/yari.jpeg" alt="thum nail" height="100" width="100" /> -->
     <nav :class="$style['nav']">
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/awards">Awards</NuxtLink>
@@ -28,6 +27,7 @@ const mode = useColorMode();
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-block-start: 3rem;
 
   nav {
     border: 1px solid var(--border-color-light);
