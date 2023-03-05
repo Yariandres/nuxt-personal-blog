@@ -5,7 +5,7 @@
     </div>
     <p :class="$style['header']">Hello! I am Yari a software engineer
       <span> delivering robust, scalable web products</span>
-      that achieve specific goals
+      that achieve your specific goals
     </p>
 
     <div :class="$style['copy']">
