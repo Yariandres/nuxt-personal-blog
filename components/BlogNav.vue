@@ -1,6 +1,6 @@
 <template>
   <header :class="$style['header']">
-    <BaseLogo :fill="mode === 'dark' ? 'var(--text-color-light)' : 'var(--text-color-dark)'" :width="70" :height="70" />
+    <h2 :class="$style['brand']">CODIGO</h2>
     <nav :class="$style['nav']">
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/awards">Awards</NuxtLink>
@@ -28,6 +28,10 @@ const mode = useColorMode();
   justify-content: space-between;
   align-items: center;
   padding-block-start: 3rem;
+
+  .brand {
+    font-weight: 900;
+  }
 
   nav {
     border: 1px solid var(--border-color-light);
