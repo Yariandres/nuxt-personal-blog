@@ -1,46 +1,58 @@
 <template>
   <main>
     <HomeHero />
-    <div :class="$style['row']">
-      <article :class="$style['article']">
-        <p>September 5, 2023</p>
-        <h2>Crafting a design system for the multidisciplinary future</h2>
-        <p>Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.</p>
-        <NuxtLink to="#">Read article</NuxtLink>
-      </article>
+    <BaseLayoutRow>
+      <div :class="$style['col']">
+        <ArticleCard v-for="post in posts" :key="post.id" 
+          :date="post.date
+            .split('T')[0]
+            .split('-')
+            .reverse()
+            .join('.')"
+          :title="post.title.rendered
+            .replace(/(<([^>]+)>)/gi, '')
+            .replace(/&nbsp;/gi, ' ')"
+          :description="post.excerpt.rendered
+            .replace(/(<([^>]+)>)/gi, '')
+            .replace(/&nbsp;/gi, ' ')
+            .substring(0, 200) + '...'"
+          :slug="post.slug">
+        </ArticleCard>
+      </div>
 
       <aside :class="$style['aside']">
         aside section
       </aside>
-
-    </div>
+    </BaseLayoutRow>
   </main>
 </template>
 
 <script setup lang="ts">
 
+interface WordpressPost {
+  id: number;
+  date: string;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  };
+}
+
+const { data: posts } = await useWordpressApi().getPosts<WordpressPost[]>();
+
+console.log(posts);
 </script>
 
 <style lang="scss" module>
-.row {
-  display: flex;
-  gap: 2rem;
+.col {
+  flex: 4;
+}
 
-  .article {
-    flex: 3;
-    padding: 2rem;
-    border: 1px solid transparent;
-    border-radius: 2rem;
-
-    &:hover {
-      background-color: #474545;
-      transition: background-color 0.5s ease;
-    }
-  }
-
-  .aside {
-    flex: 2;
-  }
+.aside {
+  flex: 2;
+  background-color: aqua;
 }
 </style>
 

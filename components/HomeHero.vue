@@ -5,12 +5,11 @@
       <div :class="$style['holder']">
         <img src="~/assets/img/yari.jpeg" alt="thum nail" />
       </div>
-      <p :class="$style['header']">Hello! I am Yari and since 7 years I <span> have </span> been creating robust scalable <span>commercial</span> web software that achieve specific goals
-      </p>
+      <p :class="$style['header']">Welcome to my site! <br><span>I am Yari a software engineer</span> based in Europe.</p>
     </div>
 
     <div :class="$style['copy']">
-      <p :class="$style['text']">Ready to launch you next idea? Working with me is like having a personal coding ninja at
+      <p :class="$style['text']">Do you have a project in mind? Working with me is like having a personal coding ninja at
         your fingertips. lets talk today and get your idea kicked off!!
       </p>
       <div :class="$style['icons']">
@@ -36,8 +35,8 @@
     align-items: center;
     gap: 2rem;
     .holder {
-      height: 80%;
-      width: 80%;
+      height: 50%;
+      width: 50%;
       border-radius: 50%;
       overflow: hidden;
 
@@ -49,7 +48,7 @@
     }
 
     .header {
-      font-size: 4.6rem;
+      font-size: 5.6rem;
       display: inline;
       line-height: 1.4;
 

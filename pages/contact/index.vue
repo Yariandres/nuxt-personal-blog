@@ -1,6 +1,7 @@
 <template>
   <div class="text-white">
-    conatct page component
+    <h1>Contact component
+    page UNDER CONSTRUCTION</h1>
   </div>
 </template>
 

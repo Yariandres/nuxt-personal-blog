@@ -1,6 +1,7 @@
 <template>
   <div>
-    Awards page component
+    <h1>Awards component
+    page UNDER CONSTRUCTION</h1>
   </div>
 </template>
 
