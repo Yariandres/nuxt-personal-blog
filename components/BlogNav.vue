@@ -14,6 +14,7 @@
       <p v-if="mode === 'light'">🌙</p>
       <p v-if="mode === 'dark'">☀️</p>
     </button>
+
   </header>
 </template>
 
@@ -27,7 +28,12 @@ const mode = useColorMode();
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block-start: 3rem;
+  padding-block: 1rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
   .brand {
     font-weight: 900;
@@ -68,6 +74,11 @@ button {
   padding-block: .2rem;
   border-radius: 50px;
   cursor: pointer;
+
+  // small screen
+  @media screen and (max-width: 768px) {
+    padding-inline: 1rem;
+  }
 
   &:hover {
     background: var(--bg-dark-secondary);
