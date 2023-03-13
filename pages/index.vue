@@ -42,7 +42,6 @@ interface WordpressPost {
 
 const { data: posts } = await useWordpressApi().getPosts<WordpressPost[]>();
 
-console.log(posts);
 </script>
 
 <style lang="scss" module>

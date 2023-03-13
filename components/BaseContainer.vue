@@ -6,7 +6,6 @@
 
 <style lang="scss">
 .base-container {
-  padding-inline: 9rem;
+  padding-inline: 4rem;
 }
-
 </style>

@@ -22,13 +22,13 @@ body {
 }
 
 .light .base-container {
-  width: clamp(300px, 90%, 1102px);
+  width: clamp(100px, 70%, 1102px);
   background-color: var(--bg-light-primary);
   margin-inline: auto;
 }
 
 .dark .base-container {
-  width: clamp(300px, 90%, 1102px);
+  width: clamp(100px, 70%, 1102px);
   background-color: var(--bg-dark-secondary);
   margin-inline: auto;
   border-left: 1px solid #474545;

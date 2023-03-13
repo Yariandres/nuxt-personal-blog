@@ -26,14 +26,12 @@
 
 <style lang="scss" module>
 .hero {
-  padding-block: 7rem;
-
-
+  padding-block: 4rem;
   .row {
     display: flex;
     align-items: center;
     gap: 2rem;
-    // small devices
+
     @media screen and (max-width: 768px) {
       flex-direction: column;
       gap: 0;
