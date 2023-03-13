@@ -1,6 +1,5 @@
 <template>
   <div :class="$style['hero']">
-
     <div :class="$style['row']">
       <div :class="$style['holder']">
         <img src="~/assets/img/yari.jpeg" alt="thum nail" />
@@ -34,11 +33,21 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    // small devices
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 0;
+    }
     .holder {
       height: 50%;
       width: 50%;
       border-radius: 50%;
       overflow: hidden;
+
+      @media screen and (max-width: 768px) {
+        height: 9rem;
+        width: 9rem;
+      }
 
       img {
         height: 100%;
@@ -51,6 +60,11 @@
       font-size: 5.6rem;
       display: inline;
       line-height: 1.4;
+
+      @media screen and (max-width: 768px) {
+        font-size: 2.6rem;
+        text-align: center;
+      }
 
       span {
         color: var(--text-color-active);
@@ -65,6 +79,12 @@
     margin-top: 5rem;
     max-width: 70.5rem;
     letter-spacing: 1px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.6rem;
+      text-align: center;
+      margin-block-start: 0;
+    }
   }
 
   .copy {
@@ -75,6 +95,10 @@
     .icons {
       display: flex;
       gap: 1.6rem;
+
+      @media screen and (max-width: 768px) {
+        justify-content: center;
+      }
 
       svg {
         cursor: pointer;
