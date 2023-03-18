@@ -1,6 +1,8 @@
 <template>
   <main>
     <HomeHero />
+    <img src="~/assets/svg/logos-logo-small (1).svg" alt="logo">
+    <img src="~/assets/svg/roche.svg" alt="logo">
     <BaseLayoutRow>
       <div :class="$style['col']">
         <ArticleCard v-for="post in posts" :key="post.id" 
