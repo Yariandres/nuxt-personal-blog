@@ -1,21 +1,23 @@
 <template>
-  <header :class="$style['header']">
-    <h2 :class="$style['brand']">CODIGO</h2>
-    <nav :class="$style['nav']">
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/awards">Awards</NuxtLink>
-      <NuxtLink to="/blog">Blog</NuxtLink>
-      <NuxtLink to="/contact">Contact</NuxtLink>
-    </nav>
-
-    <button :class="[
-      mode === 'light' ? $style['mode-btn-light'] : $style['mode-btn-dark']]"
-      @click="mode = mode === 'dark' ? 'light' : 'dark'">
-      <p v-if="mode === 'light'">🌙</p>
-      <p v-if="mode === 'dark'">☀️</p>
-    </button>
-
-  </header>
+  <BaseContainer>
+    <header :class="$style['header']">
+      <h2 :class="$style['brand']">CODIGO</h2>
+      <nav :class="$style['nav']">
+        <NuxtLink to="/">Home</NuxtLink>
+        <NuxtLink to="/awards">Awards</NuxtLink>
+        <NuxtLink to="/blog">Blog</NuxtLink>
+        <NuxtLink to="/contact">Contact</NuxtLink>
+      </nav>
+  
+      <button :class="[
+        mode === 'light' ? $style['mode-btn-light'] : $style['mode-btn-dark']]"
+        @click="mode = mode === 'dark' ? 'light' : 'dark'">
+        <p v-if="mode === 'light'">🌙</p>
+        <p v-if="mode === 'dark'">☀️</p>
+      </button>
+  
+    </header>
+  </BaseContainer>
 </template>
 
 <script setup lang="ts">
@@ -28,7 +30,7 @@ const mode = useColorMode();
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 1rem;
+  padding-block: 3.2rem;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
