@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style['hero']">
+  <BaseContainer>
     <div :class="$style['row']">
       <div :class="$style['holder']">
         <img src="~/assets/img/yari.jpeg" alt="thum nail" />
@@ -21,89 +21,86 @@
         <IconInstagram />
       </div>
     </div>
-  </div>
+  </BaseContainer>
 </template>
 
 <style lang="scss" module>
-.hero {
-  padding-block: 4rem;
-  .row {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+.row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-      gap: 0;
-    }
-    .holder {
-      height: 50%;
-      width: 50%;
-      border-radius: 50%;
-      overflow: hidden;
-
-      @media screen and (max-width: 768px) {
-        height: 9rem;
-        width: 9rem;
-      }
-
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .header {
-      font-size: 5.6rem;
-      display: inline;
-      line-height: 1.4;
-
-      @media screen and (max-width: 768px) {
-        font-size: 2.6rem;
-        text-align: center;
-      }
-
-      span {
-        color: var(--text-color-active);
-        margin-left: 2rem;
-      }
-
-    }
-  }
-
-  .text {
-    font-size: 2.3rem;
-    margin-top: 5rem;
-    max-width: 70.5rem;
-    letter-spacing: 1px;
-
-    @media screen and (max-width: 768px) {
-      font-size: 1.6rem;
-      text-align: center;
-      margin-block-start: 0;
-    }
-  }
-
-  .copy {
-    display: flex;
+  @media screen and (max-width: 768px) {
     flex-direction: column;
-    gap: 2rem;
+    gap: 0;
+  }
+  .holder {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    overflow: hidden;
 
-    .icons {
-      display: flex;
-      gap: 1.6rem;
+    @media screen and (max-width: 768px) {
+      height: 9rem;
+      width: 9rem;
+    }
 
-      @media screen and (max-width: 768px) {
-        justify-content: center;
-      }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 
-      svg {
-        cursor: pointer;
+  .header {
+    font-size: 5.6rem;
+    display: inline;
+    line-height: 1.4;
 
-        &:hover {
-          fill: var(--text-color-active);
-        }
+    @media screen and (max-width: 768px) {
+      font-size: 2.6rem;
+      text-align: center;
+    }
+
+    span {
+      color: var(--text-color-active);
+      margin-left: 2rem;
+    }
+
+  }
+}
+
+.text {
+  font-size: 2.3rem;
+  margin-top: 5rem;
+  max-width: 70.5rem;
+  letter-spacing: 1px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-block-start: 0;
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .icons {
+    display: flex;
+    gap: 1.6rem;
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+    }
+
+    svg {
+      cursor: pointer;
+
+      &:hover {
+        fill: var(--text-color-active);
       }
     }
   }
