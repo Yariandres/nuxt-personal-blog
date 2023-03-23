@@ -30,7 +30,7 @@ defineProps<{
   gap: 1.6rem;
 
   &__date {
-    color: var(--color-gray-0);
+    color: var(--text-color-active);
     font-size: 1.4rem;
     margin: 0;
   }
@@ -55,7 +55,7 @@ defineProps<{
       padding: 1rem 2rem;
       border-radius: 2rem;
       background-color: var(--color-gray-0);
-      color: var(--color-gray-1);
+      color: var(--text-color-light) !important;
       font-size: 1.4rem;
       font-weight: 600;
       text-decoration: none;
