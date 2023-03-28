@@ -4,12 +4,12 @@
       <div :class="$style['holder']">
         <img src="~/assets/img/yari.jpeg" alt="thum nail" />
       </div>
-      <p :class="$style['header']">Welcome to my site! <br><span>I am Yari a software engineer</span> based in Europe.</p>
+        <p :class="$style['header']">Hello and welcome to my website!  
+        <span>My name is Yari and I am a talented</span> software <br> engineer based in Europe.</p>
     </div>
-
+    
     <div :class="$style['copy']">
-      <p :class="$style['text']">Do you have a project in mind? Working with me is like having a personal coding ninja at
-        your fingertips. lets talk today and get your idea kicked off!!
+      <p :class="$style['text']">Are you ready to turn your project idea into a reality? With my expertise as a skilled software engineer, working with me is like having a personal coding ninja at your service. Let's discuss your vision and get your project started today!
       </p>
       <div :class="$style['icons']">
         <a href="https://github.com/Yariandres" target="_blank">
@@ -56,6 +56,7 @@
     font-size: 5.6rem;
     display: inline;
     line-height: 1.4;
+    font-weight: 800;
 
     @media screen and (max-width: 768px) {
       font-size: 2.6rem;
@@ -63,12 +64,14 @@
     }
 
     span {
-      color: var(--text-color-active);
       margin-left: 2rem;
+      color: var(--text-color-red-0);
     }
-
   }
 }
+
+
+
 
 .text {
   font-size: 2.3rem;

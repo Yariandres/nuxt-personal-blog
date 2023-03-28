@@ -21,6 +21,7 @@ defineProps<{
 </script>
 
 <style lang="scss" module>
+
 .article {
   padding: 2rem;
   border: 1px solid transparent;
