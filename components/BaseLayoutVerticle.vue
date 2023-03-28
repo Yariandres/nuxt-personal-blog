@@ -10,7 +10,7 @@ const props = defineProps<{
 }>();
 
 const style = computed(() => 
-  props.gap ? `${props.gap}rem` : '2rem',
+  props.gap ? `${props.gap}rem` : 'unset',
 );
 </script>
 

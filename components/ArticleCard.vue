@@ -4,7 +4,7 @@
     <h2 :class="$style['article__title']">{{ title }}</h2>
     <p :class="$style['article__description']">{{ description }}</p>
     <div :class="$style['article__btn']">
-      <NuxtLink to="#" :class="$style['article__btn--link']">
+      <NuxtLink :to="`/blog/${slug}`" :class="$style['article__btn--link']">
         Read article
       </NuxtLink>
     </div>
@@ -70,7 +70,7 @@ defineProps<{
   }
 
   &:hover {
-    background-color: #474545;
+    background-color: var( --text-color-red-0);
     color: var(--text-color-light);
     transition: background-color 0.5s ease;
   }
