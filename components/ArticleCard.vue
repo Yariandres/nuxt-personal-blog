@@ -2,7 +2,7 @@
   <article :class="$style['article']">
     <p :class="$style['article__date']">{{ date }}</p>
     <h2 :class="$style['article__title']">{{ title }}</h2>
-    <p :class="$style['article__description']">{{ description }}</p>
+    <p :class="$style['article__content']">{{ description }}</p>
     <div :class="$style['article__btn']">
       <NuxtLink :to="`/blog/${slug}`" :class="$style['article__btn--link']">
         Read article
@@ -41,8 +41,8 @@ defineProps<{
     margin: 0;
   }
 
-  &__description {
-    font-size: 1.4rem;
+  &__content {
+    font-size: 1.6rem;
     color: var(--color-gray-1);
     margin: 0;
   }
