@@ -23,6 +23,7 @@
     </BaseLayoutVerticle>
   </div>
   <BaseContainer>
+    <h2 :class="$style['section-title']">News and Posts </h2>
     <BaseLayoutRow>
       <div :class="$style['col']">
         <ArticleCard 
@@ -80,8 +81,6 @@ const { data: posts } = await useWordpressApi().getPosts<PostType>();
 const { data: categories } = await useWordpressApi().getCategories<CategoryType[]>();
 
 const postArr = posts.value?.splice(0, 3)
-console.log(categories.value);
-
 </script>
 
 <style lang="scss" module>
@@ -116,11 +115,18 @@ console.log(categories.value);
   text-align: center;
 }
 
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-block-end: 8.4rem;
+}
+
 .aside {
   flex: 2;
-  border: 1px solid var(--text-color-red-0);
+  border: 1px solid var(--bg-light-secondary);
   border-radius: 1rem;
-  padding: 2.4rem;
+  padding: 2.8rem;
 
   .title {
     font-size: 2.4rem;
@@ -138,6 +144,7 @@ console.log(categories.value);
 
     &:hover {
       color: var(--text-color-red-1);
+      text-decoration: underline;
     }
   }
 
@@ -152,11 +159,20 @@ console.log(categories.value);
     padding: 3px 1rem;
   }
 
+  .dark, .count {
+    background-color: var(--bg-dark-primary);
+    color: var(--bg-light-primary);
+  }
+
   .categories {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.dark, .aside {
+  border: 4px solid var(--text-color-light);
 }
 </style>
 

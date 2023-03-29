@@ -24,7 +24,7 @@ defineProps<{
 
 .article {
   padding: 2rem;
-  border: 1px solid transparent;
+  border: 4px solid transparent;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
@@ -70,10 +70,8 @@ defineProps<{
   }
 
   &:hover {
-    background-color: var( --text-color-red-0);
-    color: var(--text-color-light);
+    border: 4px solid var(--text-color-red-0);
     transition: background-color 0.5s ease;
   }
-
 }
 </style>
