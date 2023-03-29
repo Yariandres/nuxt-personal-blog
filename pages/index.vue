@@ -13,7 +13,7 @@
         </div>
 
         <img src="~/assets/svg/interflora.svg" alt="logo" width="150">
-        
+
         <div :class="$style['holder']">
           <img src="~/assets/img/verseo-logo-dark.svg" alt="logo" width="100">
         </div>
@@ -25,25 +25,31 @@
   <BaseContainer>
     <BaseLayoutRow>
       <div :class="$style['col']">
-        <ArticleCard v-for="post in posts" :key="post.id" 
+        <ArticleCard 
+          v-for="post in postArr" 
+          :key="post.id" 
           :date="post.date
             .split('T')[0]
             .split('-')
             .reverse()
-            .join('.')"
+            .join('.')" 
           :title="post.title.rendered
             .replace(/(<([^>]+)>)/gi, '')
-            .replace(/&nbsp;/gi, ' ')"
+            .replace(/&nbsp;/gi, ' ')" 
           :description="post.excerpt.rendered
             .replace(/(<([^>]+)>)/gi, '')
             .replace(/&nbsp;/gi, ' ')
-            .substring(0, 200) + '...'"
+            .substring(0, 200) + '...'" 
           :slug="post.slug">
         </ArticleCard>
       </div>
 
       <aside :class="$style['aside']">
-        aside section
+        <h2 :class="$style['title']">Categories</h2>
+        <div v-for="category in categories" :key="category.id" :class="$style['categories']">
+          <NuxtLink to="!" :class="$style['link']">{{ category.name }}</NuxtLink>
+          <p :class="$style['count']">{{ category.count }}</p>
+        </div>
       </aside>
     </BaseLayoutRow>
   </BaseContainer>
@@ -51,23 +57,34 @@
 
 <script setup lang="ts">
 
-interface WordpressPost {
+interface PostType {
   id: number;
   date: string;
   title: {
     rendered: string;
   };
-  content: {
+  excerpt: {
     rendered: string;
   };
+  slug: string;
 }
 
-const { data: posts } = await useWordpressApi().getPosts<WordpressPost[]>();
+interface CategoryType {
+  id: number;
+  name: string;
+  count: number;
+  slug: string;
+}
+
+const { data: posts } = await useWordpressApi().getPosts<PostType>();
+const { data: categories } = await useWordpressApi().getCategories<CategoryType[]>();
+
+const postArr = posts.value?.splice(0, 3)
+console.log(categories.value);
 
 </script>
 
 <style lang="scss" module>
-
 .row {
   padding-block: 6.4rem;
 }
@@ -101,7 +118,45 @@ const { data: posts } = await useWordpressApi().getPosts<WordpressPost[]>();
 
 .aside {
   flex: 2;
-  background-color: aqua;
+  border: 1px solid var(--text-color-red-0);
+  border-radius: 1rem;
+  padding: 2.4rem;
+
+  .title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .link {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--text-color-red-0);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    // margin-block-end: 2.8rem;
+
+    &:hover {
+      color: var(--text-color-red-1);
+    }
+  }
+
+  .count {
+    font-size: 1.9rem;
+    font-weight: 700;
+    border: 1px solid var(--text-color-active);
+    color: var(--bg-light-primary);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 1.5rem;
+    padding: 3px 1rem;
+  }
+
+  .categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 </style>
 

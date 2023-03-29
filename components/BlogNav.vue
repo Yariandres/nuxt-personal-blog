@@ -1,7 +1,12 @@
 <template>
   <BaseContainer>
     <header :class="$style['header']">
-      <h2 :class="$style['brand']">CODIGO</h2>
+      <div :class="$style['brand']">
+        <NuxtLink to="/" :class="$style['link']">
+          CODIGO
+        </NuxtLink>
+      </div>
+
       <nav :class="$style['nav']">
         <NuxtLink to="/">Home</NuxtLink>
         <NuxtLink to="/awards">Awards</NuxtLink>
@@ -37,10 +42,6 @@ const mode = useColorMode();
     gap: 1rem;
   }
 
-  .brand {
-    font-weight: 900;
-  }
-
   nav {
     border: 1px solid var(--border-color-light);
     padding-block: 1rem;
@@ -51,7 +52,9 @@ const mode = useColorMode();
 
     a {
       text-decoration: none;
-      font-size: 1.4rem !important;
+      font-size: 1.6rem;
+      font-weight: 800;
+
 
       &:visited {
         color: unset;
@@ -59,6 +62,19 @@ const mode = useColorMode();
 
       &:hover {
         color: var(--color-primary);
+      }
+    }
+  }
+  
+  .brand {
+    font-weight: 900;
+    font-size: 1.9rem;
+    
+    .link {
+      text-decoration: none;
+      
+      :visited {
+        color: none;
       }
     }
   }

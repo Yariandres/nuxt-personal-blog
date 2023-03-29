@@ -65,7 +65,7 @@
 
     span {
       margin-left: 2rem;
-      color: var(--text-color-red-0);
+      color: var(--text-color-active);
     }
   }
 }
