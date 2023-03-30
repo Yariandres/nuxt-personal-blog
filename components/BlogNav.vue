@@ -40,6 +40,7 @@ const mode = useColorMode();
 <style lang="scss" module>
 .base-container {
   padding-inline: 4rem;
+  z-index: 100;
 }
 .header {
   display: flex;

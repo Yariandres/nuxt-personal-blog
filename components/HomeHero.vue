@@ -1,104 +1,146 @@
 <template>
-  <div :class="$style['hero-section']">
-    <div :class="$style['row']">
-      <div :class="$style['holder']">
-        <img src="~/assets/img/yari.jpeg" alt="thum nail" />
-      </div>
-      <p :class="$style['header']">Hello and welcome to my website!  
-      <span>My name is Yari and I am a talented</span> software <br> engineer based in Europe.</p>
+  <div class="splash">
+    <div class="splash_logo">
+      Codigo Studio
     </div>
-    
-    <div :class="$style['copy']">
-      <p :class="$style['text']">Are you ready to turn your project idea into a reality? With my expertise as a skilled software engineer, working with me is like having a personal coding ninja at your service. Let's discuss your vision and get your project started today!
-      </p>
-      <div :class="$style['icons']">
-        <a href="https://github.com/Yariandres" target="_blank">
-          <IconGithub />
-        </a>
-        <a href="https://www.linkedin.com/in/yari-herrera-9677a9160/" target="_blank">
-          <IconLinkedin />
-        </a>
-        <IconInstagram />
-      </div>
+    <div class="splash_svg">
+      <svg width="100%" height="100%">
+        <rect width="100%" height="100%" />
+      </svg>
+    </div>
+    <div class="splash_minimize">
+      <svg width="100%" height="100%">
+        <rect width="100%" height="100%" />
+      </svg>
     </div>
   </div>
+<div class="text">
+  <p>
+    <span class="green">Empowering</span> - 
+    <span>Your Business Innovation with </span> - 
+    <span>Custom Software Development Services</span> 
+  </p>
+  <!-- <p>Empowering Your Business</p> -->
+  <div class="icons">
+    <a href="https://github.com/Yariandres" target="_blank">
+      <IconGithub />
+    </a>
+    <a href="https://www.linkedin.com/in/yari-herrera-9677a9160/" target="_blank">
+      <IconLinkedin />
+    </a>
+    <IconInstagram />
+  </div>
+  <NuxtLink to="/contact" class="button">Lets discuss</NuxtLink>
+</div>
 </template>
 
-<style lang="scss" module>
-.hero-section {
-  padding-block: 4.8rem;
+<style lang="scss">
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+  -webkit-animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  animation: $animations;
 }
-.row {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    gap: 0;
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
   }
-  .holder {
-    height: 50%;
-    width: 50%;
-    border-radius: 50%;
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+//theme
+$yellow: transparent;
+$black: #292929;
+$bg: #191919;
+$lines: #757474;
+
+.text {
+  opacity: 0;
+  position: absolute;
+  z-index: 7;
+
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  font-size: 48px;
+  font-weight: 700;
+  p {
+    // white-space: nowrap;
     overflow: hidden;
+    width: 100%;
+    @include animation('type .3s steps(60, end) 3.7s');
 
-    @media screen and (max-width: 768px) {
-      height: 9rem;
-      width: 9rem;
-    }
-
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .header {
-    font-size: 5.6rem;
-    display: inline;
-    line-height: 1.4;
-    font-weight: 800;
-    margin: 0;
-    padding: 0;
-
-    @media screen and (max-width: 768px) {
-      font-size: 2.6rem;
-      text-align: center;
-    }
-
-    span {
-      margin-left: 2rem;
+    .green {
       color: var(--text-color-active);
     }
   }
-}
 
-
-
-
-.text {
-  font-size: 2.3rem;
-  margin-top: 5rem;
-  max-width: 70.5rem;
-  letter-spacing: 1px;
-
-  @media screen and (max-width: 768px) {
-    font-size: 1.6rem;
-    text-align: center;
-    margin-block-start: 0;
+  p:nth-child(2) {
+    @include animation('type2 .5s steps(60, end) 3.7s');
   }
-}
+  @include animation('on .6s ease-in-out 3.7s forwards');
+  
+  .button {
+    border:0;
+    opacity:0;
+    background:var(--bg-light-primary);
+    color:var(--bg-dark-primary);
+    border:1px solid $bg;
+    letter-spacing:2px;
+    padding:.8rem 2.5rem;
+    font-size:1.9rem;
+    font-weight:800;
+    text-transform:uppercase;
+    cursor:pointer;
+    border-radius: 2rem;
+    @include transition(color .5s, background-color .5s);
+    @include animation('on .6s ease-in-out 4s forwards');
+    
 
-.copy {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+    &:hover {
+      background:var(--text-color-active);
+      border:1px solid $bg;
+    }
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
 
   .icons {
     display: flex;
     gap: 1.6rem;
+    align-items: center;
 
     @media screen and (max-width: 768px) {
       justify-content: center;
@@ -106,11 +148,179 @@
 
     svg {
       cursor: pointer;
+      fill: var(--text-color-active);
 
       &:hover {
         fill: var(--text-color-active);
       }
     }
+  }
+}
+
+
+.splash {
+  height: 65rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  &_logo {
+    position: absolute;
+    margin: -15px 0 0 -25px;
+    top: 50vh;
+    z-index: 5;
+    left: 50vw;
+    width: 50px;
+    text-align: center;
+    height: 30px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 1;
+    will-change: opacity;
+    @include animation('logo .3s ease-in 1.5s forwards, off .6s ease-in-out 3.2s forwards');
+    &:before {
+      display: block;
+      position: absolute;
+      left: 15px;
+      bottom: -5px;
+      width: 20px;
+      height: 1px;
+      background-color: $lines;
+      content: "";
+    }
+    &:after {
+      display: block;
+      position: absolute;
+      left: 15px;
+      top: -5px;
+      width: 20px;
+      height: 1px;
+      background-color: $lines;
+      content: "";
+      will-change: width;
+    }
+  }
+  &_svg {
+    position: relative;
+    margin: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    svg {
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: visible;
+      backface-visibility: visible;
+      rect {
+        width: 100%;
+        height: 100%;
+        fill: $yellow;
+        stroke: 0;
+        -webkit-clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+        clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+        @include animation('expand .7s ease-in forwards 2.7s');
+      }
+    }
+  }
+  &_minimize {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    svg {
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: visible;
+      backface-visibility: visible;
+      rect {
+        width: 100%;
+        height: 100%;
+        -webkit-clip-path: polygon(0vw 0vh, 100vw 0vh, 100vw 100vh, 0vw 100vh);
+        clip-path: polygon(0vw 0vh, 100vw 0vh, 100vw 100vh, 0vw 100vh);
+        @include animation('scale .2s ease-out forwards 1s, hide 1.3s ease-out forwards 1.2s');
+      }
+    }
+  }
+}
+
+@include keyframes(scale) {
+  100% {
+    -webkit-clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+    clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+  }
+}
+
+@include keyframes(hide) {
+  100% {
+    fill: transparent;
+  }
+}
+
+@include keyframes (off) {
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes (on) {
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes (logo) {
+  100% {
+    color: $black;
+  }
+}
+
+@include keyframes (type) {
+  0% {
+    width: 0;
+  }
+}
+
+@include keyframes (type2) {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 100;
+  }
+}
+
+@include keyframes(expand) {
+  0% {}
+  25% {
+    -webkit-clip-path: polygon(0vw 0vh, 55vw 40vh, 55vw 58vh, 45vw 58vh);
+    clip-path: polygon(0vw 0vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+    fill: white;
+  }
+  50% {
+    -webkit-clip-path: polygon(0vw 0vh, 100vw 0vh, 55vw 60vh, 45vw 60vh);
+    clip-path: polygon(0vw 0vh, 100vw 0vh, 55vw 60vh, 45vw 60vh);
+    fill: $yellow;
+  }
+  75% {
+    -webkit-clip-path: polygon(0vw 0vh, 100vw 0vh, 55vw 60vh, 0vw 100vh);
+    clip-path: polygon(0vw 0vh, 100vw 0vh, 55vw 60vh, 0vw 100vh);
+    fill: white;
+  }
+  100% {
+    -webkit-clip-path: polygon(0vw 0vh, 100vw 0vh, 100vw 100vh, 0vw 100vh);
+    clip-path: polygon(0vw 0vh, 100vw 0vh, 100vw 100vh, 0vw 100vh);
+    fill: $yellow;
   }
 }
 </style>
