@@ -1,5 +1,5 @@
 <template>
-  <BaseContainer>
+  <div :class="$style['base-container']">
     <header :class="$style['header']">
       <div :class="$style['brand']">
         <NuxtLink to="/" :class="$style['link']">
@@ -14,15 +14,22 @@
         <NuxtLink to="/contact">Contact</NuxtLink>
       </nav>
   
-      <button :class="[
-        mode === 'light' ? $style['mode-btn-light'] : $style['mode-btn-dark']]"
+      <button 
+        v-if="mode === 'light'" 
+        :class="$style['mode-btn-dark']"
         @click="mode = mode === 'dark' ? 'light' : 'dark'">
-        <p v-if="mode === 'light'">🌙</p>
-        <p v-if="mode === 'dark'">☀️</p>
+        &#x263D;
+      </button>
+
+      <button 
+        v-if="mode === 'dark'" 
+        :class="$style['mode-btn-light']"
+        @click="mode = mode === 'dark' ? 'light' : 'dark'">
+        &#x263C;
       </button>
   
     </header>
-  </BaseContainer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -31,6 +38,9 @@ const mode = useColorMode();
 </script>
 
 <style lang="scss" module>
+.base-container {
+  padding-inline: 4rem;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -87,7 +97,8 @@ button {
 }
 
 .mode-btn-light {
-  border: 2px solid var(--color-gray-400);
+  border: 2px solid white;
+  color: aliceblue;
   padding-inline: 2rem;
   padding-block: .2rem;
   border-radius: 50px;
@@ -112,6 +123,7 @@ button {
 
 .mode-btn-dark {
   border: 1px solid var(--bg-dark-primary);
+  font-weight: 400;
   padding-inline: 2rem;
   padding-block: .2rem;
   border-radius: 50px;

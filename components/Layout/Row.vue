@@ -1,6 +1,7 @@
 <template>
   <div :class="$style['row']">
-    <slot />
+    <slot name="left"/>
+    <slot name="right"/>
   </div>
 </template>
 

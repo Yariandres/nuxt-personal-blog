@@ -2,7 +2,7 @@
   <article :class="$style['article']">
     <p :class="$style['article__date']">{{ date }}</p>
     <h2 :class="$style['article__title']">{{ title }}</h2>
-    <p :class="$style['article__content']">{{ description }}</p>
+    <span v-if="content" :class="$style['article__content']" v-html="content"/>
     <div :class="$style['article__btn']">
       <NuxtLink :to="`/blog/${slug}`" :class="$style['article__btn--link']">
         Read article
@@ -13,10 +13,10 @@
 
 <script setup lang="ts">
 defineProps<{
-  date: string;
-  title: string;
-  description: string;
-  slug: string;
+  date?: string;
+  title?: string;
+  content?: string;
+  slug?: string;
 }>();
 </script>
 

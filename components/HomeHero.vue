@@ -1,11 +1,11 @@
 <template>
-  <BaseContainer>
+  <div :class="$style['hero-section']">
     <div :class="$style['row']">
       <div :class="$style['holder']">
         <img src="~/assets/img/yari.jpeg" alt="thum nail" />
       </div>
-        <p :class="$style['header']">Hello and welcome to my website!  
-        <span>My name is Yari and I am a talented</span> software <br> engineer based in Europe.</p>
+      <p :class="$style['header']">Hello and welcome to my website!  
+      <span>My name is Yari and I am a talented</span> software <br> engineer based in Europe.</p>
     </div>
     
     <div :class="$style['copy']">
@@ -15,16 +15,19 @@
         <a href="https://github.com/Yariandres" target="_blank">
           <IconGithub />
         </a>
-        <a href="https://github.com/Yariandres" target="_blank">
+        <a href="https://www.linkedin.com/in/yari-herrera-9677a9160/" target="_blank">
           <IconLinkedin />
         </a>
         <IconInstagram />
       </div>
     </div>
-  </BaseContainer>
+  </div>
 </template>
 
 <style lang="scss" module>
+.hero-section {
+  padding-block: 4.8rem;
+}
 .row {
   display: flex;
   align-items: center;
@@ -57,6 +60,8 @@
     display: inline;
     line-height: 1.4;
     font-weight: 800;
+    margin: 0;
+    padding: 0;
 
     @media screen and (max-width: 768px) {
       font-size: 2.6rem;
