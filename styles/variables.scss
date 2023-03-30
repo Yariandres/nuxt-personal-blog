@@ -7,6 +7,9 @@
   /* RED */
   --text-color-red-0: rgb(248, 55, 87);
 
+  /* Yellow */
+  --text-color-yellow-0: rgb(223, 241, 27);
+
   /* BACKGROUND */
   --bg-dark-primary: rgba(2, 0, 36, 1);
   --bg-dark-secondary: #060648;
@@ -16,4 +19,6 @@
 
   /* BORDER */
   --border-color-light: #474545;
+
+  --space-400: clamp(8rem, 1vw + 16px, 4rem);
 }

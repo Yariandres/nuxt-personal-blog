@@ -39,8 +39,12 @@
 .images-container {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 .holder {

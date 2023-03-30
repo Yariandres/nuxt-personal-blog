@@ -70,7 +70,7 @@ defineProps<{
   }
 
   &:hover {
-    border: 4px solid var(--text-color-red-0);
+    border: 4px solid var(--bg-light-primary);
     transition: background-color 0.5s ease;
   }
 }

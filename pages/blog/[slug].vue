@@ -40,7 +40,7 @@
 
 <style lang="scss" module>
 .base-container {
-  padding-inline: 4rem;
+  padding-inline: var(--space-400);
 }
   .post-title {
     font-size: 2.2rem;

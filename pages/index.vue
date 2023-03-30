@@ -1,14 +1,14 @@
 <template>
+  <HomeHero />
+  <hr>
   <div :class="$style['base-container']">
-    <HomeHero />
-    <hr>
     <ClientsSection />
     <hr>
     <div :class="$style['news-posts-section']">
       <h2 :class="$style['section-title']">News and Posts </h2>
       <LayoutRow>
         <template #left>
-          <div :class="$style['col']">
+          <div :class="$style['left']">
             <ArticleCard 
               v-for="post in posts" 
               :key="post.id" 
@@ -70,11 +70,14 @@ console.log(posts);
 
 <style lang="scss" module>
 .base-container {
-  padding-inline: 4rem;
+  padding-inline: var(--space-400);
 }
 
 .news-posts-section {
   padding-block: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
 }
 
 .section-title {
@@ -83,6 +86,13 @@ console.log(posts);
   text-align: center;
   margin: 0;
   padding: 0;
+}
+
+.left {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
 }
 
 .aside {
@@ -100,10 +110,8 @@ console.log(posts);
   .link {
     font-size: 1.9rem;
     font-weight: 700;
-    color: var(--text-color-red-0);
     text-decoration: none;
     transition: all 0.3s ease-in-out;
-    // margin-block-end: 2.8rem;
 
     &:hover {
       color: var(--text-color-red-1);
@@ -121,6 +129,8 @@ console.log(posts);
     border-radius: 1.5rem;
     padding: 3px 1rem;
   }
+
+
 
   .dark, .count {
     background-color: var(--bg-dark-primary);
