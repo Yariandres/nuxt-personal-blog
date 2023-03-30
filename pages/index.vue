@@ -1,63 +1,49 @@
 <template>
-  <HomeHero />
-  <div :class="$style['row']">
-    <BaseLayoutVerticle :gap="6.2">
-      <h2 :class="$style['heading']">Past Clients</h2>
-      <div :class="$style['images-container']">
-        <div :class="$style['holder']">
-          <img src="~/assets/svg/maybellin.svg" alt="logo">
-        </div>
-
-        <div :class="$style['holder']">
-          <img src="~/assets/svg/roche-logo-white.png" alt="logo" width="80">
-        </div>
-
-        <img src="~/assets/svg/interflora.svg" alt="logo" width="150">
-
-        <div :class="$style['holder']">
-          <img src="~/assets/img/verseo-logo-dark.svg" alt="logo" width="100">
-        </div>
-
-        <img src="~/assets/img/seargin.jpeg" alt="logo" width="100">
-      </div>
-    </BaseLayoutVerticle>
+  <div :class="$style['base-container']">
+    <HomeHero />
+    <hr>
+    <ClientsSection />
+    <hr>
+    <div :class="$style['news-posts-section']">
+      <h2 :class="$style['section-title']">News and Posts </h2>
+      <LayoutRow>
+        <template #left>
+          <div :class="$style['col']">
+            <ArticleCard 
+              v-for="post in posts" 
+              :key="post.id" 
+              :date="post.date
+                .split('T')[0]
+                .split('-')
+                .reverse()
+                .join('.')" 
+              :title="post.title.rendered" 
+              :content="post.excerpt.rendered"
+              :slug="post.slug"
+              >
+            </ArticleCard>
+          </div>
+        </template>
+  
+        <template #right>
+          <aside :class="$style['aside']">
+          <h2 :class="$style['title']">Categories</h2>
+          <div v-for="category in categories" :key="category.id" :class="$style['categories']">
+            <NuxtLink to="#!" :class="$style['link']">{{ category.name }}</NuxtLink>
+            <p :class="$style['count']">{{ category.count }}</p>
+          </div>
+        </aside>
+        </template>
+  
+      </LayoutRow>
+    </div>
   </div>
-  <BaseContainer>
-    <BaseLayoutRow>
-      <div :class="$style['col']">
-        <ArticleCard 
-          v-for="post in postArr" 
-          :key="post.id" 
-          :date="post.date
-            .split('T')[0]
-            .split('-')
-            .reverse()
-            .join('.')" 
-          :title="post.title.rendered
-            .replace(/(<([^>]+)>)/gi, '')
-            .replace(/&nbsp;/gi, ' ')" 
-          :description="post.excerpt.rendered
-            .replace(/(<([^>]+)>)/gi, '')
-            .replace(/&nbsp;/gi, ' ')
-            .substring(0, 200) + '...'" 
-          :slug="post.slug">
-        </ArticleCard>
-      </div>
-
-      <aside :class="$style['aside']">
-        <h2 :class="$style['title']">Categories</h2>
-        <div v-for="category in categories" :key="category.id" :class="$style['categories']">
-          <NuxtLink to="!" :class="$style['link']">{{ category.name }}</NuxtLink>
-          <p :class="$style['count']">{{ category.count }}</p>
-        </div>
-      </aside>
-    </BaseLayoutRow>
-  </BaseContainer>
 </template>
 
 <script setup lang="ts">
 
 interface PostType {
+  // key vaue pairs
   id: number;
   date: string;
   title: {
@@ -76,51 +62,34 @@ interface CategoryType {
   slug: string;
 }
 
-const { data: posts } = await useWordpressApi().getPosts<PostType>();
+const { data: posts } = await useWordpressApi().getPosts<any>();
 const { data: categories } = await useWordpressApi().getCategories<CategoryType[]>();
 
-const postArr = posts.value?.splice(0, 3)
-console.log(categories.value);
-
+console.log(posts);
 </script>
 
 <style lang="scss" module>
-.row {
-  padding-block: 6.4rem;
+.base-container {
+  padding-inline: 4rem;
 }
 
-.holder {
-  height: 100px;
-  background-color: var(--bg-dark-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-inline: 1.6rem;
-  border-radius: 1rem;
+.news-posts-section {
+  padding-block: 4.8rem;
 }
 
-.col {
-  flex: 4;
-}
-
-.images-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-block-end: 6.4rem;
-}
-
-.heading {
+.section-title {
   font-size: 2.4rem;
   font-weight: 700;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .aside {
   flex: 2;
-  border: 1px solid var(--text-color-red-0);
+  border: 1px solid var(--bg-light-secondary);
   border-radius: 1rem;
-  padding: 2.4rem;
+  padding: 2.8rem;
 
   .title {
     font-size: 2.4rem;
@@ -138,6 +107,7 @@ console.log(categories.value);
 
     &:hover {
       color: var(--text-color-red-1);
+      text-decoration: underline;
     }
   }
 
@@ -152,11 +122,20 @@ console.log(categories.value);
     padding: 3px 1rem;
   }
 
+  .dark, .count {
+    background-color: var(--bg-dark-primary);
+    color: var(--bg-light-primary);
+  }
+
   .categories {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.dark, .aside {
+  border: 4px solid var(--text-color-light);
 }
 </style>
 

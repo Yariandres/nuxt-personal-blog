@@ -1,11 +1,11 @@
 <template>
-  <BaseContainer>
+  <div :class="$style['base-container']">
     <div :class="$style['post-title']">
       <h1>{{ post.title.rendered }}</h1>
     </div>
 
     <div :class="$style['post-content']">
-      <p v-html="post.content.rendered" />
+      <span v-html="post.content.rendered" />
     </div>
 
     <div :class="$style['post-meta']">
@@ -15,7 +15,7 @@
         {{ post.date.split('T')[0].split('-').reverse().join('.') }}
       </span>
     </div>
-  </BaseContainer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -30,16 +30,18 @@
     };
   }
 
-  const {params} = useRoute();
-
-  const {data: posts} = await useWordpressApi().getPost<WordpressPost>(
+  const { params } = useRoute();
+  const { data: posts } = await useWordpressApi().getPost<WordpressPost>(
     params.slug as string
   );
   const post = posts.value[0];
+
 </script>
 
 <style lang="scss" module>
-
+.base-container {
+  padding-inline: 4rem;
+}
   .post-title {
     font-size: 2.2rem;
     text-align: center;
