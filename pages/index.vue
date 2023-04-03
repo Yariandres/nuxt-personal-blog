@@ -1,9 +1,7 @@
 <template>
   <HomeHero />
-  <hr>
   <div :class="$style['base-container']">
     <ClientsSection />
-    <hr>
     <div :class="$style['news-posts-section']">
       <h2 :class="$style['section-title']">News and Posts </h2>
       <LayoutRow>
@@ -29,7 +27,7 @@
           <aside :class="$style['aside']">
           <h2 :class="$style['title']">Categories</h2>
           <div v-for="category in categories" :key="category.id" :class="$style['categories']">
-            <NuxtLink to="#!" :class="$style['link']">{{ category.name }}</NuxtLink>
+            <NuxtLink :to="`/posts/${category.slug}`" :class="$style['link']">{{ category.name }}</NuxtLink>
             <p :class="$style['count']">{{ category.count }}</p>
           </div>
         </aside>
@@ -43,7 +41,6 @@
 <script setup lang="ts">
 
 interface PostType {
-  // key vaue pairs
   id: number;
   date: string;
   title: {
@@ -65,7 +62,9 @@ interface CategoryType {
 const { data: posts } = await useWordpressApi().getPosts<any>();
 const { data: categories } = await useWordpressApi().getCategories<CategoryType[]>();
 
-console.log(posts);
+console.log(posts.value)
+console.log(categories.value)
+
 </script>
 
 <style lang="scss" module>
@@ -129,8 +128,6 @@ console.log(posts);
     border-radius: 1.5rem;
     padding: 3px 1rem;
   }
-
-
 
   .dark, .count {
     background-color: var(--bg-dark-primary);
