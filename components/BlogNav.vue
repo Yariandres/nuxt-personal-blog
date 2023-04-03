@@ -1,6 +1,6 @@
 <template>
   <div :class="$style['base-container']">
-    <header :class="$style['header']">
+    <div :class="$style['header']">
       <div :class="$style['brand']">
         <NuxtLink to="/" :class="$style['link']">
           CODIGO
@@ -15,7 +15,8 @@
       </nav>
   
       <button 
-        v-if="mode === 'light'" 
+        v-if="mode === 'light'"
+        type="button"
         :class="$style['mode-btn-dark']"
         @click="mode = mode === 'dark' ? 'light' : 'dark'">
         &#x263D;
@@ -23,12 +24,13 @@
 
       <button 
         v-if="mode === 'dark'" 
+        type="button"
         :class="$style['mode-btn-light']"
         @click="mode = mode === 'dark' ? 'light' : 'dark'">
         &#x263C;
       </button>
   
-    </header>
+    </div>
   </div>
 </template>
 

@@ -4,9 +4,7 @@
       <h1>{{ post.title.rendered }}</h1>
     </div>
 
-    <div :class="$style['post-content']">
-      <span v-html="post.content.rendered" />
-    </div>
+    <div :class="$style['post-content']" v-html="post.content.rendered"/>
 
     <div :class="$style['post-meta']">
       <span>Written by {{ post._embedded['author'][0].name }} </span>
