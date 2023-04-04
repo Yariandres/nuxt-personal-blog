@@ -16,6 +16,21 @@
           </select>
         </LayoutFlexColumn>
       </LayoutFlexRow>
+      <LayoutFlexColumn :gap="3.2">
+        <ArticleCard
+          v-for="post in posts" 
+          :key="post.id" 
+          :date="post.date
+            .split('T')[0]
+            .split('-')
+            .reverse()
+            .join('.')" 
+          :title="post.title.rendered" 
+          :content="post.excerpt.rendered"
+          :slug="post.slug"
+          >
+        </ArticleCard>
+      </LayoutFlexColumn>
     </LayoutFlexColumn>
   </div>
 </template>
