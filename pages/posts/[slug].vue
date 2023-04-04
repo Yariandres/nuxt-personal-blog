@@ -48,7 +48,6 @@ const capFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-console.log(posts.value)
 </script>
 
 <style lang="scss" module>

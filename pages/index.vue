@@ -61,10 +61,6 @@ interface CategoryType {
 
 const { data: posts } = await useWordpressApi().getPosts<any>();
 const { data: categories } = await useWordpressApi().getCategories<CategoryType[]>();
-
-console.log(posts.value)
-console.log(categories.value)
-
 </script>
 
 <style lang="scss" module>
