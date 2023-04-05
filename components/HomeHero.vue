@@ -16,9 +16,10 @@
   </div>
 <div class="text">
   <p>
-    <span class="green">Empowering</span> - 
-    <span>Your Business Innovation with </span> - 
-    <span>Custom Software Development Services</span> 
+    <span class="green">Empowering</span> 
+    <br>
+    <span>Your Business with - </span>
+    <span>Software Solutions</span> 
   </p>
   <!-- <p>Empowering Your Business</p> -->
   <div class="icons">
@@ -30,7 +31,7 @@
     </a>
     <IconInstagram />
   </div>
-  <NuxtLink to="/contact" class="button">Lets discuss</NuxtLink>
+  <NuxtLink to="/contact" class="button">Let's talk</NuxtLink>
 </div>
 </template>
 
@@ -91,13 +92,15 @@ $lines: #757474;
   font-size: 48px;
   font-weight: 700;
   p {
-    // white-space: nowrap;
+
+    line-height: 10rem;
     overflow: hidden;
     width: 100%;
     @include animation('type .3s steps(60, end) 3.7s');
 
     .green {
       color: var(--text-color-active);
+      font-size: 8.2rem;
     }
   }
 
