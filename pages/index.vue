@@ -1,6 +1,7 @@
 <template>
   <HomeHero />
   <div :class="$style['base-container']">
+    <ServicesSection />
     <ClientsSection />
     <div :class="$style['news-posts-section']">
       <h2 :class="$style['section-title']">News and Posts </h2>
@@ -24,15 +25,8 @@
         </template>
   
         <template #right>
-          <aside :class="$style['aside']">
-          <h2 :class="$style['title']">Categories</h2>
-          <div v-for="category in categories" :key="category.id" :class="$style['categories']">
-            <NuxtLink :to="`/posts/${category.slug}`" :class="$style['link']">{{ category.name }}</NuxtLink>
-            <p :class="$style['count']">{{ category.count }}</p>
-          </div>
-        </aside>
+          <Aside :categories="categories" />
         </template>
-  
       </LayoutRow>
     </div>
   </div>
@@ -88,53 +82,6 @@ const { data: categories } = await useWordpressApi().getCategories<CategoryType[
   display: flex;
   flex-direction: column;
   gap: 2.8rem;
-}
-
-.aside {
-  flex: 2;
-  border: 1px solid var(--bg-light-secondary);
-  border-radius: 1rem;
-  padding: 2.8rem;
-
-  .title {
-    font-size: 2.4rem;
-    font-weight: 800;
-    text-align: center;
-  }
-
-  .link {
-    font-size: 1.9rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      color: var(--text-color-red-1);
-      text-decoration: underline;
-    }
-  }
-
-  .count {
-    font-size: 1.9rem;
-    font-weight: 700;
-    border: 1px solid var(--text-color-active);
-    color: var(--bg-light-primary);
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    border-radius: 1.5rem;
-    padding: 3px 1rem;
-  }
-
-  .dark, .count {
-    background-color: var(--bg-dark-primary);
-    color: var(--bg-light-primary);
-  }
-
-  .categories {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 }
 
 .dark, .aside {
