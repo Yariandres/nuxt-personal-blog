@@ -1,8 +1,11 @@
 <template>
   <HomeHero />
   <div :class="$style['base-container']">
+    <div :class="$style['divider']"/>
     <ServicesSection />
+    <div :class="$style['divider']"/>
     <ClientsSection />
+    <div :class="$style['divider']"/>
     <div :class="$style['news-posts-section']">
       <h2 :class="$style['section-title']">News and Posts </h2>
       <LayoutRow>
@@ -86,6 +89,12 @@ const { data: categories } = await useWordpressApi().getCategories<CategoryType[
 
 .dark, .aside {
   border: 4px solid var(--text-color-light);
+}
+
+.divider {
+  height: 5px;
+  background-color: var(--text-color-red-1);
+  margin-block: 4.8rem;
 }
 </style>
 

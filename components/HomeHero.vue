@@ -16,10 +16,10 @@
   </div>
 <div class="text">
   <p>
-    <span class="green">Empowering</span> 
+    <span class="green">Hi, I'm Yari!</span> 
     <br>
-    <span>Your Business with - </span>
-    <span>Software Solutions</span> 
+    <span class="text-normal">I'm a web developer with in-depth experience in UI/UX design. <br></span>
+    <span class="text-normal"> In a nutshell, I create websites and web apps that help <br> organizations address business challenges and meet their needs.</span>
   </p>
   <!-- <p>Empowering Your Business</p> -->
   <div class="icons">
@@ -31,7 +31,7 @@
     </a>
     <IconInstagram />
   </div>
-  <NuxtLink to="/contact" class="button">Let's talk</NuxtLink>
+  <NuxtLink to="/contact" class="button"></NuxtLink>
 </div>
 </template>
 
@@ -91,17 +91,21 @@ $lines: #757474;
   left: 10%;
   font-size: 48px;
   font-weight: 700;
-  p {
 
-    line-height: 10rem;
+  p {
     overflow: hidden;
-    width: 100%;
     @include animation('type .3s steps(60, end) 3.7s');
 
     .green {
       color: var(--text-color-active);
       font-size: 8.2rem;
     }
+  }
+
+  .text-normal {
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
   }
 
   p:nth-child(2) {
@@ -112,9 +116,8 @@ $lines: #757474;
   .button {
     border:0;
     opacity:0;
-    background:var(--bg-light-primary);
-    color:var(--bg-dark-primary);
-    border:1px solid $bg;
+    color: inherit;
+    border:1px solid var(--text-color-active);
     letter-spacing:2px;
     padding:.8rem 2.5rem;
     font-size:1.9rem;
@@ -124,11 +127,22 @@ $lines: #757474;
     border-radius: 2rem;
     @include transition(color .5s, background-color .5s);
     @include animation('on .6s ease-in-out 4s forwards');
-    
+    transition: border .5s ;
+
+    &:before {
+      content: "Schedule a call";
+    }
 
     &:hover {
-      background:var(--text-color-active);
-      border:1px solid $bg;
+      // background:var(--text-color-red-0);
+      border:1px solid var(--text-color-red-0);
+      color: var(--bg-light-primar);
+      transition: color .5s ;
+      
+
+      &:before {
+        content: "Let's gooooo!";
+      }
     }
 
     @media screen and (max-width: 768px) {
@@ -159,7 +173,6 @@ $lines: #757474;
     }
   }
 }
-
 
 .splash {
   height: 65rem;
