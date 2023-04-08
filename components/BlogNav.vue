@@ -17,7 +17,7 @@
       <button 
         v-if="mode === 'light'"
         type="button"
-        :class="$style['mode-btn-dark']"
+        :class="[$style['button'], $style['mode-btn-dark']]"
         @click="mode = mode === 'dark' ? 'light' : 'dark'">
         &#x263D;
       </button>
@@ -25,7 +25,7 @@
       <button 
         v-if="mode === 'dark'" 
         type="button"
-        :class="$style['mode-btn-light']"
+        :class="[$style['button'], $style['mode-btn-light']]"
         @click="mode = mode === 'dark' ? 'light' : 'dark'">
         &#x263C;
       </button>
@@ -39,7 +39,7 @@ import { useColorMode } from '@vueuse/core';
 const mode = useColorMode();
 </script>
 
-<style lang="scss" module>
+<style lang="scss" module scoped>
 .base-container {
   padding-inline: 4rem;
   z-index: 100;
@@ -93,7 +93,7 @@ const mode = useColorMode();
   }
 }
 
-button {
+.button {
   border: none;
   background: none;
   cursor: pointer;
