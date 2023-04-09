@@ -1,43 +1,51 @@
 <template>
+<LayoutFlexColumn>
   <div :class="{[$style['input-base']]: true, [$style['input-border-active']]: isActive }">
-    <LayoutFlexColumn>
-      <label :class="{[$style['label']]: true, [$style['label-color-active']]: isActive}" for="name">{{ label }}</label>
-      <input
-        v-bind="$attrs"
-        :class="$style['input']" 
-        type="text" 
-        id="name" 
-        :value="modelValue"
-        @input="
-          isInputEmpty($event); 
-          $emit('update:modelValue', ($event.target as HTMLInputElement)?.value)"
+    
+    <label for="type" :class="$style['label']">{{ label }}:</label>
+      <select 
+        :value="modelValue" 
+        id="type" 
+        :class="$style['field']"
+        v-bind="{
+          ...$attrs,
+          onChange: ($event: Event) => 
+            {
+              $emit('update:modelValue', $event.target.value),
+              isActive = true
+            }
+        }"
       >
-    </LayoutFlexColumn>
+        <option 
+          v-for="option in options"
+          :key="option"
+          :value="option"
+          :selected="option === modelValue"
+        >
+          {{ option }}
+        </option>
+      </select>
   </div>
+  </LayoutFlexColumn>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+interface Event {
+  target: HTMLInputElement;
+}
 
 defineProps<{
   label: string;
   id: string;
   modelValue: string | number;
+  options: string[];
 }>();
 
 const isActive = ref(false);
-
-const isInputEmpty = (e: Event) => {
-  if ((e.target as HTMLInputElement).value === '') {
-    isActive.value = false
-  } else {
-    isActive.value = true
-  }
-}
-
 </script>
 
 <style lang="scss" module>
+
 .input-base {
   border-radius: 5rem;
   border: 2px solid var(--border-color-light);
@@ -49,19 +57,21 @@ const isInputEmpty = (e: Event) => {
     margin-inline-start: 2.2rem;
     padding-block-start: .5rem;
   }
-
-  .input {
-    width: 30rem;
-    height: 2.5rem;
+  .field {
     border: none;
     background-color: unset;
     color: inherit;
-    padding-inline-start: 2.9rem;
+    padding-inline-start: 1rem;
 
     &:focus-visible {
       outline: none;
     }
+
+    option {
+      color: var(--text-color);
+    }
   }
+
 }
 
 .input-border-active {
