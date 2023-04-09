@@ -5,55 +5,87 @@
     <form @onsubmit.prevent="handleSubmit">
       <LayoutRow>
         <template #left>
-          <BaseTextInput/>
+          <BaseTextInput 
+            :label="'Name'" 
+            :id="'name'" 
+            type="text" 
+            v-model="useDetails.name"
+          />
         </template>
 
         <template #right>
-          <LayoutFlexColumn>
-            <div>
-              <label for="company">Company</label>
-              <input type="text" id="company">
-            </div>
-          </LayoutFlexColumn>
+          <BaseTextInput
+            :label="'Company'"
+            :id="'company'"
+            type="text"
+            v-model="useDetails.company"
+          />
         </template>
       </LayoutRow>
 
-      <div>
-        <label for="project">Project or Business Name</label>
-        <input type="text" id="project">
-      </div>
+      <LayoutRow>
+        <template #left>
+          <BaseTextInput
+            :label="'Project or Business Name'"
+            :id="'project'"
+            type="text"
+            v-model="useDetails.project"
+          />
+        </template>
 
-      <div>
-        <label for="type">Project type</label>
-        <select id="type">
-          <option value="1">Pay as you go</option>
-          <option value="2">White Label Developer</option>
-          <option value="3">Migration, Update, Refactoring</option>
-          <option value="4">Other</option>
-        </select>
-      </div>
+        <template #right>
+          <BaseSelectInput
+            :label="'Project type'"
+            :id="'type'"
+            v-model="useDetails.type"
+            :options="[
+              'Pay as you go', 
+              'White Label Developer', 
+              'Migration, Update, Refactoring', 
+              'Other'
+            ]"
+          />
+        </template>
+    </LayoutRow>
 
-      <div>
-        <label for="text">Links/resources to look at: </label>
-        <input type="text" id="text" />
-        <p>Ex: figma, existing web app or loom video description</p>
-      </div>
+    <LayoutRow>
+      <template #left>
+        <LayoutFlexColumn>
+          <BaseTextInput
+            :label="'Links/resources to look at:'"
+            :id="'links'"
+            type="text"
+            v-model="useDetails.links"
+          />
+          <small :class="$style['text-center']">Ex: figma, existing web app or loom video description</small>
+        </LayoutFlexColumn>
+      </template>
 
-      <div>
-        <label for="deadline">Deadline</label>
-        <select id="deadline">
-          <option value="1">1 month or less</option>
-          <option value="2">1 - 3 months</option>
-          <option value="3">3 - 6 months</option>
-          <option value="4">Undefined</option>
-        </select>
-      </div>
+      <template #right>
+        <BaseSelectInput 
+          :label="'Deadline'"
+          :id="'deadline'"
+          v-model="useDetails.deadline"
+          :options="[
+            '1 month or less', 
+            '1 - 3 months', 
+            '3 - 6 months',
+            'Help me stimate',
+            'Undefined'
+          ]"
+        />
+      </template>
+    </LayoutRow>
 
-      <div>
-        <label for="details">Project Summary & Details</label>
-        <textarea id="details" cols="30" rows="10"
-          placeholder="Share additional information about the project"></textarea>
-      </div>
+    <BaseTextarea
+      :label="'Project Summary & Details'"
+      :id="'details'"
+      v-model="useDetails.description"
+      cols="30" 
+      rows="10"
+      placeholder="Share additional information about the project"
+    />
+
 
       <div>
         <p>What is your budget?</p>
@@ -74,10 +106,24 @@
         <button type="submit" :class="$style['button']"></button>
       </div>
     </form>
+
+    <pre>{{ useDetails }}</pre>
   </div>
 </template>
 
 <script setup lang="ts">
+
+
+const useDetails = ref({
+  name: '',
+  company: '',
+  project: '',
+  type: '',
+  links: '',
+  deadline: '',
+  description: '',
+  budget: '',
+})
 
 const handleSubmit = () => {
   alert('submit')
@@ -91,16 +137,19 @@ const handleSubmit = () => {
 .heading {
   font-size: 4.8rem;
 }
+
+.text-center {
+  text-align: center;
+}
 .button {
-    border:0;
-    // opacity:0;
-    border:1px solid var(--text-color-active);
-    letter-spacing:2px;
-    padding:.8rem 2.5rem;
-    font-size:1.9rem;
-    font-weight:800;
-    text-transform:uppercase;
-    cursor:pointer;
+    border: 0;
+    border: 1px solid var(--text-color-active);
+    letter-spacing: 2px;
+    padding: .8rem 2.5rem;
+    font-size: 1.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
     transition: border .5s ;
 
     &:before {
