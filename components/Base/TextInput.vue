@@ -12,6 +12,7 @@
           isInputEmpty($event); 
           $emit('update:modelValue', ($event.target as HTMLInputElement)?.value)"
       >
+      <slot name="default"/>
     </LayoutFlexColumn>
   </div>
 </template>
@@ -41,6 +42,7 @@ const isInputEmpty = (e: Event) => {
 .input-base {
   border-radius: 5rem;
   border: 2px solid var(--border-color-light);
+  width: 100%;
 
   .label {
     font-size: 1.6rem;
@@ -51,7 +53,7 @@ const isInputEmpty = (e: Event) => {
   }
 
   .input {
-    width: 30rem;
+    width: 100%;
     height: 2.5rem;
     border: none;
     background-color: unset;
