@@ -1,7 +1,7 @@
 <template>
-<LayoutFlexColumn>
   <div :class="{[$style['input-base']]: true, [$style['input-border-active']]: isActive }">
     
+    <LayoutFlexColumn>
     <label for="type" :class="$style['label']">{{ label }}:</label>
       <select 
         :value="modelValue" 
@@ -25,8 +25,8 @@
           {{ option }}
         </option>
       </select>
+    </LayoutFlexColumn>
   </div>
-  </LayoutFlexColumn>
 </template>
 
 <script setup lang="ts">
@@ -49,6 +49,7 @@ const isActive = ref(false);
 .input-base {
   border-radius: 5rem;
   border: 2px solid var(--border-color-light);
+  width: 100%;
 
   .label {
     font-size: 1.6rem;
@@ -61,7 +62,13 @@ const isActive = ref(false);
     border: none;
     background-color: unset;
     color: inherit;
-    padding-inline-start: 1rem;
+    padding-inline-start: 1.9rem;
+    width: 100%;
+
+    // remove default arrow
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
     &:focus-visible {
       outline: none;
@@ -71,7 +78,6 @@ const isActive = ref(false);
       color: var(--text-color);
     }
   }
-
 }
 
 .input-border-active {

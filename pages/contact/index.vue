@@ -3,65 +3,57 @@
     <h1 :class="$style['heading']">Let's do it!</h1>
 
     <form @onsubmit.prevent="handleSubmit">
-      <LayoutRow>
-        <template #left>
-          <BaseTextInput 
-            :label="'Name'" 
-            :id="'name'" 
-            type="text" 
-            v-model="useDetails.name"
-          />
-        </template>
+      <LayoutFlexRow>
+        <BaseTextInput 
+          :label="'Name'" 
+          :id="'name'" 
+          type="text" 
+          v-model="useDetails.name"
+        />
 
-        <template #right>
-          <BaseTextInput
-            :label="'Company'"
-            :id="'company'"
-            type="text"
-            v-model="useDetails.company"
-          />
-        </template>
-      </LayoutRow>
+        <BaseTextInput
+          :label="'Company'"
+          :id="'company'"
+          type="text"
+          v-model="useDetails.company"
+        />
+      </LayoutFlexRow>
 
-      <LayoutRow>
-        <template #left>
-          <BaseTextInput
-            :label="'Project or Business Name'"
-            :id="'project'"
-            type="text"
-            v-model="useDetails.project"
-          />
-        </template>
+      <LayoutFlexRow>
+        <BaseTextInput
+          :label="'Project or Business Name'"
+          :id="'project'"
+          type="text"
+          v-model="useDetails.project"
+        />
 
-        <template #right>
-          <BaseSelectInput
-            :label="'Project type'"
-            :id="'type'"
-            v-model="useDetails.type"
-            :options="[
-              'Pay as you go', 
-              'White Label Developer', 
-              'Migration, Update, Refactoring', 
-              'Other'
-            ]"
-          />
-        </template>
-    </LayoutRow>
+        <BaseSelectInput
+          :label="'Project type'"
+          :id="'type'"
+          v-model="useDetails.type"
+          :options="[
+            'Pay as you go',  
+            'White Label Developer', 
+            'Migration, Update, Refactoring', 
+            'Other'
+          ]"
+        />
 
-    <LayoutRow>
-      <template #left>
-        <LayoutFlexColumn>
-          <BaseTextInput
-            :label="'Links/resources to look at:'"
-            :id="'links'"
-            type="text"
-            v-model="useDetails.links"
-          />
-          <small :class="$style['text-center']">Ex: figma, existing web app or loom video description</small>
-        </LayoutFlexColumn>
-      </template>
+      </LayoutFlexRow>
 
-      <template #right>
+      <LayoutFlexRow>
+        <BaseTextInput
+          :label="'Links/resources to look at:'"
+          :id="'links'"
+          type="text"
+          v-model="useDetails.links"
+        >
+          <template #default>
+            <small :class="$style['text-center']">Ex: figma, existing web app or loom video description</small>
+          </template>
+        </BaseTextInput>
+        
+
         <BaseSelectInput 
           :label="'Deadline'"
           :id="'deadline'"
@@ -74,33 +66,55 @@
             'Undefined'
           ]"
         />
-      </template>
-    </LayoutRow>
+      </LayoutFlexRow>
 
-    <BaseTextarea
-      :label="'Project Summary & Details'"
-      :id="'details'"
-      v-model="useDetails.description"
-      cols="30" 
-      rows="10"
-      placeholder="Share additional information about the project"
-    />
+      <BaseTextarea
+        :label="'Project Summary & Details'"
+        :id="'details'"
+        v-model="useDetails.description"
+        cols="30" 
+        rows="10"
+        placeholder="Share additional information about the project"
+      />
 
+      <p :class="$style['label-primary']">What is your budget?</p>
+      <LayoutFlexRow>
+        <BaseRadioInput
+          type="radio"
+          :label="'Hourly'"
+          :id="'budget-1'"
+          v-model="useDetails.budget"
+          :value="0"
+          name="budget"
+        />
 
-      <div>
-        <p>What is your budget?</p>
-        <label for="budget-1">Hourly</label>
-        <input type="radio" id="budget-1" name="budget" value="1">
+        <BaseRadioInput
+          type="radio"
+          :label="'5k - 10k Euros'"
+          :id="'budget-2'"
+          v-model="useDetails.budget"
+          :value="1"
+          name="budget"
+        />
 
-        <label for="budget-2">5k - 10k Euros</label>
-        <input type="radio" id="budget-2" name="budget" value="2">
+        <BaseRadioInput
+          type="radio"
+          :label="'10k - 20k Euros'"
+          :id="'budget-3'"
+          v-model="useDetails.budget"
+          :value="2"
+          name="budget"
+        />
 
-        <label for="budget-3">10k - 20k Euros</label>
-        <input type="radio" id="budget-3" name="budget" value="3">
-
-        <label for="budget-4">20k+ Euros</label>
-        <input type="radio" id="budget-4" name="budget" value="4">
-      </div>
+        <BaseRadioInput
+          type="radio"
+          :label="'20k+ Euros'"
+          :id="'budget-4'"
+          v-model="useDetails.budget"
+          :value="3"
+          name="budget"
+        />
+      </LayoutFlexRow>
 
       <div>
         <button type="submit" :class="$style['button']"></button>
@@ -141,6 +155,14 @@ const handleSubmit = () => {
 .text-center {
   text-align: center;
 }
+
+.label-primary {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
 .button {
     border: 0;
     border: 1px solid var(--text-color-active);
@@ -169,5 +191,5 @@ const handleSubmit = () => {
     @media screen and (max-width: 768px) {
       text-align: center;
     }
-  }
+}
 </style>
