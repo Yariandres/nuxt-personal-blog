@@ -18,6 +18,7 @@ defineProps<{
   modelValue: string | number;
   value: string | number;
 }>();
+
 </script>
 
 <style lang="scss" module>
@@ -31,5 +32,35 @@ defineProps<{
   font-weight: 600;
   color: inherit;
 
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="radio"]:checked {
+  border-color: var(--text-color-active);
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  border-radius: 50%;
+  background-color: var(--text-color-active);
+}
+
+.label-color-active {
+  color: var(--text-color-active) !important;
 }
 </style>

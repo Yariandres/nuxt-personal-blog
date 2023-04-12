@@ -111,6 +111,7 @@ $lines: #757474;
   p:nth-child(2) {
     @include animation('type2 .5s steps(60, end) 3.7s');
   }
+  
   @include animation('on .6s ease-in-out 3.7s forwards');
   
   .button {
