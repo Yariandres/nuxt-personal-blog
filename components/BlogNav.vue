@@ -11,7 +11,7 @@
         <NuxtLink to="/">Home</NuxtLink>
         <NuxtLink to="/awards">Awards</NuxtLink>
         <NuxtLink to="/blog">Blog</NuxtLink>
-        <NuxtLink to="/contact">Contact</NuxtLink>
+        <NuxtLink to="/contact">Start a project</NuxtLink>
       </nav>
   
       <button 

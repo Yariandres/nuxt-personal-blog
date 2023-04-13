@@ -21,7 +21,6 @@
     <span class="text-normal">I'm a web developer with in-depth experience in UI/UX design. <br></span>
     <span class="text-normal"> In a nutshell, I create websites and web apps that help <br> organizations address business challenges and meet their needs.</span>
   </p>
-  <!-- <p>Empowering Your Business</p> -->
   <div class="icons">
     <a href="https://github.com/Yariandres" target="_blank">
       <IconGithub />
@@ -131,7 +130,7 @@ $lines: #757474;
     transition: border .5s ;
 
     &:before {
-      content: "Schedule a call";
+      content: "Start a project";
     }
 
     &:hover {
