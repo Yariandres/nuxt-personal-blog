@@ -2,20 +2,25 @@
   <div :class="$style['base-container']">
     <LayoutFlexColumn :gap="2.8">
       <h1 :class="$style['title']">All posts</h1>
-      <LayoutFlexRow>
-        <LayoutFlexColumn :gap="1">
-          <label for="search">Search post</label>
-          <input type="text" v-model="search" placeholder="Search posts" id="search"/>
-        </LayoutFlexColumn>
+      <div :class="$style['flex']">
+        <div :class="$style['flex-item-1']">
+          <BaseTextInput
+            :label="'Search by title'"
+            :id="'search'"
+            type="text"
+            v-model="search"
+          />
+        </div>
 
-        <LayoutFlexColumn :gap="1">
-          <label for="select">sort by:</label> 
-          <select v-model="sortBy" id="select">
-            <option value="latest">newest</option>
-            <option value="Oldest">Oldest</option>
-          </select>
-        </LayoutFlexColumn>
-      </LayoutFlexRow>
+        <div :class="$style['flex-item-2']">
+          <BaseSelectInput
+            :label="'Sort by'"
+            :options="['Newest', 'Oldest']" :id="'sort'"
+            v-model="sortBy"
+          />
+        </div>
+      </div>
+
       <LayoutFlexColumn :gap="3.2">
         <ArticleCard
           v-for="post in posts" 
@@ -38,7 +43,7 @@
 <script setup lang="ts">
 
 const search = ref('');
-const sortBy = ref('latest');
+const sortBy = ref('');
 
 // get all posts
 const { data: posts } = await useWordpressApi().getPosts<any>();
@@ -50,11 +55,26 @@ const { data: posts } = await useWordpressApi().getPosts<any>();
   padding-inline: 4rem;
 }
 
+.flex {
+  display: flex;
+  gap: 2.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-item-1 {
+  min-width: 50rem;
+}
+.flex-item-2 {
+  min-width: 20rem;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;
   gap: 2.8rem;
 }
+
 
 .title {
     font-size: 2.4rem;

@@ -125,7 +125,8 @@
 </template>
 
 <script setup lang="ts">
-
+// https://contactform7.com/getting-started-with-contact-form-7/
+// https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/
 
 const useDetails = ref({
   name: '',

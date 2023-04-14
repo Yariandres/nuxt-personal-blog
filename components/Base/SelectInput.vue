@@ -2,10 +2,10 @@
   <div :class="{[$style['input-base']]: true, [$style['input-border-active']]: isActive }">
     
     <LayoutFlexColumn>
-    <label for="type" :class="$style['label']">{{ label }}:</label>
+    <label :for="id" :class="$style['label']">{{ label }}:</label>
       <select 
         :value="modelValue" 
-        id="type" 
+        :id="id" 
         :class="$style['field']"
         v-bind="{
           ...$attrs,
@@ -57,6 +57,7 @@ const isActive = ref(false);
     color: inherit;
     margin-inline-start: 2.2rem;
     padding-block-start: .5rem;
+    cursor: pointer;
   }
   .field {
     border: none;
@@ -64,6 +65,8 @@ const isActive = ref(false);
     color: inherit;
     padding-inline-start: 1.9rem;
     width: 100%;
+    cursor: pointer;
+
 
     // remove default arrow
     -webkit-appearance: none;
