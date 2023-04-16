@@ -41,18 +41,16 @@
 </template>
 
 <script setup lang="ts">
-
+import { Post } from "~~/types/post";
 const search = ref('');
 const sortBy = ref('');
 
-// get all posts
-const { data: posts } = await useWordpressApi().getPosts<any>();
+const { data: posts } = await useWordpressApi().getPosts();
 
-const searchByTitle = (post: any) => {
+const searchByTitle = (post: Post) => {
   return post.title.rendered.toLowerCase().includes(search.value.toLowerCase());
 }
 
-// Usage
 const filteredPosts = computed(() => {
   if (!search.value) {
     return posts.value;
