@@ -11,32 +11,37 @@
         <NuxtLink to="/">Home</NuxtLink>
         <NuxtLink to="/awards">Awards</NuxtLink>
         <NuxtLink to="/blog">Blog</NuxtLink>
-        <NuxtLink to="/contact">Start a project</NuxtLink>
       </nav>
-  
-      <button 
-        v-if="mode === 'light'"
-        type="button"
-        :class="[$style['button'], $style['mode-btn-dark']]"
-        @click="mode = mode === 'dark' ? 'light' : 'dark'">
-        &#x263D;
-      </button>
 
-      <button 
-        v-if="mode === 'dark'" 
-        type="button"
-        :class="[$style['button'], $style['mode-btn-light']]"
-        @click="mode = mode === 'dark' ? 'light' : 'dark'">
-        &#x263C;
-      </button>
-  
+      <div :class="$style['flex-row']">
+        <NuxtLink v-if="isConatctPage !== 'contact'" to="/contact">Start a project</NuxtLink>
+        <button v-if="mode === 'light'" type="button" :class="[$style['button'], $style['mode-btn-dark']]"
+          @click="mode = mode === 'dark' ? 'light' : 'dark'">
+          &#x263D;
+        </button>
+
+        <button v-if="mode === 'dark'" type="button" :class="[$style['button'], $style['mode-btn-light']]"
+          @click="mode = mode === 'dark' ? 'light' : 'dark'">
+          &#x263C;
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useColorMode } from '@vueuse/core';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 const mode = useColorMode();
+
+const isConatctPage = computed(() => {
+  return router.currentRoute.value.name;
+});
+
+console.log(isConatctPage.value);
+
 </script>
 
 <style lang="scss" module scoped>
@@ -44,6 +49,7 @@ const mode = useColorMode();
   padding-inline: 4rem;
   z-index: 100;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -68,7 +74,6 @@ const mode = useColorMode();
       font-size: 1.6rem;
       font-weight: 800;
 
-
       &:visited {
         color: unset;
       }
@@ -78,16 +83,36 @@ const mode = useColorMode();
       }
     }
   }
-  
+
   .brand {
     font-weight: 900;
     font-size: 1.9rem;
-    
+
     .link {
       text-decoration: none;
-      
+
       :visited {
         color: none;
+      }
+    }
+  }
+
+  .flex-row {
+    display: flex;
+    gap: 1.6rem;
+
+    a {
+      text-decoration: none;
+      font-size: 1.6rem;
+      font-weight: 800;
+
+
+      &:visited {
+        color: unset;
+      }
+
+      &:hover {
+        color: var(--text-color-active) !important;
       }
     }
   }

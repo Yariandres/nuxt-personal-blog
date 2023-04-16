@@ -35,7 +35,6 @@
 </template>
 
 <style lang="scss">
-
 @mixin animation($animate...) {
   $max: length($animate);
   $animations: '';
