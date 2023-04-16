@@ -11,14 +11,6 @@
             v-model="search"
           />
         </div>
-
-        <div :class="$style['flex-item-2']">
-          <BaseSelectInput
-            :label="'Sort by'"
-            :options="['Newest', 'Oldest']" :id="'sort'"
-            v-model="sortBy"
-          />
-        </div>
       </div>
 
       <LayoutFlexColumn :gap="3.2">
@@ -43,7 +35,6 @@
 <script setup lang="ts">
 import { Post } from "~~/types/post";
 const search = ref('');
-const sortBy = ref('');
 
 const { data: posts } = await useWordpressApi().getPosts();
 
@@ -57,7 +48,6 @@ const filteredPosts = computed(() => {
   }
   return posts.value?.filter(searchByTitle);
 });
-
 </script>
 
 <style lang="scss" module>
