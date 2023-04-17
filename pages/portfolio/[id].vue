@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>Awards component
-    page UNDER CONSTRUCTION</h1>
+    portfolio item page
   </div>
 </template>
 
@@ -9,6 +8,6 @@
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 
 </style>

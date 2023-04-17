@@ -9,7 +9,7 @@
 
       <nav :class="$style['nav']">
         <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="/awards">Awards</NuxtLink>
+        <NuxtLink to="/portfolio">Portfolio</NuxtLink>
         <NuxtLink to="/blog">Blog</NuxtLink>
       </nav>
 
