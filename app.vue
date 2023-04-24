@@ -5,5 +5,5 @@
 </template>
 
 <style>
-@import '~/styles/index.scss';
+@import '~/css/index.scss';
 </style>
