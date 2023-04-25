@@ -1,9 +1,18 @@
 <template>
-  <BlogNav />
-  <NuxtPage />
-
+  <div class="container">
+    <BlogNav />
+    <NuxtPage />
+  </div>
+  <Preloader/>
 </template>
 
-<style>
+
+<style lang="scss">
 @import '~/css/index.scss';
+@import '~/css/plugins.css';
+
+.container {
+  display: flex;
+}
+
 </style>

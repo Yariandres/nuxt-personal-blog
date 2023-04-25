@@ -15,13 +15,14 @@
 
       <template #main>
         <NavMenu :items="[
-          { name: 'Home', path: '/' },
-          { name: 'About', path: 'about' },
-          { name: 'Services', path: 'services' },
-          { name: 'Portfolio', path: 'portfolio' },
-          { name: 'Blog', path: 'blog' },
-          { name: 'Contact', path: 'contact' }
-        ]" />
+            { name: 'Home', path: '/' },
+            { name: 'About', path: '/about' },
+            { name: 'Services', path: '/ervices' },
+            { name: 'Portfolio', path: '/portfolio' },
+            { name: 'Blog', path: '/blog' },
+            { name: 'Contact', path: '/contact' }
+          ]" 
+        />
       </template>
 
       <template #footer>
@@ -29,7 +30,6 @@
       </template>
     </LayoutMain>
   </div>
-  <!-- /SIDEBAR -->
 </template>
 
 <script setup lang="ts">
@@ -38,10 +38,6 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const mode = useColorMode();
-
-const isConatctPage = computed(() => {
-  return router.currentRoute.value.name;
-});
 </script>
 
 <style lang="scss" module>

@@ -26,9 +26,9 @@ const year = today.getFullYear();
   flex-direction: column;
   gap: 16px;
   .social {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 
   a {
     width: 40px;
