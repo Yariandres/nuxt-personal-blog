@@ -1,5 +1,6 @@
 @charset "utf-8";
-
+@import './variables.scss';
+@import './plugins.css';
 /*
 /*	Copyright (c) 2023 Marketify
 /*	Author: Marketify
@@ -33,21 +34,13 @@ a {
 ul {
 	list-style-type: none;
 }
-:root{
-    --main-color: #55527C;
-    --dark-color: #130F49;
-    --yellow-color: #FF972D;
-    --blue-color: #A5A6FF;
-    --font-inter: 'Inter', sans-serif;
-    --font-karla: 'Karla', sans-serif;
-    --font-kristi: 'Kristi', cursive;
-	
-}
+
 html {
 	overflow-x: hidden;
 	padding: 0px;
 	margin: 0px;	
 }
+
 body{
 	font-family: var(--font-karla);
 	font-size: 18px;
@@ -65,6 +58,7 @@ svg{
 	width: 15px;
 	height: 15px;
 }
+
 img.svg{
 	width: 15px;
 	height: 15px;
@@ -480,156 +474,6 @@ body::-webkit-scrollbar-thumb{
 /*---------------------------------------------------*/
 /*	03) ELISC SIDEBAR
 /*---------------------------------------------------*/
-
-.elisc_tm_sidebar{
-	width: 370px;
-	height: 100vh;
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	border-right: 1px solid rgba(85,82,124,.1);
-}
-.elisc_tm_sidebar .sidebar_inner{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-	text-align: center;
-}
-.elisc_tm_sidebar .author{
-	width: 100%;
-	float: left;
-	padding-top: 60px;
-}
-.elisc_tm_sidebar .author .image{
-	position: relative;
-	width: 118px;
-	display: inline-block;
-}
-.elisc_tm_sidebar .author .image img{
-	position: relative;
-	opacity: 0;
-	min-width: 100%;
-}
-.elisc_tm_sidebar .author .main{
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	border-radius: 100%;
-}
-.elisc_tm_sidebar .author .main:before{
-	position: absolute;
-	content: "";
-	top: -2px;
-	bottom: -2px;
-	left: -2px;
-	right: -2px;
-	background-color: var(--blue-color);
-	z-index: -1;
-	border-radius: 100%;
-}
-.elisc_tm_sidebar .name{
-	width: 100%;
-	float: left;
-	margin-top: -9px;
-}
-.elisc_tm_sidebar .name span{
-	position: relative;
-	font-style: italic;
-	font-size: 88px;
-	font-family: var(--font-kristi);
-	line-height: 1;
-	color: rgba(19, 15, 73, 0.07);
-	display: block;
-}
-.elisc_tm_sidebar .name .back{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	z-index: 1;
-	font-family: var(--font-inter);
-	font-weight: 700;
-	font-size: 30px;
-	color: var(--dark-color);
-	font-style: normal;
-	margin-top: 5px;
-}
-.elisc_tm_sidebar .menu{
-	width: 100%;
-	float: left;
-}
-.elisc_tm_sidebar .menu ul{
-	margin: 0px;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-}
-.elisc_tm_sidebar .menu ul li{
-	margin: 0px 0px 15px 0px;
-}
-.elisc_tm_sidebar .menu ul li:last-child{
-	margin-bottom: 0px;
-}
-.elisc_tm_sidebar .menu ul li a{
-	color: var(--main-color);
-	
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
-}
-.elisc_tm_sidebar .menu ul li.active a,
-.elisc_tm_sidebar .menu ul li.current a,
-.elisc_tm_sidebar .menu ul li a:hover{
-	color: var(--blue-color);
-}
-.elisc_tm_sidebar .copyright{
-	position: absolute;
-	bottom: 50px;
-}
-.elisc_tm_sidebar .social{
-	width: 100%;
-	float: left;
-	margin-bottom: 7px;
-}
-.elisc_tm_sidebar .social ul{
-	margin: 0px;
-}
-.elisc_tm_sidebar .social ul li{
-	margin: 0px 3px 0px 0px;
-	display: inline-block;
-}
-.elisc_tm_sidebar .social ul li:last-child{
-	margin-right: 0px;
-}
-.elisc_tm_sidebar .social ul li a{
-	width: 40px;
-	height: 40px;
-	display: inline-block;
-	position: relative;
-	border-radius: 100%;
-	background-color: rgba(19, 15, 73, 0.05);
-	color: var(--dark-color);
-}
-.elisc_tm_sidebar .social ul li i{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	font-size: 16px;
-}
-.elisc_tm_sidebar .text{
-	padding: 0px 50px;
-}
 
 /*---------------------------------------------------*/
 /*	04) ELISC HOME
