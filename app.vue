@@ -9,6 +9,7 @@
 
 <style lang="scss">
 @import '~/css/index.scss';
+@import '~/css/variables.scss';
 @import '~/css/plugins.css';
 
 .container {

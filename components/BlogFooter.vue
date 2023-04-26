@@ -50,7 +50,8 @@ const year = today.getFullYear();
 }
 .text {
   text-align: center;
-}
+  font-size: 16px;
+  }
 }
 
 
