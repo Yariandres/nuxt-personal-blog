@@ -8,3 +8,150 @@
   --font-kristi: 'Kristi', cursive;
   --space-400: clamp(8rem, 1vw + 16px, 4rem);
 }
+
+@media (max-width: 1600px) {
+	body {font-size: 16px;line-height: 30px;}
+	.tm_content{max-width: 1000px;}
+	.sidebar{width: 300px;}
+	.elisc_tm_mainpart{padding-left: 300px;}
+	.sidebar .author{padding-top: 30px;}
+	.sidebar .author .image{width: 77px;}
+	.sidebar .name .back{font-size: 18px;}
+	.sidebar .name span{font-size: 50px;}
+	.sidebar .menu ul li{margin-bottom: 9px;}
+	.sidebar .copyright{bottom: 30px;}
+	.sidebar .social ul li a{width: 30px;height: 30px;}
+	.sidebar .social{margin-bottom: 2px;}
+	.sidebar .author .image{margin-bottom: 5px;}
+	.elisc_tm_home .title h3,.elisc_tm_home .title span{font-size: 50px;line-height: 60px;}
+	.elisc_tm_home .buttons{margin-bottom: 60px;}
+	.elisc_tm_home .subtitle{margin-bottom: 30px;}
+	.elisc_tm_home .info ul li a{font-size: 16px;}
+	.elisc_tm_biography .text p{margin-bottom: 20px;}
+	.elisc_tm_biography .info ul li{margin-right: 20px;}
+	.elisc_tm_biography .title .mini{margin-bottom: 5px;}
+	.elisc_tm_biography .name{font-size: 35px;}
+	.elisc_tm_biography .job{font-size: 17px;}
+	.elisc_tm_biography .title{margin-bottom: 30px;}
+	.elisc_tm_counter ul li .list_inner{padding: 45px 20px;}
+	.elisc_tm_counter h3{font-size: 35px;margin-bottom: 3px;}
+	.elisc_tm_title h3{font-size: 35px;}
+	.elisc_tm_title span{margin-bottom: 4px;}
+	.elisc_tm_experience .list ul li .list_inner{padding: 40px;}
+	.elisc_tm_experience .job h3{font-size: 19px;}
+	.elisc_tm_experience .job span{margin-bottom: 3px;}
+	.service_list .title span{font-size: 18px;margin-bottom: 10px;}
+	.service_list .title h3{font-size: 19px;}
+	.service_list .text{margin-bottom: 20px;}
+	.service_list ul li .list_inner{padding-bottom: 45px;}
+	.elisc_tm_video .play{width: 100px;height: 100px;}
+	.elisc_tm_video .text{padding: 15px 25px;}
+	.elisc_tm_video .text h3{font-size: 15px;}
+	.elisc_tm_portfolio .portfolio_list .details .title a{font-size: 21px;}
+	.elisc_tm_portfolio .portfolio_list .details .category{margin-bottom: 0px;}
+	.elisc_tm_news .list .title h3{font-size: 25px;line-height: 33px;}
+	.elisc_tm_news .list .meta{margin-bottom: 6px;}
+	.elisc_tm_about{padding-top: 85px;}
+	.elisc_tm_services{padding-top: 85px;}
+	.elisc_tm_portfolio{padding-top: 85px;}
+	.elisc_tm_news{padding-top: 85px;}
+	.elisc_tm_sticky_section{top: 85px;}
+	.elisc_tm_contact{padding-top: 85px;}
+	.dodo_tm_one_page_wrapper .elisc_tm_news{padding-top: 85px;}
+	.dodo_tm_one_page_wrapper .elisc_tm_portfolio{padding-top: 85px;}
+	.elisc_tm_modalbox .box_inner{width: 800px;}
+	.elisc_tm_modalbox .description_wrap{padding: 40px;}
+	.elisc_tm_modalbox .description_wrap:before{height: 40px;}
+	.elisc_tm_modalbox .description_wrap:after{height: 40px;}
+	.elisc_tm_modalbox .close{margin-left: 20px;}
+}
+@media (max-width: 1040px) {
+	.container{padding: 0px 20px;}
+	.mouse-cursor{display: none;}
+	#preloader{display: none;}
+	.elisc_tm_topbar{display: block;}
+	.sidebar {display: none;}
+	.elisc_tm_mainpart{padding-left: 0px;}
+	.elisc_tm_home .details{align-items: baseline;flex-direction: column-reverse;}
+	.elisc_tm_home .details .left{width: 100%;}
+	.elisc_tm_home .details .right{width: 100%;padding-left: 0px;margin-bottom: 50px;}
+	.elisc_tm_home{padding: 100px 0px;}
+	.elisc_tm_home .title h3,.elisc_tm_home .title span{font-size: 50px;line-height: 63px;}
+	.elisc_tm_home .buttons{margin-bottom: 75px;}
+	.elisc_tm_biography{flex-direction: column;}
+	.elisc_tm_biography .left{width: 100%;margin-bottom: 50px;}
+	.elisc_tm_biography .right{width: 100%;}
+	.elisc_tm_biography .text p{margin-bottom: 17px;}
+	.elisc_tm_counter ul li{width: 50%;}
+	.elisc_tm_biography .info ul li{margin-right: 25px;}
+	.elisc_tm_title h3{font-size: 30px;}
+	.elisc_tm_title span{margin-bottom: 5px;}
+	.elisc_tm_counter ul li .list_inner:before{display: none;}
+	.service_list ul li{width: 50%;}
+	.elisc_tm_partners ul li{width: 33.3333%;}
+	.elisc_tm_testimonials .text p{font-size: 20px;line-height: 33px;}
+	.elisc_tm_testimonials .detail h3{font-size: 25px;}
+	.elisc_tm_news .wrapper{flex-direction: column;}
+	.elisc_tm_news .left{padding-right: 0px;width: 100%;margin-bottom: 50px;}
+	.elisc_tm_news .right{padding-left: 0px;width: 100%;}
+	.elisc_tm_news .list ul li .list_inner{flex-direction: column;align-items: baseline;}
+	.elisc_tm_news .list .info{width: 100%;margin-bottom: 20px;}
+	.elisc_tm_news .list .title h3{font-size: 22px;}
+	.elisc_tm_news .list .meta{margin-bottom: 5px;}
+	.movingbox{display: none;}
+	.elisc_tm_contact .wrapper{flex-direction: column;}
+	.elisc_tm_contact .wrapper .left{width: 100%;padding: 0px;margin-bottom: 40px;}
+	.elisc_tm_contact .wrapper .right{width: 100%;padding: 0px;}
+	.elisc_tm_contact .wrapper .text{margin-bottom: 30px;}
+	.elisc_tm_map{margin-top: 70px;}
+	.elisc_tm_modalbox .box_inner{width: 600px;top: 50px;bottom: 50px;}
+	.elisc_tm_modalbox .description_wrap{padding: 30px;}
+	.elisc_tm_modalbox .description_wrap:before{height: 30px;}
+	.elisc_tm_modalbox .description_wrap:after{height: 30px;}
+	.elisc_tm_modalbox .main_details{flex-direction: column;}
+	.elisc_tm_modalbox .main_details .textbox{width: 100%;padding-right: 0px;margin-bottom: 30px;}
+	.elisc_tm_modalbox .main_details .detailbox{width: 100%;padding-left: 0px;}
+	.elisc_tm_modalbox .close a{width: 30px;height: 30px;}
+	.elisc_tm_modalbox .close{margin-left: 15px;}
+}
+@media (max-width: 768px) {
+	.elisc_tm_home .title h3,.elisc_tm_home .title span{font-size: 35px;line-height: 45px;}
+	.elisc_tm_counter ul{margin: 0px;}
+	.elisc_tm_counter ul li{width: 100%;padding-left: 0px;}
+	.elisc_tm_experience .list ul{margin: 0px;}
+	.elisc_tm_experience .list ul li{width: 100%;padding-left: 0px;}
+	.elisc_tm_experience .list ul li .list_inner{padding: 35px 25px;}
+	.elisc_tm_experience .short{font-size: 15px;}
+	.elisc_tm_experience .list ul li{margin-bottom: 30px;}
+	.service_list ul{margin: 0px;}
+	.service_list ul li{width: 100%;padding-left: 0px;}
+	.elisc_tm_service_title{flex-direction: column;align-items: baseline;}
+	.elisc_tm_service_title .elisc_tm_title{margin-bottom: 20px;}
+	.service_list ul li .list_inner{padding-left: 25px;padding-right: 25px;}
+	.elisc_tm_video .text h3{font-size: 12px;}
+	.elisc_tm_video .text{padding: 5px 15px;bottom: 10px;right: 10px;}
+	.elisc_tm_video .play{width: 45px;height: 45px;}
+	.elisc_tm_video .play .svg{width: 13px;height: 13px;}
+	.elisc_tm_portfolio_title{flex-direction: column;align-items: baseline;}
+	.elisc_tm_portfolio_title .elisc_tm_title{margin-bottom: 20px;}
+	.elisc_tm_partners ul li{width: 50%;}
+	.elisc_tm_testimonials{padding-left: 40px;padding-right: 40px;}
+	.elisc_tm_modalbox .box_inner{width: 300px;top: 40px;bottom: 40px;}
+	.elisc_tm_modalbox .description_wrap{padding: 30px 25px 25px 25px;}
+	.elisc_tm_modalbox .description_wrap:before{height: 30px;}
+	.elisc_tm_modalbox .description_wrap:after{height: 25px;}
+	.elisc_tm_modalbox .close{margin-left: auto;left: auto;right: 25px;top: 15px;}
+	.elisc_tm_modalbox .close a{color: #000;width: auto;height: auto;border: none;font-size: 20px;}
+	.elisc_tm_modalbox .infos .job h3{font-size: 19px;}
+	.elisc_tm_modalbox .infos .year span{padding: 2px 15px;}
+	.elisc_tm_modalbox .infos .year{margin-bottom: 15px;}
+	.elisc_tm_modalbox .infos{margin-bottom: 15px;}
+	.elisc_tm_modalbox .main_title h3{font-size: 19px;}
+	.elisc_tm_modalbox .main_title{margin-bottom: 10px;}
+	.elisc_tm_modalbox .portfolio_main_title h3{font-size: 19px;}
+	.elisc_tm_modalbox .portfolio_main_title{margin-bottom: 15px;}
+	.elisc_tm_modalbox .additional_images ul{margin: 0px;}
+	.elisc_tm_modalbox .additional_images ul li{width: 100% !important;padding-left: 0px;margin-bottom: 20px;}
+	.elisc_tm_modalbox .news_popup_informations .title h3{font-size: 19px;}
+	.elisc_tm_modalbox .news_popup_informations .title{margin-bottom: 15px;}
+}

@@ -1,5 +1,28 @@
 <template>
-  Home page!
+<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic fuga quis sapiente odit dolores error. Recusandae omnis ipsum soluta dignissimos cum accusantium eius labore molestias id? Qui cumque corporis reiciendis!</div> 
+
 </template>
 
 <script setup lang="ts">
@@ -27,4 +50,16 @@ const { data: posts } = await useWordpressApi().getPosts<any>();
 const { data: categories } = await useWordpressApi().getCategories<CategoryType[]>();
 </script>
 
+<style lang="scss" scoped>
+div {
+  padding: 50px;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+</style>
 

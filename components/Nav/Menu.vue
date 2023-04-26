@@ -19,7 +19,7 @@ defineProps<{
 }>();
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .menu {
   ul {
     margin: 0px;
