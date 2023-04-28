@@ -19,8 +19,10 @@
     </div>
   </div>
 
-  <div :class="{[$style['menu']]: true, [$style['opened']]: isMobileMenuOpen}">
-    <!-- <div class="menu opened"> -->
+  <div :class="{
+        [$style['menu']]: true, 
+        [$style['opened']]: isMobileMenuOpen
+      }">
     <div :class="$style['menu__inner']">
       <ul :class="$style['menu__inner--list']">
         <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -74,11 +76,28 @@ const today = new Date();
 const year = today.getFullYear();
 
 const isMobileMenuOpen = ref<boolean>(false);
+const isMobileSize = ref<boolean>(false);
 
+const checkMobileSize = () => {
+  isMobileSize.value = window.innerWidth < 1040
+  if (isMobileMenuOpen.value && !isMobileSize.value) {
+    isMobileMenuOpen.value = false;
+  }
+} 
+
+onMounted(() => {
+  checkMobileSize();
+  window.addEventListener('resize', checkMobileSize)
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkMobileSize)
+})
 
 const toggleMobileMenu = (): boolean => {
   return isMobileMenuOpen.value = !isMobileMenuOpen.value;
 }
+
 </script>
 
 <style lang="scss" module>
@@ -113,7 +132,6 @@ const toggleMobileMenu = (): boolean => {
   letter-spacing: 0px;
   line-height: 50px;
 }
-
 
 .hamburger-menu {
   background-color: #ffffff;
