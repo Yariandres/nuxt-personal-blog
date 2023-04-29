@@ -76,6 +76,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+// TODO: use clickoutside for the menu
+import useClickOutside from '~/composables/useClickOutside'; 
 const today = new Date();
 const year = today.getFullYear();
 
@@ -90,14 +92,6 @@ const checkMobileSize = () => {
   }
 }
 
-// TODO: implement clickoutside
-// const handleClickOutside = (event: MouseEvent | any) => {
-//   if (event.target.closest('.side-menu') === null) {
-//     isClickOutside.value = true;
-//   } else {
-//     isClickOutside.value = false;
-//   }
-// }
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
@@ -106,14 +100,11 @@ const toggleMobileMenu = () => {
 onMounted(() => {
   checkMobileSize();
   window.addEventListener('resize', checkMobileSize);
-  // document.addEventListener('click', handleClickOutside);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', checkMobileSize);
-  // document.removeEventListener('click', handleClickOutside);
 })
-
 </script>
 
 <style lang="scss" module>
