@@ -5,11 +5,12 @@
         <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
         <!-- <NuxtLink class="image" href="#"><img src="~/assets/img/logo/logo.png" alt="" /></NuxtLink> -->
         <NuxtLink :class="$style['text']" to="/"><span>Codigo</span></NuxtLink>
+        {{ isClickOutside }}
       </div>
 
       <div @click="toggleMobileMenu">
         <div :class="$style['hamburger-menu']">
-          <button :class="{[$style['hamburger']]: true, [$style['is-active']]: isMobileMenuOpen}">
+          <button :class="{[$style['hamburger']]: true, [$style['is-active']]: isMobileMenuOpen }">
             <span :class="$style['line']"></span>
             <span :class="$style['line']"></span>
             <span :class="$style['line']"></span>
@@ -19,10 +20,13 @@
     </div>
   </div>
 
-  <div :class="{
+  <div 
+    :class="{
         [$style['menu']]: true, 
         [$style['opened']]: isMobileMenuOpen
-      }">
+      }"
+    class="side-menu"
+    >
     <div :class="$style['menu__inner']">
       <ul :class="$style['menu__inner--list']">
         <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -72,32 +76,35 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+// TODO: use clickoutside for the menu
+import useClickOutside from '~/composables/useClickOutside'; 
 const today = new Date();
 const year = today.getFullYear();
 
 const isMobileMenuOpen = ref<boolean>(false);
 const isMobileSize = ref<boolean>(false);
+const isClickOutside = ref<boolean>(false);
 
 const checkMobileSize = () => {
   isMobileSize.value = window.innerWidth < 1040
   if (isMobileMenuOpen.value && !isMobileSize.value) {
     isMobileMenuOpen.value = false;
   }
-} 
+}
+
+
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+}
 
 onMounted(() => {
   checkMobileSize();
-  window.addEventListener('resize', checkMobileSize)
+  window.addEventListener('resize', checkMobileSize);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', checkMobileSize)
+  window.removeEventListener('resize', checkMobileSize);
 })
-
-const toggleMobileMenu = (): boolean => {
-  return isMobileMenuOpen.value = !isMobileMenuOpen.value;
-}
-
 </script>
 
 <style lang="scss" module>
