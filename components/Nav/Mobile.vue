@@ -5,7 +5,6 @@
         <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
         <!-- <NuxtLink class="image" href="#"><img src="~/assets/img/logo/logo.png" alt="" /></NuxtLink> -->
         <NuxtLink :class="$style['text']" to="/"><span>Codigo</span></NuxtLink>
-        {{ isClickOutside }}
       </div>
 
       <div @click="toggleMobileMenu">
@@ -77,7 +76,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 // TODO: use clickoutside for the menu
-import useClickOutside from '~/composables/useClickOutside'; 
+// import useClickOutside from '~/composables/useClickOutside'; 
 const today = new Date();
 const year = today.getFullYear();
 
