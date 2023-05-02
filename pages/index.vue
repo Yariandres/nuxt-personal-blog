@@ -7,9 +7,9 @@
           <span class="cd-headline rotate-1">
             <span>Creative </span>
             <span class="cd-words-wrapper">
-              <b>Designer</b>
-              <b >Coder</b>
-              <b class="is-visible">Player</b>
+              <b :class="[ isActive[0] ? 'is-visible' : 'is-hidden']">Designer</b>
+              <b :class="[ isActive[1] ? 'is-visible' : 'is-hidden']">Coder</b>
+              <b :class="[ isActive[2] ? 'is-visible' : 'is-hidden']">Player</b>
             </span>
           </span>
         </h1>
@@ -35,7 +35,8 @@
           <li><a href="tel:+77 022 444 05 05">+77 022 444 05 05</a></li>
           <li><a href="mailto:support@elisc.com">support@elisc.com</a></li>
           <li>
-            <a :class="$style['href_location']" :to="locationButton">Ave Street Avenue, New York</a>
+            <p ref="locationText" :to="googleAddress" :class="$style['address']" @click="openLocation">Ave Street Avenue, New York</p>
+            <!-- <button @click="openLocation">Hello</button> -->
           </li>
         </ul>
       </div>
@@ -48,6 +49,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watchEffect, watch} from 'vue';
+
   interface PostType {
     id: number;
     date: string;
@@ -67,9 +70,27 @@
     slug: string;
   }
 
-  const locationButton = ref<string>('');
+  const locationText = ref<HTMLElement>();
+  const googleAddress = ref<string>();
+  const isActive = ref([true, false, false]);
 
-  
+  watchEffect((onInvalidate) => {
+  const interval = setInterval(() => {
+    const [first, second, third] = isActive.value;
+
+    isActive.value = [second, third, first];
+  }, 2500);
+
+  onInvalidate(() => {
+    clearInterval(interval);
+  });
+});;
+
+  const openLocation = () => {
+    const address = locationText.value?.textContent?.replace(/\ /g, '+');
+    const text = 'https://maps.google.com?q=';
+    window.open(text + address);
+  }
 
   const {data: posts} = await useWordpressApi().getPosts<any>();
   const {data: categories} = await useWordpressApi().getCategories<
@@ -88,6 +109,12 @@
     scroll-behavior: smooth;
     display: flex;
 
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column-reverse;
+      
+    }
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -95,6 +122,10 @@
     .heading {
       font-size: 50px;
       line-height: 50px;
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
 
     .left {
@@ -108,10 +139,20 @@
         justify-content: space-around;
         gap: 3rem;
         margin-block-start: 1.6rem;
+
+        @media (max-width: 768px) {
+          text-align: center;
+        }
       }
       .buttons {
         display: flex;
         gap: 16px;
+
+        @media (max-width: 768px) {
+          display: flex;
+          justify-content: center;
+          margin-block: 32px;
+        }
         .button {
           a {
             color: inherit;
@@ -150,6 +191,12 @@
           -ms-transition: all 0.3s ease;
           -o-transition: all 0.3s ease;
           transition: all 0.3s ease;
+        }
+
+        .address {
+          cursor: pointer;
+          color: #130f49;
+          font-weight: 600;
         }
       }
     }
