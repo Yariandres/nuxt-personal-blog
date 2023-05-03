@@ -24,7 +24,7 @@
 
 <style lang="scss" module>
 .sidebar {
-  width: 370px;
+  width: 300px;
   border-right: 1px solid rgba(85, 82, 124, .1);
   display: flex;
   flex-direction: column;

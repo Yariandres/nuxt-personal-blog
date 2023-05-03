@@ -76,16 +76,16 @@ import { ref, watchEffect} from 'vue';
   const isActive = ref([true, false, false]);
 
   watchEffect((onInvalidate) => {
-  const interval = setInterval(() => {
-    const [first, second, third] = isActive.value;
+    const interval = setInterval(() => {
+      const [first, second, third] = isActive.value;
 
-    isActive.value = [second, third, first];
-  }, 2500);
+      isActive.value = [second, third, first];
+    }, 2500);
 
-  onInvalidate(() => {
-    clearInterval(interval);
+    onInvalidate(() => {
+      clearInterval(interval);
+    });
   });
-});;
 
   const openLocation = () => {
     const address = locationText.value?.textContent?.replace(/\ /g, '+');
@@ -121,9 +121,6 @@ import { ref, watchEffect} from 'vue';
     &::-webkit-scrollbar {
       display: none;
     }
-
-    
-
     .left {
       display: flex;
       flex-direction: column;
