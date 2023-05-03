@@ -3,13 +3,13 @@
     <div :class="$style['left']">
       <div :class="$style['description']">
         <h1 :class="$style['heading']">
-          Hi, I'm Yari Herrera <br />
+          Hi, I'm Yari <br />
           <span class="cd-headline rotate-1">
             <span>Creative </span>
             <span class="cd-words-wrapper">
-              <b :class="[ isActive[0] ? 'is-visible' : 'is-hidden']">Designer</b>
-              <b :class="[ isActive[1] ? 'is-visible' : 'is-hidden']">Coder</b>
-              <b :class="[ isActive[2] ? 'is-visible' : 'is-hidden']">Player</b>
+              <b :class="[isActive[0] ? 'is-visible' : 'is-hidden']" style="color: blue">Designer</b>
+              <b :class="[ isActive[1] ? 'is-visible' : 'is-hidden']" style="color: orange">Coder</b>
+              <b :class="[ isActive[2] ? 'is-visible' : 'is-hidden']" style="color: red">Player</b>
             </span>
           </span>
         </h1>
@@ -36,20 +36,21 @@
           <li><a href="mailto:support@elisc.com">support@elisc.com</a></li>
           <li>
             <p ref="locationText" :to="googleAddress" :class="$style['address']" @click="openLocation">Ave Street Avenue, New York</p>
-            <!-- <button @click="openLocation">Hello</button> -->
           </li>
         </ul>
       </div>
     </div>
 
     <div :class="$style['right']">
-      <img src="~/assets/img/about/2.jpg" alt="" />
+      <div :class="$style['image-holder']">
+        <img src="~/assets/img/about/2.png" alt="image thumbnail" />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect, watch} from 'vue';
+import { ref, watchEffect} from 'vue';
 
   interface PostType {
     id: number;
@@ -108,25 +109,20 @@ import { ref, watchEffect, watch} from 'vue';
     overflow-y: scroll;
     scroll-behavior: smooth;
     display: flex;
+    gap: 16px;
+    background-color: #7aebbe3e;
 
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column-reverse;
-      
+      justify-content: flex-end;
     }
 
     &::-webkit-scrollbar {
       display: none;
     }
 
-    .heading {
-      font-size: 50px;
-      line-height: 50px;
-
-      @media (max-width: 768px) {
-        text-align: center;
-      }
-    }
+    
 
     .left {
       display: flex;
@@ -144,6 +140,20 @@ import { ref, watchEffect, watch} from 'vue';
           text-align: center;
         }
       }
+
+      .heading {
+        font-size: 50px;
+        line-height: 50px;
+
+        @media (max-width: 768px) {
+          text-align: center;
+        }
+
+        .blue-text {
+          color: pink !important;
+        }
+      }
+
       .buttons {
         display: flex;
         gap: 16px;
@@ -175,7 +185,7 @@ import { ref, watchEffect, watch} from 'vue';
             }
           }
         }
-      }
+      }     
 
       .info { 
         border-left: 4px solid var(--yellow-color);
@@ -195,10 +205,24 @@ import { ref, watchEffect, watch} from 'vue';
 
         .address {
           cursor: pointer;
-          color: #130f49;
+          color: #ef982e;
           font-weight: 600;
         }
       }
     }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      img {
+        border-radius: 50%;
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
+        -webkit-box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
+        -moz-box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
+      }
+    }
   }
+
 </style>
