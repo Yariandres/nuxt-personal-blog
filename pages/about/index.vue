@@ -1,107 +1,66 @@
 <template>
   <section :class="$style['container']">
-    <div :class="$style['main']">
+    <div :class="$style['about']">
       <div :class="$style['flex-row']">
         <div :class="$style['flex-col']">
-          <div :class="$style['text-group']">
-            <p :class="$style['greetings']">- Nice to meet you</p>
-            <h3 :class="$style['name']">Yari Herrera</h3>
-            <span class="cd-headline rotate-1">
-              <span class="blc" >Web designer &amp; </span>
-              <span class="cd-words-wrapper">
-                <b :class="[isActive[0] ? 'is-visible' : 'is-hidden']" style="color: blue">Designer</b>
-                <b :class="[ isActive[1] ? 'is-visible' : 'is-hidden']" style="color: orange">Coder</b>
-                <b :class="[ isActive[2] ? 'is-visible' : 'is-hidden']" style="color: red">Player</b>
-              </span>
-            </span>
-          </div>
-
-          <div :class="$style['button']">
-            <NuxtLink to="/portfolio">Got a project?</NuxtLink>
-          </div>
+          <AboutBiography/>
         </div>
 
         <div :class="$style['flex-col']">
-          <div :class="$style['paragraphs']">
-            <p>
-              Hello there! My name is <span :class="$style['text-orange']">Yari Herrera</span>. I am a web designer &amp; developer, and I'm very passionate and dedicated to my work.
-            </p>
-            <p>
-              With 20 years experience as a professional a graphic designer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.
-            </p>
-          </div>
-
-          <ul :class="$style['list']">
-            <li :class="$style['list__items']">
-              <span :class="$style['list__items--label']">Age</span>
-              <span :class="$style['list__items--data']">25</span>
-            </li>
-
-            <li :class="$style['list__items']">
-              <span :class="$style['list__items--label']">Born In</span>
-              <span :class="$style['list__items--data']"><a class="href_location" href="#">Florida, USA</a></span>
-            </li>
-
-            <li :class="$style['list__items']">
-              <span :class="$style['list__items--label']">Mail</span>
-              <span :class="$style['list__items--data']"><a href="mailto:support@elisc.com">support@elisc.com</a></span>
-            </li>
-
-            <li :class="$style['list__items']">
-              <span :class="$style['list__items--label']">Phone</span>
-              <span :class="$style['list__items--data']"><a href="tel:+77 022 444 05 05">+77 022 444 05 05</a></span>
-            </li>
-          </ul>
+          <AboutParagraphs/>
+          <AboutInfoList/>
         </div>
       </div>
+      <AboutCards/>
+    </div>
 
-      <ul :class="$style['cards']">
-        <li :class="$style['card']">
-          <div class="list_inner">
-            <h3>10+</h3>
-            <span>Years of Experience</span>
+    <div :class="$style['experience']">
+      <div :class="$style['flex-gap-32']">
+        <p :class="$style['greetings']">- Experience</p>
+        <h3 :class="$style['heading']">Everything about me!</h3>
+
+        <div :class="$style['card-row']">
+          <div :class="$style['card']">
+            <div :class="$style['card__header']">
+              <p :class="$style['text-orange']">-2018 - Present</p>
+              <p>-Envato Market</p>
+            </div>
+            
+            <div :class="$style['flex-gap-16']">
+              <h3>Web Developer</h3>
+              <div :class="$style['card__text']">
+                <p>Website development is the process of building, programming, coding and maintaining websites and web applications.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Modalbox Info Start -->
+            <dialog>
+              <img :class="$style['popup_image']" src="~/assets/img/experience/1.jpg" alt="" />
+              <div :class="$style['descriptions']">
+                <p>Elisc is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
+                <p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
+                <p>That’s why more companies are not only reevaluating their website’s design but also partnering with Elisc, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
+              </div>
+            </dialog>
           </div>
-        </li>
-        <li :class="$style['card']">
-          <div class="list_inner">
-            <h3>50+</h3>
-            <span>Projects Completed</span>
-          </div>
-        </li>
-        <li :class="$style['card']">
-          <div class="list_inner">
-            <h3>30+</h3>
-            <span>Happy Clients</span>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue';
-const isActive = ref([true, false, false]);
-
-watchEffect((onInvalidate) => {
-  const interval = setInterval(() => {
-    const [first, second, third] = isActive.value;
-
-    isActive.value = [second, third, first];
-  }, 2500);
-
-  onInvalidate(() => {
-    clearInterval(interval);
-  });
-});
 
 </script>
 
 <style lang="scss" module>
 .container {
-  background-color: #7aebbe3e;
-
-  .main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: #25326ed6;
+  .about {
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -125,148 +84,82 @@ watchEffect((onInvalidate) => {
         display: flex;
         flex-direction: column;
         gap: 32px;
-  
-        .text-group {
-          width: max-content;
-          .greetings {
-            text-transform: uppercase;
-            font-weight: 500;
-            font-size: 14px;
-          }
-        
-          .name {
-            font-weight: 800;
-            font-size: 40px;
-          }
-        }
-  
-        .button {
-          a {
-            color: inherit;
-            display: inline-block;
-            border: 1.5px solid #130F49;
-            border-radius: 50px;
-            padding: 9px 40px;
-            white-space: nowrap;
-            
-            -webkit-transition: all .3s ease;
-            -moz-transition: all .3s ease;
-            -ms-transition: all .3s ease;
-            -o-transition: all .3s ease;
-            transition: all .3s ease;
-            
-            &:hover {
-              background-color: #130F49;
-              color: #fff;
-            }
-          }
-        }
 
-        .paragraphs {
-          display: flex;
-          flex-direction: column;
-          gap: 19px;
-
-          p {
-            @extend .font-style
-          }
-        }
-        .list {
-          margin-block-start: 14px;
-          display: flex;
-          gap: 25px;
-
-          &__items {
-            display: flex;
-            flex-direction: column;
-
-            &--label {
-              text-transform: uppercase;
-              text-decoration: underline;
-              @extend .font-style
-            }
-
-            &--data {
-              font-size: 16px;
-              font-weight: 700;
-              line-height: 30px;
-              
-              a {
-                color: #130F49;
-                &:hover {
-                  color: orange;
-                }
-              }
-            }
-          }
+        @media (max-width: 1040px) {
+          text-align: center;
+          align-items: center;
         }
       }
     }
-    .cards {
-      display: flex;
-      justify-content: space-around;
+  }
+
+  .experience {
+    padding-inline: 90px;
+    padding-block: 90px;
+    .greetings {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      color: #fff;
+    }
+    .heading {
+      font-weight: 800;
+      font-size: 40px;
+      color: #fff;
+    }
+
+    .card-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px;
-      
-      .card {
-        background-color: #D2F4EC;
-        text-align: center;
-        padding: 60px 20px;
-        border-radius: 4px;
-        overflow: hidden;
-        width: 100%;
-        position: relative;
+    }
+    .card {
+      flex-basis: 50%;
+      background-color: #fff;
+      padding-inline: 40px;
+      padding-block: 40px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.252);
+      box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
+      -webkit-box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
+      -moz-box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
+      cursor: pointer;
 
-        &::before {
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
- 
-          background-color: rgba(255, 255, 255, 0.5);
-          content: '';
-          -webkit-transition: -webkit-transform 0.6s;
-          transition: transform 0.6s;
-          -webkit-transform: 
-            scale3d(3.9, 1.4, 1) 
-            rotate3d(0, 0, 1, 45deg)
-            translate3d(0, -100%, 0);
-          transform: 
-            scale3d(3.9, 1.4, 1) 
-            rotate3d(0, 0, 1, 45deg)
-            translate3d(0, -100%, 0);
-        }
-
-        &:hover::before {
-          -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
-            translate3d(0, 100%, 0);
-          transform: scale3d(3.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
-            translate3d(0, 100%, 0);
-        }
-
-        &:nth-child(1){
-          background-color: #d3f4ec;
-        }
-
-        &:nth-child(2) {
-          background-color: #fce8d4;
-        }
-
-        &:nth-child(3) {
-          background-color: #e3f9e0;
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        p {
+          font-size: 14px;
+          font-weight: 500;
         }
       }
+      .font-style {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 30px;
+      }
+
+      &__text {
+        p {
+          @extend .font-style
+        }
+      }
+
+      .text-orange {
+        color: orange;
+      }
+    };
+
+    .flex-gap-16 {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
-
-    .font-style {
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 30px;
-    }
-
-    .text-orange {
-      color: orange;
+    .flex-gap-32 {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
     }
   }
 }
