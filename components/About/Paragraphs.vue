@@ -10,7 +10,7 @@
 </template>
 
 <style lang="scss" module>
- .font-style {
+.font-style {
   font-size: 15px;
   font-weight: 400;
   line-height: 30px;

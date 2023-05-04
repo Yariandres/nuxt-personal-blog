@@ -29,6 +29,10 @@
     overflow: hidden;
     width: 100%;
     position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
+    -webkit-box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
+    -moz-box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
 
     &::before {
       position: absolute;

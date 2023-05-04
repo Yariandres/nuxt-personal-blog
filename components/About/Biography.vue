@@ -1,7 +1,7 @@
 <template>
   <div :class="$style['text-group']">
     <p :class="$style['greetings']">- Nice to meet you</p>
-    <h3 :class="$style['name']">Yari Herrera</h3>
+    <h3 :class="$style['heading']">Yari Herrera</h3>
     <span class="cd-headline rotate-1">
       <span class="blc" >Web designer &amp; </span>
       <span class="cd-words-wrapper">
@@ -44,7 +44,7 @@
     font-size: 14px;
   }
 
-  .name {
+  .heading {
     font-weight: 800;
     font-size: 40px;
   }
