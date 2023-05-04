@@ -24,11 +24,11 @@
 
 
 <style lang="scss" module>
- .font-style {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 30px;
-  }
+.font-style {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+}
 .list {
   margin-block-start: 14px;
   display: flex;
