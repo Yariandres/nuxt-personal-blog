@@ -130,7 +130,7 @@ const closeModal = () =>{
       grid-template-columns: repeat(2, 1fr);
       gap: 32px;
     }
-    .card {
+    .card {  
       flex-basis: 50%;
       background-color: #fff;
       padding-inline: 40px;
