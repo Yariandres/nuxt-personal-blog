@@ -1,75 +1,8 @@
 <template>
-  <div :class="$style['base-container']">
-    <div :class="$style['section']">
-      <div :class="$style['carousel']">
-        <div>
-          <h2 :class="$style['heading']">Software</h2>
-          <h2 :class="$style['heading']">& Developement</h2>
-        </div>
-
-        <div :class="$style['carousel__controls']">
-          <IconArrowLeft />
-          <IconArrowRight />
-        </div>
-      </div>
-
-      <div :class="$style['carousel-cards']">
-        <div :class="$style['carousel-cards__card']">
-          <div :class="$style['carousel-cards__card__image']">
-            <img src="https://picsum.photos/200/300" alt="image" />
-          </div>
-          <div :class="$style['carousel-cards__card__content']">
-            <h3 :class="$style['carousel-cards__card__content__heading']">
-              Project 1
-            </h3>
-            <p :class="$style['carousel-cards__card__content__description']">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quod, voluptate, quia, voluptates quas voluptatibus quibusdam
-              doloremque quae quidem nesciunt voluptatum. Quisquam, quae
-              voluptates. Quisquam, quae voluptates. Quisquam, quae voluptates.
-            </p>
-          </div>
-        </div>
-        <div :class="$style['carousel-cards__card']">
-          <div :class="$style['carousel-cards__card__image']">
-            <img src="https://picsum.photos/200/300" alt="image" />
-          </div>
-          <div :class="$style['carousel-cards__card__content']">
-            <h3 :class="$style['carousel-cards__card__content__heading']">
-              Project 2
-            </h3>
-            <p :class="$style['carousel-cards__card__content__description']">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quod, voluptate, quia, voluptates quas voluptatibus quibusdam
-              doloremque quae quidem nesciunt voluptatum. Quisquam, quae
-              voluptates. Quisquam, quae voluptates. Quisquam, quae voluptates.
-            </p>
-          </div>
-        </div>
-        <div :class="$style['carousel-cards__card']">
-          <div :class="$style['carousel-cards__card__image']">
-            <img src="https://picsum.photos/200/300" alt="image" />
-          </div>
-          <div :class="$style['carousel-cards__card__content']">
-            <h3 :class="$style['carousel-cards__card__content__heading']">
-              Project 3
-            </h3>
-            <p :class="$style['carousel-cards__card__content__description']">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quod, voluptate, quia, voluptates quas voluptatibus quibusdam
-              doloremque quae quidem nesciunt voluptatum. Quisquam, quae
-              voluptates. Quisquam, quae voluptates. Quisquam, quae voluptates.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div>portfolio page!</div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" module>
 .base-container {

@@ -1,4 +1,4 @@
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 export default function useCheckBrowserSize() {
   const isMobileSize = ref(false);
@@ -9,11 +9,11 @@ export default function useCheckBrowserSize() {
 
   onMounted(() => {
     checkMobileSize();
-    window.addEventListener('resize', checkMobileSize);
+    window.addEventListener("resize", checkMobileSize);
   });
 
   onBeforeUnmount(() => {
-    window.removeEventListener('resize', checkMobileSize);
+    window.removeEventListener("resize", checkMobileSize);
   });
 
   return {

@@ -1,15 +1,28 @@
 <template>
   <LayoutFlexColumn>
-    <div :class="{[$style['input-base']]: true, [$style['input-border-active']]: isActive }">
-      <label :class="{[$style['label']]: true, [$style['label-color-active']]: isActive}" :for="id">{{ label }}</label>
-        <textarea 
-          v-bind="$attrs"
-          id="details" 
-          :value="modelValue"
-          @input="
+    <div
+      :class="{
+        [$style['input-base']]: true,
+        [$style['input-border-active']]: isActive,
+      }"
+    >
+      <label
+        :class="{
+          [$style['label']]: true,
+          [$style['label-color-active']]: isActive,
+        }"
+        :for="id"
+        >{{ label }}</label
+      >
+      <textarea
+        v-bind="$attrs"
+        id="details"
+        :value="modelValue"
+        @input="
           isInputEmpty($event);
-          $emit('update:modelValue', ($event.target as HTMLInputElement).value)"
-        />
+          $emit('update:modelValue', ($event.target as HTMLInputElement).value);
+        "
+      />
     </div>
   </LayoutFlexColumn>
 </template>
@@ -24,12 +37,12 @@ defineProps<{
 const isActive = ref(false);
 
 const isInputEmpty = (e: Event) => {
-  if ((e.target as HTMLInputElement).value === '') {
-    isActive.value = false
+  if ((e.target as HTMLInputElement).value === "") {
+    isActive.value = false;
   } else {
-    isActive.value = true
+    isActive.value = true;
   }
-}
+};
 </script>
 
 <style lang="scss" module>
@@ -38,16 +51,16 @@ const isInputEmpty = (e: Event) => {
   border: 2px solid var(--border-color-light);
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 
   .label {
     font-size: 1.6rem;
     font-weight: 600;
     color: inherit;
     margin-inline-start: 2.2rem;
-    padding-block-start: .5rem;
+    padding-block-start: 0.5rem;
   }
-  
+
   textarea {
     border: 1px solid var(--color-gray-300);
     border-radius: 2.5rem;
@@ -72,5 +85,4 @@ const isInputEmpty = (e: Event) => {
 .label-color-active {
   color: var(--text-color-active) !important;
 }
-
 </style>

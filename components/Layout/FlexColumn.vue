@@ -1,6 +1,6 @@
 <template>
   <div :class="$style['flex-column']">
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ const props = defineProps<{
 }>();
 
 const style = computed(() => {
-  return props.gap ? `${props.gap}rem` : 'none';
+  return props.gap ? `${props.gap}rem` : "none";
 });
 </script>
 
@@ -20,5 +20,4 @@ const style = computed(() => {
   flex-direction: column;
   gap: v-bind(style);
 }
-
 </style>

@@ -2,7 +2,7 @@
   <article :class="$style['article']">
     <p :class="$style['article__date']">{{ date }}</p>
     <h2 :class="$style['article__title']">{{ title }}</h2>
-    <span v-if="content" :class="$style['article__content']" v-html="content"/>
+    <span v-if="content" :class="$style['article__content']" v-html="content" />
     <div :class="$style['article__btn']">
       <NuxtLink :to="`/blog/${slug}`" :class="$style['article__btn--link']">
         Read article
@@ -21,7 +21,6 @@ defineProps<{
 </script>
 
 <style lang="scss" module>
-
 .article {
   padding: 2rem;
   border: 4px solid transparent;

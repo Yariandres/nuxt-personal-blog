@@ -3,23 +3,21 @@
     <h2 :class="$style['section-title']">Past Clients</h2>
     <div :class="$style['images-container']">
       <div :class="$style['holder']">
-        <img src="~/assets/svg/maybellin.svg" alt="logo">
+        <img src="~/assets/svg/maybellin.svg" alt="logo" />
       </div>
       <div :class="$style['holder']">
-        <img src="~/assets/svg/roche-logo-white.png" alt="logo" width="80">
+        <img src="~/assets/svg/roche-logo-white.png" alt="logo" width="80" />
       </div>
-      <img src="~/assets/svg/interflora.svg" alt="logo" width="150">
+      <img src="~/assets/svg/interflora.svg" alt="logo" width="150" />
       <div :class="$style['holder']">
-        <img src="~/assets/img/verseo-logo-dark.svg" alt="logo" width="100">
+        <img src="~/assets/img/verseo-logo-dark.svg" alt="logo" width="100" />
       </div>
-      <img src="~/assets/img/seargin.jpeg" alt="logo" width="100">
+      <img src="~/assets/img/seargin.jpeg" alt="logo" width="100" />
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" module>
 .layout-verticle {

@@ -1,42 +1,68 @@
 <template>
-    <div :class="$style['row']">
-      <div :class="$style['card']">
-        <button :class="$style['card__btn']" @click="openModal">
-          <div :class="$style['card__header']">
-            <p :class="$style['text-orange']">-2018 - Present</p>
-            <p>-Envato Market</p>
-          </div>
-          
-          <div :class="$style['flex-gap-16']">
-            <h3 :class="$style['card__title']">Web Developer</h3>
-            <div :class="$style['card__text']">
-              <p>Website development is the process of building, programming, coding and maintaining websites and web applications.
-              </p>
-            </div>
-          </div>
-        </button>
-      </div>
-
-      <dialog ref="modal" :class="{ [$style['modal']]: true, [$style['modal__isOpen']]: isNotOpen }">
-        <button :class="$style['modal__close-icon']" @click="closeModal">
-          <i class="icon-cancel"></i>
-        </button>
-
-        <img :class="$style['modal__image']"  src="~/assets/img/experience/1.jpg" alt="" />
-
-        <p :class="$style['modal__time']">-2018 - Present</p>
-        <p :class="$style['modal__company']">-Envato Market</p>
-
-        <div :class="$style['modal__description']">
-          <p>Elisc is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
-          <p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
-          <p>That’s why more companies are not only reevaluating their website’s design but also partnering with Elisc, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
+  <div :class="$style['row']">
+    <div :class="$style['card']">
+      <button :class="$style['card__btn']" @click="openModal">
+        <div :class="$style['card__header']">
+          <p :class="$style['text-orange']">-2018 - Present</p>
+          <p>-Envato Market</p>
         </div>
-      </dialog>
+
+        <div :class="$style['flex-gap-16']">
+          <h3 :class="$style['card__title']">Web Developer</h3>
+          <div :class="$style['card__text']">
+            <p>
+              Website development is the process of building, programming,
+              coding and maintaining websites and web applications.
+            </p>
+          </div>
+        </div>
+      </button>
     </div>
+
+    <dialog
+      ref="modal"
+      :class="{ [$style['modal']]: true, [$style['modal__isOpen']]: isNotOpen }"
+    >
+      <button :class="$style['modal__close-icon']" @click="closeModal">
+        <i class="icon-cancel"></i>
+      </button>
+
+      <img
+        :class="$style['modal__image']"
+        src="~/assets/img/experience/1.jpg"
+        alt=""
+      />
+
+      <p :class="$style['modal__time']">-2018 - Present</p>
+      <p :class="$style['modal__company']">-Envato Market</p>
+
+      <div :class="$style['modal__description']">
+        <p>
+          Elisc is a leading web design agency with an award-winning design team
+          that creates innovative, effective websites that capture your brand,
+          improve your conversion rates, and maximize your revenue to help grow
+          your business and achieve your goals.
+        </p>
+        <p>
+          In today’s digital world, your website is the first interaction
+          consumers have with your business. That's why almost 95 percent of a
+          user’s first impression relates to web design. It’s also why web
+          design services can have an immense impact on your company’s bottom
+          line.
+        </p>
+        <p>
+          That’s why more companies are not only reevaluating their website’s
+          design but also partnering with Elisc, the web design agency that’s
+          driven more than $2.4 billion in revenue for its clients. With over 50
+          web design awards under our belt, we're confident we can design a
+          custom website that drives sales for your unique business.
+        </p>
+      </div>
+    </dialog>
+  </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const modal = ref<HTMLDialogElement | null>(null);
 const isNotOpen = ref<boolean>(true);
@@ -44,13 +70,12 @@ const isNotOpen = ref<boolean>(true);
 const openModal = () => {
   modal.value?.showModal();
   isNotOpen.value = false;
-}
+};
 
-const closeModal = () =>{
+const closeModal = () => {
   modal.value?.close();
   isNotOpen.value = true;
-}
-
+};
 </script>
 
 <style lang="scss" module>
@@ -59,17 +84,16 @@ const closeModal = () =>{
   flex-direction: column;
 }
 
-.card {  
+.card {
   flex-basis: 50%;
   background-color: #fff;
   padding-inline: 40px;
   padding-block: 40px;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.252);
-  box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
-  -webkit-box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
-  -moz-box-shadow: -1px 9px 25px -5px rgba(0,0,0,0.1);
-  
+  box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
 
   &__btn {
     background: none;
@@ -82,7 +106,7 @@ const closeModal = () =>{
     outline: none;
     text-align: left;
   }
-  
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -96,7 +120,7 @@ const closeModal = () =>{
   &__title {
     font-weight: 700;
     font-size: 19px;
-  } 
+  }
 
   .font-style {
     font-size: 14px;
@@ -106,14 +130,14 @@ const closeModal = () =>{
 
   &__text {
     p {
-      @extend .font-style
+      @extend .font-style;
     }
   }
 
   .text-orange {
     color: orange;
   }
-};
+}
 
 .modal {
   max-width: 80ch;
@@ -137,7 +161,7 @@ const closeModal = () =>{
 
   &__image {
     border-radius: 5px;
-    height: 375px; // to be removed  
+    height: 375px; // to be removed
   }
 
   &__time {
@@ -178,12 +202,11 @@ const closeModal = () =>{
     color: inherit;
     cursor: pointer;
     outline: none;
-    
 
     i {
       padding: 10px;
-      color: rgba(85, 82, 124, 0.632);;
-      border: 2px solid rgba(85, 82, 124, 0.632);;
+      color: rgba(85, 82, 124, 0.632);
+      border: 2px solid rgba(85, 82, 124, 0.632);
       border-radius: 10px;
       z-index: 10;
 
@@ -197,6 +220,6 @@ const closeModal = () =>{
         border-radius: 100%;
       }
     }
-  }      
+  }
 }
 </style>

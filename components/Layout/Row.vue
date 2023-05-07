@@ -1,13 +1,11 @@
 <template>
   <div :class="$style['row']">
-    <slot name="left"/>
-    <slot name="right"/>
+    <slot name="left" />
+    <slot name="right" />
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" module>
 .row {

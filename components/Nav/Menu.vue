@@ -4,8 +4,8 @@
       <li v-for="item in items" :key="item.name">
         <NuxtLink :to="item.path">{{ item.name }}</NuxtLink>
       </li>
-    </ul>  
-</div>
+    </ul>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -15,7 +15,7 @@ interface MenuItem {
 }
 
 defineProps<{
-  items: Array<MenuItem>; 
+  items: Array<MenuItem>;
 }>();
 </script>
 
@@ -33,11 +33,11 @@ defineProps<{
     li {
       a {
         color: var(--main-color);
-        -webkit-transition: color .3s ease;
-        -moz-transition: color .3s ease;
-        -ms-transition: color .3s ease;
-        -o-transition: color .3s ease;
-        transition: color .3s ease;
+        -webkit-transition: color 0.3s ease;
+        -moz-transition: color 0.3s ease;
+        -ms-transition: color 0.3s ease;
+        -o-transition: color 0.3s ease;
+        transition: color 0.3s ease;
 
         &:hover {
           color: var(--blue-color);

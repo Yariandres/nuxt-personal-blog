@@ -1,16 +1,16 @@
 <template>
   <div :class="$style['row']">
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-  gap?: number
-}>()
+  gap?: number;
+}>();
 
 const style = computed(() => {
-  return props.gap ? `${props.gap}rem` : 'none';
+  return props.gap ? `${props.gap}rem` : "none";
 });
 </script>
 
@@ -26,5 +26,4 @@ const style = computed(() => {
     flex-direction: column;
   }
 }
-
 </style>

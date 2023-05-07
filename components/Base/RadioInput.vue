@@ -2,12 +2,12 @@
   <div :class="$style['group']">
     <label :for="id" :class="$style['label']">{{ label }}</label>
     <input
-      :checked="modelValue === value" 
+      :checked="modelValue === value"
       :value="value"
       @change="$emit('update:modelValue', value)"
       v-bind="$attrs"
       :id="id"
-    >
+    />
   </div>
 </template>
 
@@ -18,7 +18,6 @@ defineProps<{
   modelValue: string | number;
   value: string | number;
 }>();
-
 </script>
 
 <style lang="scss" module>
@@ -31,7 +30,6 @@ defineProps<{
   font-size: 1.4rem;
   font-weight: 600;
   color: inherit;
-
 }
 
 input[type="radio"] {

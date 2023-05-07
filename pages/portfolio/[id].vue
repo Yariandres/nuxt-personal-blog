@@ -1,13 +1,7 @@
 <template>
-  <div>
-    portfolio item page
-  </div>
+  <div>portfolio item page</div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style lang="scss" module>
-
-</style>
+<style lang="scss" module></style>
