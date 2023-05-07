@@ -1,6 +1,7 @@
 <template>
-  <div :class="$style['base-container']">
-    <LayoutFlexColumn :gap="4.5">
+  <div>
+    contact form page
+    <!-- <LayoutFlexColumn :gap="4.5">
       <h1 :class="$style['heading']">Let's do it!</h1>
       <form @onsubmit.prevent="handleSubmit">
         <LayoutFlexColumn :gap="3.2">
@@ -120,7 +121,7 @@
           </div>
         </LayoutFlexColumn>
       </form>
-  </LayoutFlexColumn>
+  </LayoutFlexColumn> -->
   </div>
 </template>
 

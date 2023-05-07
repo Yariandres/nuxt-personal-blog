@@ -3,15 +3,15 @@
     <div :class="$style['about']">
       <div :class="$style['flex-row']">
         <div :class="$style['flex-col']">
-          <AboutBiography/>
+          <AboutBiography />
         </div>
 
         <div :class="$style['flex-col']">
-          <AboutParagraphs/>
-          <AboutInfoList/>
+          <AboutParagraphs />
+          <AboutInfoList />
         </div>
       </div>
-      <AboutCards/>
+      <AboutCards />
     </div>
 
     <div :class="$style['experience']">
@@ -19,21 +19,19 @@
         <p :class="$style['greetings']">- Experience</p>
         <h3 :class="$style['heading']">Everything about me!</h3>
         <div :class="$style['card-row']">
-          <AboutExperienceCard/>
-          <AboutExperienceCard/>
-          <AboutExperienceCard/>
-          <AboutExperienceCard/>
-          <AboutExperienceCard/>
-          <AboutExperienceCard/>
+          <AboutExperienceCard />
+          <AboutExperienceCard />
+          <AboutExperienceCard />
+          <AboutExperienceCard />
+          <AboutExperienceCard />
+          <AboutExperienceCard />
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" module>
 .container {
@@ -56,7 +54,7 @@
     .flex-row {
       display: flex;
       gap: 150px;
-      
+
       @media (max-width: 1040px) {
         flex-direction: column;
         gap: 46px;

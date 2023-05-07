@@ -1,6 +1,7 @@
 <template>
-  <div :class="$style['base-container']">
-    <LayoutFlexColumn :gap="2.8">
+  <div>
+    blog page under construction
+    <!-- <LayoutFlexColumn :gap="2.8">
       <h1 :class="$style['title']">All posts</h1>
       <div :class="$style['flex']">
         <div :class="$style['flex-item-1']">
@@ -28,19 +29,19 @@
           >
         </ArticleCard>
       </LayoutFlexColumn>
-    </LayoutFlexColumn>
+    </LayoutFlexColumn> -->
   </div>
 </template>
 
 <script setup lang="ts">
 import { Post } from "~~/types/post";
-const search = ref('');
+const search = ref("");
 
 const { data: posts } = await useWordpressApi().getPosts();
 
 const searchByTitle = (post: Post) => {
   return post.title.rendered.toLowerCase().includes(search.value.toLowerCase());
-}
+};
 
 const filteredPosts = computed(() => {
   if (!search.value) {
@@ -77,9 +78,8 @@ const filteredPosts = computed(() => {
 }
 
 .title {
-    font-size: 2.4rem;
-    font-weight: 800;
-    text-align: center;
-  }
-
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-align: center;
+}
 </style>
