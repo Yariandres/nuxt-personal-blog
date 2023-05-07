@@ -1,31 +1,32 @@
 <template>
   <div :class="$style['sidebar']">
-      <div>
-        <div :class="$style['image']">
-          <img src="~/assets/img/about/1.jpg" alt="about image" />
-          <!-- <div :class="$style['main']" data-img-url="~/assets/img/about/1.jpg"></div> -->
-        </div>
-        <div :class="$style['name']">
-          <h3>Yari Herrera</h3>
-        </div>
+    <div>
+      <div :class="$style['image']">
+        <img src="~/assets/img/about/1.jpg" alt="about image" />
+        <!-- <div :class="$style['main']" data-img-url="~/assets/img/about/1.jpg"></div> -->
       </div>
-      <NavMenu :items="[
-          { name: 'Home', path: '/' },
-          { name: 'About', path: '/about' },
-          { name: 'Services', path: '/services' },
-          { name: 'Portfolio', path: '/portfolio' },
-          { name: 'Blog', path: '/blog' },
-          { name: 'Contact', path: '/contact' }
-        ]" 
-      />
-      <BlogFooter />
+      <div :class="$style['name']">
+        <h3>Yari Herrera</h3>
+      </div>
     </div>
+    <NavMenu
+      :items="[
+        { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' },
+        { name: 'Services', path: '/services' },
+        { name: 'Portfolio', path: '/portfolio' },
+        { name: 'Blog', path: '/blog' },
+        { name: 'Contact', path: '/contact' },
+      ]"
+    />
+    <BlogFooter />
+  </div>
 </template>
 
 <style lang="scss" module>
 .sidebar {
   width: 300px;
-  border-right: 1px solid rgba(85, 82, 124, .1);
+  border-right: 1px solid rgba(85, 82, 124, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

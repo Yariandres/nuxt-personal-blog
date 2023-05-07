@@ -1,8 +1,14 @@
 <template>
   <aside :class="$style['aside']">
     <h2 :class="$style['title']">Categories</h2>
-    <div v-for="category in categories" :key="category.id" :class="$style['categories']">
-      <NuxtLink :to="`/posts/${category.slug}`" :class="$style['link']">{{ category.name }}</NuxtLink>
+    <div
+      v-for="category in categories"
+      :key="category.id"
+      :class="$style['categories']"
+    >
+      <NuxtLink :to="`/posts/${category.slug}`" :class="$style['link']">{{
+        category.name
+      }}</NuxtLink>
       <p :class="$style['count']">{{ category.count }}</p>
     </div>
   </aside>
@@ -63,7 +69,8 @@ interface CategoryType {
     padding: 3px 1rem;
   }
 
-  .dark, .count {
+  .dark,
+  .count {
     background-color: var(--bg-dark-primary);
     color: var(--bg-light-primary);
   }

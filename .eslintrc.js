@@ -1,23 +1,14 @@
 module.exports = {
+  root: true,
   env: {
+    browser: true,
     node: true,
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:vue/vue3-recommended",
-    "eslint:recommended",
-    "plugin:vue/vue3-recommended",
-    "prettier",
-  ],
-  rules: {
-    // override/add rules settings here, such as:
-    // 'vue/no-unused-vars': 'error'
-    "vue/multi-word-component-names": [
-      "error",
-      {
-        // ignores for nuxt projects
-        ignores: ["index"],
-      },
-    ],
+  parser: "vue-eslint-parser",
+  parserOptions: {
+    parser: "@typescript-eslint/parser",
   },
+  extends: ["@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended"],
+  plugins: [],
+  rules: {},
 };

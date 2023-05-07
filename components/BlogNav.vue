@@ -1,13 +1,13 @@
 <template>
   <header>
-    <NavDesktop/>
-    <NavMobile/>
+    <NavDesktop />
+    <NavMobile />
   </header>
 </template>
 
 <script setup lang="ts">
-import { useColorMode } from '@vueuse/core';
-import { useRouter } from 'vue-router';
+import { useColorMode } from "@vueuse/core";
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 const mode = useColorMode();

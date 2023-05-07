@@ -1,17 +1,15 @@
 <template>
   <div :class="$style['main-layout']">
-    <slot name="navigation"/>
+    <slot name="navigation" />
 
     <div :class="$style['main-layout__main']">
-      <slot name="main"/>
+      <slot name="main" />
     </div>
-    <slot name="footer"/>
+    <slot name="footer" />
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" module>
 .main-layout {

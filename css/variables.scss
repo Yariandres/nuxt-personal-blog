@@ -1,17 +1,13 @@
 :root {
-  --main-color: #55527C;
-  --dark-color: #130F49;
-  --yellow-color: #FF972D;
-  --blue-color: #A5A6FF;
-  --font-inter: 'Inter', sans-serif;
-  --font-karla: 'Karla', sans-serif;
-  --font-kristi: 'Kristi', cursive;
+  --main-color: #55527c;
+  --dark-color: #130f49;
+  --yellow-color: #ff972d;
+  --blue-color: #a5a6ff;
+  --font-inter: "Inter", sans-serif;
+  --font-karla: "Karla", sans-serif;
+  --font-kristi: "Kristi", cursive;
   --space-400: clamp(8rem, 1vw + 16px, 4rem);
 }
 
-
 @media (max-width: 1040px) {
 }
-
-
-

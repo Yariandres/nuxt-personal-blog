@@ -7,21 +7,26 @@
 
     <li :class="$style['list__items']">
       <span :class="$style['list__items--label']">Born In</span>
-      <span :class="$style['list__items--data']"><a href="#">Florida, USA</a></span>
+      <span :class="$style['list__items--data']"
+        ><a href="#">Florida, USA</a></span
+      >
     </li>
 
     <li :class="$style['list__items']">
       <span :class="$style['list__items--label']">Mail</span>
-      <span :class="$style['list__items--data']"><a href="mailto:support@elisc.com">support@elisc.com</a></span>
+      <span :class="$style['list__items--data']"
+        ><a href="mailto:support@elisc.com">support@elisc.com</a></span
+      >
     </li>
 
     <li :class="$style['list__items']">
       <span :class="$style['list__items--label']">Phone</span>
-      <span :class="$style['list__items--data']"><a href="tel:+77 022 444 05 05">+77 022 444 05 05</a></span>
+      <span :class="$style['list__items--data']"
+        ><a href="tel:+77 022 444 05 05">+77 022 444 05 05</a></span
+      >
     </li>
   </ul>
 </template>
-
 
 <style lang="scss" module>
 .font-style {
@@ -41,16 +46,16 @@
     &--label {
       text-transform: uppercase;
       text-decoration: underline;
-      @extend .font-style
+      @extend .font-style;
     }
 
     &--data {
       font-size: 16px;
       font-weight: 700;
       line-height: 30px;
-      
+
       a {
-        color: #130F49;
+        color: #130f49;
         &:hover {
           color: orange;
         }

@@ -9,7 +9,12 @@
 
       <div @click="toggleMobileMenu">
         <div :class="$style['hamburger-menu']">
-          <button :class="{[$style['hamburger']]: true, [$style['is-active']]: isMobileMenuOpen }">
+          <button
+            :class="{
+              [$style['hamburger']]: true,
+              [$style['is-active']]: isMobileMenuOpen,
+            }"
+          >
             <span :class="$style['line']"></span>
             <span :class="$style['line']"></span>
             <span :class="$style['line']"></span>
@@ -19,13 +24,13 @@
     </div>
   </div>
 
-  <div 
+  <div
     :class="{
-        [$style['menu']]: true, 
-        [$style['opened']]: isMobileMenuOpen
-      }"
+      [$style['menu']]: true,
+      [$style['opened']]: isMobileMenuOpen,
+    }"
     class="side-menu"
-    >
+  >
     <div :class="$style['menu__inner']">
       <ul :class="$style['menu__inner--list']">
         <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -35,37 +40,52 @@
         <li><NuxtLink to="/blog">Blog</NuxtLink></li>
         <li><NuxtLink to="/contact">Contact</NuxtLink></li>
       </ul>
-      
+
       <div :class="$style['menu__inner--social']">
         <ul>
           <li>
             <NuxtLink to="#"
-              ><img :class="$style['svg']" src="~/assets/img/svg/social/facebook.svg" alt=""
+              ><img
+                :class="$style['svg']"
+                src="~/assets/img/svg/social/facebook.svg"
+                alt=""
             /></NuxtLink>
           </li>
           <li>
             <NuxtLink to="#"
-              ><img :class="$style['svg']" src="~/assets/img/svg/social/twitter.svg" alt=""
+              ><img
+                :class="$style['svg']"
+                src="~/assets/img/svg/social/twitter.svg"
+                alt=""
             /></NuxtLink>
           </li>
           <li>
             <NuxtLink to="#"
-              ><img :class="$style['svg']" src="~/assets/img/svg/social/instagram.svg" alt=""
+              ><img
+                :class="$style['svg']"
+                src="~/assets/img/svg/social/instagram.svg"
+                alt=""
             /></NuxtLink>
           </li>
           <li>
             <NuxtLink to="#"
-              ><img :class="$style['svg']" src="~/assets/img/svg/social/dribbble.svg" alt=""
+              ><img
+                :class="$style['svg']"
+                src="~/assets/img/svg/social/dribbble.svg"
+                alt=""
             /></NuxtLink>
           </li>
           <li>
             <NuxtLink to="#"
-              ><img :class="$style['svg']" src="~/assets/img/svg/social/tik-tok.svg" alt=""
+              ><img
+                :class="$style['svg']"
+                src="~/assets/img/svg/social/tik-tok.svg"
+                alt=""
             /></NuxtLink>
           </li>
         </ul>
       </div>
-      
+
       <div :class="$style['menu__inner--copyright']">
         <p>Yari's blog &copy; ALl Rights Reserved {{ year }}</p>
       </div>
@@ -74,9 +94,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 // TODO: use clickoutside for the menu
-// import useClickOutside from '~/composables/useClickOutside'; 
+// import useClickOutside from '~/composables/useClickOutside';
 const today = new Date();
 const year = today.getFullYear();
 
@@ -85,37 +105,36 @@ const isMobileSize = ref<boolean>(false);
 const isClickOutside = ref<boolean>(false);
 
 const checkMobileSize = () => {
-  isMobileSize.value = window.innerWidth < 1040
+  isMobileSize.value = window.innerWidth < 1040;
   if (isMobileMenuOpen.value && !isMobileSize.value) {
     isMobileMenuOpen.value = false;
   }
-}
-
+};
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
-}
+};
 
 onMounted(() => {
   checkMobileSize();
-  window.addEventListener('resize', checkMobileSize);
+  window.addEventListener("resize", checkMobileSize);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', checkMobileSize);
-})
+  window.removeEventListener("resize", checkMobileSize);
+});
 </script>
 
 <style lang="scss" module>
 .topbar {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	height: 50px;
-	background-color: #fff;
-	z-index: 15;
-	display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  background-color: #fff;
+  z-index: 15;
+  display: none;
   box-shadow: 0px 1px 20px rgba(160, 160, 160, 0.1);
 
   @media (max-width: 1040px) {
@@ -171,7 +190,6 @@ onBeforeUnmount(() => {
     &.is-active {
       .line:first-child {
         transform: rotate(39.5deg);
-    
       }
 
       .line:nth-child(2) {
@@ -180,7 +198,6 @@ onBeforeUnmount(() => {
 
       .line:last-child {
         transform: rotate(-39.5deg);
-
       }
     }
   }
@@ -209,22 +226,21 @@ onBeforeUnmount(() => {
   }
 }
 
-
 .menu {
-	position: fixed;
-	top: 50px;
-	right: -200px;
-	min-height: 100dvh;
-	width: 200px;
-	z-index: 15;
-	background-color: #fff;
+  position: fixed;
+  top: 50px;
+  right: -200px;
+  min-height: 100dvh;
+  width: 200px;
+  z-index: 15;
+  background-color: #fff;
   box-shadow: 2px 20px 1px 4px rgba(160, 160, 160, 0.1);
 
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 
   &__inner {
     display: flex;
@@ -241,11 +257,11 @@ onBeforeUnmount(() => {
 
       a {
         color: inherit;
-        -webkit-transition: color .3s ease;
-        -moz-transition: color .3s ease;
-        -ms-transition: color .3s ease;
-        -o-transition: color .3s ease;
-        transition: color .3s ease;
+        -webkit-transition: color 0.3s ease;
+        -moz-transition: color 0.3s ease;
+        -ms-transition: color 0.3s ease;
+        -o-transition: color 0.3s ease;
+        transition: color 0.3s ease;
 
         &:hover {
           color: var(--blue-color);
@@ -267,5 +283,4 @@ onBeforeUnmount(() => {
 .menu.opened {
   right: 0px;
 }
-
 </style>

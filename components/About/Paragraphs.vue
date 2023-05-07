@@ -1,10 +1,16 @@
 <template>
   <div :class="$style['paragraphs']">
     <p>
-      Hello there! My name is <span :class="$style['text-orange']">Yari Herrera</span>. I am a web designer &amp; developer, and I'm very passionate and dedicated to my work.
+      Hello there! My name is
+      <span :class="$style['text-orange']">Yari Herrera</span>. I am a web
+      designer &amp; developer, and I'm very passionate and dedicated to my
+      work.
     </p>
     <p>
-      With 20 years experience as a professional a graphic designer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.
+      With 20 years experience as a professional a graphic designer, I have
+      acquired the skills and knowledge necessary to make your project a
+      success. I enjoy every step of the design process, from discussion and
+      collaboration.
     </p>
   </div>
 </template>
@@ -21,7 +27,7 @@
   gap: 19px;
 
   p {
-    @extend .font-style
+    @extend .font-style;
   }
 
   .text-orange {

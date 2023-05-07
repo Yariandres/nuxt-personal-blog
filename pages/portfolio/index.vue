@@ -1,12 +1,8 @@
 <template>
-  <div>
-    portfolio page!
-  </div>
+  <div>portfolio page!</div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" module>
 .base-container {

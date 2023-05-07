@@ -130,19 +130,19 @@
 // https://css-tricks.com/headless-form-submission-with-the-wordpress-rest-api/
 
 const useDetails = ref({
-  name: '',
-  company: '',
-  project: '',
-  type: '',
-  links: '',
-  deadline: '',
-  description: '',
-  budget: '',
-})
+  name: "",
+  company: "",
+  project: "",
+  type: "",
+  links: "",
+  deadline: "",
+  description: "",
+  budget: "",
+});
 
 const handleSubmit = () => {
-  alert('submit')
-}
+  alert("submit");
+};
 </script>
 
 <style lang="scss" module>
@@ -171,28 +171,28 @@ const handleSubmit = () => {
   display: flex;
   align-items: center;
 
-    .button {
-      background-color: transparent;
-      color: inherit;
-      border: 0;
-      border: 1px solid var(--text-color-active);
-      border-radius: 2rem;
-      letter-spacing: 2px;
-      padding: .8rem 2.5rem;
-      font-size: 1.9rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: border .5s ;
+  .button {
+    background-color: transparent;
+    color: inherit;
+    border: 0;
+    border: 1px solid var(--text-color-active);
+    border-radius: 2rem;
+    letter-spacing: 2px;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border 0.5s;
 
-      &:before {
-        content: "Send it!";
-      }
+    &:before {
+      content: "Send it!";
+    }
 
     &:hover {
-      border:1px solid var(--text-color-red-0);
-      transition: color .5s ;
-      
+      border: 1px solid var(--text-color-red-0);
+      transition: color 0.5s;
+
       &:before {
         content: "Booom!";
       }
@@ -203,5 +203,4 @@ const handleSubmit = () => {
     }
   }
 }
-
 </style>

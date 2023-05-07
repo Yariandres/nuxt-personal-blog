@@ -34,16 +34,17 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from "vue";
 import { Post } from "~~/types/post";
 const search = ref("");
 
 const { data: posts } = await useWordpressApi().getPosts();
 
-const searchByTitle = (post: Post) => {
+const searchByTitle = (post: Post): boolean => {
   return post.title.rendered.toLowerCase().includes(search.value.toLowerCase());
 };
 
-const filteredPosts = computed(() => {
+const filteredPosts = computed((): Post[] | null | undefined => {
   if (!search.value) {
     return posts.value;
   }

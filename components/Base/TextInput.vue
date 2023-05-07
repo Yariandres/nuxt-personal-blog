@@ -1,24 +1,40 @@
 <template>
-  <div :class="{[$style['input-base']]: true, [$style['input-border-active']]: isActive }">
+  <div
+    :class="{
+      [$style['input-base']]: true,
+      [$style['input-border-active']]: isActive,
+    }"
+  >
     <LayoutFlexColumn>
-      <label :class="{[$style['label']]: true, [$style['label-color-active']]: isActive}" for="name">{{ label }}</label>
+      <label
+        :class="{
+          [$style['label']]: true,
+          [$style['label-color-active']]: isActive,
+        }"
+        for="name"
+        >{{ label }}</label
+      >
       <input
         v-bind="$attrs"
-        :class="$style['input']" 
-        type="text" 
-        id="name" 
+        :class="$style['input']"
+        type="text"
+        id="name"
         :value="modelValue"
         @input="
-          isInputEmpty($event); 
-          $emit('update:modelValue', ($event.target as HTMLInputElement)?.value)"
-      >
-      <slot name="default"/>
+          isInputEmpty($event);
+          $emit(
+            'update:modelValue',
+            ($event.target as HTMLInputElement)?.value
+          );
+        "
+      />
+      <slot name="default" />
     </LayoutFlexColumn>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
 defineProps<{
   label: string;
@@ -29,13 +45,12 @@ defineProps<{
 const isActive = ref(false);
 
 const isInputEmpty = (e: Event) => {
-  if ((e.target as HTMLInputElement).value === '') {
-    isActive.value = false
+  if ((e.target as HTMLInputElement).value === "") {
+    isActive.value = false;
   } else {
-    isActive.value = true
+    isActive.value = true;
   }
-}
-
+};
 </script>
 
 <style lang="scss" module>
@@ -49,7 +64,7 @@ const isInputEmpty = (e: Event) => {
     font-weight: 600;
     color: inherit;
     margin-inline-start: 2.2rem;
-    padding-block-start: .5rem;
+    padding-block-start: 0.5rem;
   }
 
   .input {
