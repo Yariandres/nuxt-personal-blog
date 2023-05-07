@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style['section']" class="animated">
+  <div :class="$style['section']">
     <div :class="$style['left']">
       <div :class="$style['description']">
         <h1 :class="$style['heading']">
