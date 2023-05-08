@@ -1,9 +1,11 @@
 <template>
-  <div class="container">
-    <BlogNav />
-    <NuxtPage />
+  <div>
+    <div class="container">
+      <BlogNav />
+      <NuxtPage />
+    </div>
+    <Preloader />
   </div>
-  <Preloader />
 </template>
 
 <style lang="scss">
@@ -13,5 +15,6 @@
 
 .container {
   display: flex;
+  justify-content: space-between;
 }
 </style>

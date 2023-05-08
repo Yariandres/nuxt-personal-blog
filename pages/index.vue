@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style['section']">
+  <div :class="$style['container']" class="animated">
     <div :class="$style['left']">
       <div :class="$style['description']">
         <h1 :class="$style['heading']">
@@ -121,9 +121,11 @@ const { data: categories } = await useWordpressApi().getCategories<
 <style lang="scss" module>
 @import "~/css/plugins.css";
 
-.section {
+.container {
   padding: 50px;
   height: 100vh;
+  width: 100dvw;
+
   overflow-y: scroll;
   scroll-behavior: smooth;
   display: flex;

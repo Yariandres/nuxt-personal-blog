@@ -64,7 +64,7 @@
         flex-direction: column;
         gap: 32px;
 
-        @media (max-width: 1040px) {
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
           text-align: center;
           align-items: center;
         }

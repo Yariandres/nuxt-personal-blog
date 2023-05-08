@@ -11,11 +11,9 @@ const isMobile = ref<boolean>();
 const preLoader = ref<HTMLElement>();
 
 onMounted(() => {
-  isMobile.value = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
+  isMobile.value = !!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
     window.navigator.userAgent
-  )
-    ? true
-    : false;
+  );
 
   if (!isMobile.value) {
     setTimeout(() => {
