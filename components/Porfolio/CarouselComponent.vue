@@ -1,0 +1,118 @@
+<template>
+  <div :class="$style['carousel']">
+    <swiper :slides-per-view="slides" :space-between="30" :modules="[Thumbs]">
+      <swiper-slide>
+        <div :class="$style['card']">
+          <img
+            :class="$style['card__image']"
+            src="~/assets/img/experience/1.jpg"
+            alt=""
+          />
+          <p :class="$style['card__title']">Vimeo 1</p>
+          <p :class="$style['card__name']">Front fortune Ltd.</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div :class="$style['card']">
+          <img
+            :class="$style['card__image']"
+            src="~/assets/img/experience/1.jpg"
+            alt=""
+          />
+          <p :class="$style['card__title']">Vimeo 2</p>
+          <p :class="$style['card__name']">Front fortune Ltd.</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div :class="$style['card']">
+          <img
+            :class="$style['card__image']"
+            src="~/assets/img/experience/1.jpg"
+            alt=""
+          />
+          <p :class="$style['card__title']">Vimeo 3</p>
+          <p :class="$style['card__name']">Front fortune Ltd.</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div :class="$style['card']">
+          <img
+            :class="$style['card__image']"
+            src="~/assets/img/experience/1.jpg"
+            alt=""
+          />
+          <p :class="$style['card__title']">Vimeo 4</p>
+          <p :class="$style['card__name']">Front fortune Ltd.</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div :class="$style['card']">
+          <img
+            :class="$style['card__image']"
+            src="~/assets/img/experience/1.jpg"
+            alt=""
+          />
+          <p :class="$style['card__title']">Vimeo 5</p>
+          <p :class="$style['card__name']">Front fortune Ltd.</p>
+        </div>
+      </swiper-slide>
+    </swiper>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { Thumbs } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+// https://swiperjs.com/vue
+
+const slides = ref<number>(3);
+
+const checkMobileSize = () => {
+  if (window.innerWidth < 678) {
+    slides.value = 1;
+  } else if (window.innerWidth < 1040) {
+    slides.value = 2;
+  } else if (window.innerWidth > 1040) {
+    slides.value = 3;
+  }
+};
+
+onMounted(() => {
+  checkMobileSize();
+  window.addEventListener("resize", checkMobileSize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", checkMobileSize);
+});
+</script>
+
+<style lang="scss" module>
+.carousel {
+  cursor: pointer;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__image {
+    border-radius: 5px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    color: inherit;
+  }
+
+  &__name {
+    font-size: 16px;
+    color: black;
+    font-weight: 700;
+  }
+}
+</style>
