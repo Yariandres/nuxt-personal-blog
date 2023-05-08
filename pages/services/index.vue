@@ -1,7 +1,66 @@
 <template>
-  <div>services page!</div>
+  <section :class="$style['container']">
+    <div :class="$style['services']">
+      <div>
+        <p :class="$style['greetings']">-services</p>
+        <h3 :class="$style['heading']">My Services</h3>
+      </div>
+
+      <div :class="$style['services-cards']">
+        <ServicesCardComponent />
+        <ServicesCardComponent />
+        <ServicesCardComponent />
+        <ServicesCardComponent />
+        <ServicesCardComponent />
+        <ServicesCardComponent />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style lang="scss" module>
+.container {
+  height: 100dvh;
+  width: 100dvw;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+  .services {
+    padding-inline: 90px;
+    padding-block: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    .greetings {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      color: inherit;
+    }
+
+    .heading {
+      font-weight: 800;
+      font-size: 40px;
+      color: black;
+    }
+
+    .services-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+
+      /* Tablet styles */
+      @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Mobile styles */
+      @media only screen and (max-width: 767px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}
+</style>
