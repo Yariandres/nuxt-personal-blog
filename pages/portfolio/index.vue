@@ -1,86 +1,71 @@
 <template>
-  <div>portfolio page!</div>
+  <section :class="$style['container']">
+    <div :class="$style['section']">
+      <div>
+        <p :class="$style['title']">- Projects</p>
+        <h3 :class="$style['heading']">Recent completed works</h3>
+      </div>
+
+      <porfolio-carousel-component />
+
+      <div :class="$style['button']">
+        <NuxtLink to="/portfolio">Wiev all projects</NuxtLink>
+      </div>
+
+      <hr />
+
+      <PorfolioTestimonialComponent />
+    </div>
+  </section>
 </template>
 
-<script setup lang="ts"></script>
-
 <style lang="scss" module>
-.base-container {
-  padding-inline: var(--space-400);
-}
-
-.heading {
-  font-size: 6.8rem;
-  margin: 0;
-  padding: 0;
-}
-
-.section {
-  height: 70dvh;
-}
-
-.carousel {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-
-  &__controls {
-    display: flex;
-    gap: 1.6rem;
-  }
-}
-
-.carousel-cards {
-  display: flex;
-  gap: 1.6rem;
-
-  scroll-snap-type: x mandatory;
+.container {
+  height: 100dvh;
+  width: 100dvw;
+  overflow-y: scroll;
   scroll-behavior: smooth;
 
-  &__card {
-    scroll-snap-align: start;
-    width: 40rem;
-    height: 30rem;
-    background-color: var(--color-background);
-    border-radius: var(--border-radius-200);
-    padding: var(--space-200);
+  .section {
+    padding-inline: 90px;
+    padding-block: 50px;
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 54px;
 
-    &__image {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      border-radius: var(--border-radius-200);
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    .title {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      color: inherit;
     }
 
-    &__content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.6rem;
+    .heading {
+      font-weight: 800;
+      font-size: 40px;
+      color: black;
+    }
 
-      &__heading {
-        font-size: 2.4rem;
-        font-weight: 600;
-        margin: 0;
-        padding: 0;
-      }
+    .button {
+      a {
+        color: inherit;
+        // background-color: #130F49;
+        display: inline-block;
+        border: 1.5px solid #130f49;
+        border-radius: 50px;
+        padding: 9px 40px;
+        white-space: nowrap;
 
-      &__description {
-        font-size: 1.6rem;
-        font-weight: 400;
-        margin: 0;
-        padding: 0;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #130f49;
+          color: #fff;
+        }
       }
     }
   }

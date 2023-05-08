@@ -2,7 +2,7 @@
   <section :class="$style['container']">
     <div :class="$style['services']">
       <div>
-        <p :class="$style['greetings']">-services</p>
+        <p :class="$style['title']">-services</p>
         <h3 :class="$style['heading']">My Services</h3>
       </div>
 
@@ -29,11 +29,11 @@
 
   .services {
     padding-inline: 90px;
-    padding-block: 90px;
+    padding-block: 50px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    .greetings {
+    gap: 20px;
+    .title {
       text-transform: uppercase;
       font-weight: 500;
       font-size: 14px;

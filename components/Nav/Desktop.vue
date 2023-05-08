@@ -6,7 +6,7 @@
         <!-- <div :class="$style['main']" data-img-url="~/assets/img/about/1.jpg"></div> -->
       </div>
       <div :class="$style['name']">
-        <h3>Yari Herrera</h3>
+        <h3>Codigo</h3>
       </div>
     </div>
     <NavMenu
