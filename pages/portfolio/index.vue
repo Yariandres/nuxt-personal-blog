@@ -14,7 +14,7 @@
 
       <hr />
 
-      <PorfolioTestimonialComponent />
+      <porfolio-testimonial-component />
     </div>
   </section>
 </template>

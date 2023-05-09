@@ -91,6 +91,7 @@
               src="~/assets/img/experience/1.jpg"
               alt=""
             />
+
             <div>
               <p :class="$style['testimonial__name']">John Doe</p>
               <p :class="$style['testimonial__job']">CEO at Design labs</p>
@@ -127,14 +128,14 @@ export default {
 
 <style lang="scss" module>
 .testimonials {
-  padding-block: 50px;
+  padding-block: 100px;
   padding-inline: 100px;
   text-align: center;
   background-color: #fff4f6;
   border-radius: 10px;
 
   &__top {
-    margin-block-end: 46px;
+    margin-block-end: 50px;
   }
 
   &__title {
@@ -154,8 +155,8 @@ export default {
 .testimonial {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding-block-end: 62px;
+  gap: 36px;
+  padding-block-end: 72px;
 
   &__text {
     font-size: 24px;
@@ -174,7 +175,7 @@ export default {
     width: 70px;
     height: auto;
     border-radius: 50%;
-    border: 4px solid white;
+    border: 5px solid white;
   }
 
   &__name {
