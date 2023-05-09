@@ -110,7 +110,7 @@ onBeforeUnmount(() => {
   }
 
   &__name {
-    font-size: 16px;
+    font-size: 19px;
     color: black;
     font-weight: 700;
     position: relative;
