@@ -63,6 +63,9 @@ const isInputEmpty = (e: Event) => {
     align-items: center;
     background-color: #fff;
     border-radius: 50px;
+    box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
   }
 
   .label {

@@ -68,6 +68,9 @@ const isInputEmpty = (e: Event) => {
     color: #130f49;
     background-color: #fff;
     resize: none;
+    box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
 
     &:focus-visible {
       border: 1px solid #fff;

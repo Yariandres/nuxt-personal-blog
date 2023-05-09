@@ -149,7 +149,7 @@ const handleSubmit = () => {
   scroll-behavior: smooth;
 
   .section {
-    background-color: #e9f8ff;
+    background-color: #e1faef;
 
     padding-inline: 100px;
     padding-block: 100px;
@@ -199,7 +199,6 @@ const handleSubmit = () => {
       background-color: #fff;
       color: #130f49;
       border: 0;
-      border: 1px solid #130f49;
       border-radius: 20px;
       letter-spacing: 2px;
       padding: 10px 25px;
@@ -208,17 +207,19 @@ const handleSubmit = () => {
       text-transform: uppercase;
       cursor: pointer;
       transition: border 0.5s;
+      box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
 
       &:before {
         content: "Send it!";
       }
 
       &:hover {
-        border: 1px solid blue;
         transition: color 0.5s;
 
         &:before {
-          content: "Booom!";
+          content: "Boooom!";
         }
       }
 
