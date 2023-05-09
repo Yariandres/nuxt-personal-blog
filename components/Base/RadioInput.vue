@@ -2,16 +2,18 @@
   <div :class="$style['group']">
     <label :for="id" :class="$style['label']">{{ label }}</label>
     <input
+      v-bind="$attrs"
+      :id="id"
       :checked="modelValue === value"
       :value="value"
       @change="$emit('update:modelValue', value)"
-      v-bind="$attrs"
-      :id="id"
     />
   </div>
 </template>
 
 <script setup lang="ts">
+defineEmits(["update:modelValue"]);
+
 defineProps<{
   label: string;
   id: string;
@@ -24,12 +26,12 @@ defineProps<{
 .group {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
 }
 .label {
-  font-size: 1.4rem;
+  font-size: 19px;
   font-weight: 600;
-  color: inherit;
+  color: #130f49;
 }
 
 input[type="radio"] {
@@ -39,13 +41,13 @@ input[type="radio"] {
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  border: 2px solid #ccc;
+  border: 1px solid #130f49;
   outline: none;
   transition: border-color 0.2s;
 }
 
 input[type="radio"]:checked {
-  border-color: var(--text-color-active);
+  border-color: yellowgreen;
 }
 
 input[type="radio"]:checked::before {
@@ -53,12 +55,8 @@ input[type="radio"]:checked::before {
   display: block;
   width: 10px;
   height: 10px;
-  margin: 3px;
+  margin: 4px;
   border-radius: 50%;
-  background-color: var(--text-color-active);
-}
-
-.label-color-active {
-  color: var(--text-color-active) !important;
+  background-color: yellowgreen;
 }
 </style>

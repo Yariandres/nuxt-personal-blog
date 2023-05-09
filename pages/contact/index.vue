@@ -1,127 +1,123 @@
 <template>
-  <div>
-    contact form page
-    <!-- <LayoutFlexColumn :gap="4.5">
+  <div :class="$style['container']">
+    <div :class="$style['section']">
       <h1 :class="$style['heading']">Let's do it!</h1>
       <form @onsubmit.prevent="handleSubmit">
-        <LayoutFlexColumn :gap="3.2">
-
-          <LayoutFlexRow :gap="1.6">
-            <BaseTextInput 
-              :label="'Name'" 
-              :id="'name'" 
-              type="text" 
+        <div :class="$style['wrap']">
+          <div :class="$style['row']">
+            <BaseTextInput
+              :id="'name'"
               v-model="useDetails.name"
+              :label="'Name'"
+              type="text"
             />
 
             <BaseTextInput
-              :label="'Company'"
               :id="'company'"
-              type="text"
               v-model="useDetails.company"
-            />
-          </LayoutFlexRow>
-
-          <LayoutFlexRow :gap="1.6">
-            <BaseTextInput
-              :label="'Project or Business Name'"
-              :id="'project'"
+              :label="'Company'"
               type="text"
+            />
+          </div>
+
+          <div :class="$style['row']">
+            <BaseTextInput
+              :id="'project'"
               v-model="useDetails.project"
+              :label="'Project or Business Name'"
+              type="text"
             />
             <BaseSelectInput
-              :label="'Project type'"
               :id="'type'"
               v-model="useDetails.type"
+              :label="'Project type'"
               :options="[
-                'Pay as you go',  
-                'White Label Developer', 
-                'Migration, Update, Refactoring', 
-                'Other'
+                'Pay as you go',
+                'White Label Developer',
+                'Migration, Update, Refactoring',
+                'Other',
               ]"
             />
-          </LayoutFlexRow>
+          </div>
 
-          <LayoutFlexRow :gap="1.6">
+          <div :class="$style['row']">
             <BaseTextInput
-              :label="'Links/resources to look at:'"
               :id="'links'"
-              type="text"
               v-model="useDetails.links"
+              :label="'Links/resources to look at:'"
+              type="text"
             >
-              <template #default>
-                <small :class="$style['text-center']">Ex: figma, existing web app or loom video description</small>
-              </template>
             </BaseTextInput>
-            
-            <BaseSelectInput 
-              :label="'Deadline'"
+
+            <BaseSelectInput
               :id="'deadline'"
               v-model="useDetails.deadline"
+              :label="'Deadline'"
               :options="[
-                '1 month or less', 
-                '1 - 3 months', 
+                '1 month or less',
+                '1 - 3 months',
                 '3 - 6 months',
                 'Help me stimate',
-                'Undefined'
+                'Undefined',
               ]"
             />
-          </LayoutFlexRow>
+          </div>
 
           <BaseTextarea
-            :label="'Project Summary & Details'"
             :id="'details'"
             v-model="useDetails.description"
-            cols="30" 
+            :label="'Project Summary & Details'"
+            cols="300"
             rows="10"
             placeholder="Share additional information about the project"
           />
 
           <p :class="$style['label-primary']">What is your budget?</p>
-          <LayoutFlexRow :gap="1.6">
+
+          <div :class="$style['row']">
             <BaseRadioInput
-              type="radio"
-              :label="'Hourly'"
               :id="'budget-1'"
               v-model="useDetails.budget"
+              type="radio"
+              :label="'Hourly'"
               :value="'hourly'"
               name="budget"
             />
 
             <BaseRadioInput
-              type="radio"
-              :label="'5k - 10k Euros'"
               :id="'budget-2'"
               v-model="useDetails.budget"
+              type="radio"
+              :label="'5k - 10k Euros'"
               :value="'5k - 10k'"
               name="budget"
             />
 
             <BaseRadioInput
-              type="radio"
-              :label="'10k - 20k Euros'"
               :id="'budget-3'"
               v-model="useDetails.budget"
+              type="radio"
+              :label="'10k - 20k Euros'"
               :value="'10k - 20k'"
               name="budget"
             />
 
             <BaseRadioInput
-              type="radio"
-              :label="'20k+ Euros'"
               :id="'budget-4'"
               v-model="useDetails.budget"
+              type="radio"
+              :label="'20k+ Euros'"
               :value="'20k+'"
               name="budget"
             />
-          </LayoutFlexRow>
+          </div>
 
           <div :class="$style['btn-container']">
             <button type="submit" :class="$style['button']"></button>
           </div>
-        </LayoutFlexColumn>
+        </div>
       </form>
-  </LayoutFlexColumn> -->
+    </div>
   </div>
 </template>
 
@@ -146,60 +142,89 @@ const handleSubmit = () => {
 </script>
 
 <style lang="scss" module>
-.base-container {
-  padding-inline: var(--space-400);
-}
-.heading {
-  font-size: 4.8rem;
-  margin: 0;
-  padding: 0;
-}
+.container {
+  height: 100dvh;
+  width: 100dvw;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 
-.text-center {
-  text-align: center;
-}
+  .section {
+    background-color: #e9f8ff;
 
-.label-primary {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: inherit;
-  margin: 0;
-  padding: 0;
-}
+    padding-inline: 100px;
+    padding-block: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+  }
 
-.btn-container {
-  display: flex;
-  align-items: center;
+  .row {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  .button {
-    background-color: transparent;
-    color: inherit;
-    border: 0;
-    border: 1px solid var(--text-color-active);
-    border-radius: 2rem;
-    letter-spacing: 2px;
-    padding: 0.8rem 2.5rem;
-    font-size: 1.9rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: border 0.5s;
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
 
-    &:before {
-      content: "Send it!";
-    }
+  .heading {
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    color: #130f49;
+  }
 
-    &:hover {
-      border: 1px solid var(--text-color-red-0);
-      transition: color 0.5s;
+  .text-center {
+    text-align: center;
+    color: #130f49;
+  }
+
+  .label-primary {
+    font-size: 16px;
+    font-weight: 600;
+    color: #130f49;
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn-container {
+    display: flex;
+    align-items: center;
+
+    .button {
+      background-color: #fff;
+      color: #130f49;
+      border: 0;
+      border: 1px solid #130f49;
+      border-radius: 20px;
+      letter-spacing: 2px;
+      padding: 10px 25px;
+      font-size: 19px;
+      font-weight: 800;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border 0.5s;
 
       &:before {
-        content: "Booom!";
+        content: "Send it!";
       }
-    }
 
-    @media screen and (max-width: 768px) {
-      text-align: center;
+      &:hover {
+        border: 1px solid blue;
+        transition: color 0.5s;
+
+        &:before {
+          content: "Booom!";
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
     }
   }
 }

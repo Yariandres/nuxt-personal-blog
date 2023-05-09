@@ -5,11 +5,11 @@
       [$style['input-border-active']]: isActive,
     }"
   >
-    <LayoutFlexColumn>
-      <label :for="id" :class="$style['label']">{{ label }}:</label>
+    <div :class="$style['container']">
+      <label for="id" :class="$style['label']">{{ label }}:</label>
       <select
-        :value="modelValue"
         :id="id"
+        :value="modelValue"
         :class="$style['field']"
         v-bind="{
           ...$attrs,
@@ -29,7 +29,7 @@
           {{ option }}
         </option>
       </select>
-    </LayoutFlexColumn>
+    </div>
   </div>
 </template>
 
@@ -37,6 +37,8 @@
 interface Event {
   target: HTMLInputElement;
 }
+
+defineEmits(["update:modelValue"]);
 
 defineProps<{
   label: string;
@@ -50,25 +52,33 @@ const isActive = ref(false);
 
 <style lang="scss" module>
 .input-base {
-  border-radius: 5rem;
-  border: 2px solid var(--border-color-light);
+  border-radius: 50px;
+  border: 1px solid #130f49;
   width: 100%;
 
+  .container {
+    display: flex;
+  }
+
   .label {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 600;
-    color: inherit;
-    margin-inline-start: 2.2rem;
-    padding-block-start: 0.5rem;
+    color: #130f49;
+    margin-inline-start: 22px;
+    padding-block-start: 0.5px;
     cursor: pointer;
+    flex: 3;
+    z-index: 10;
   }
   .field {
     border: none;
     background-color: unset;
-    color: inherit;
-    padding-inline-start: 1.9rem;
+    color: #130f49;
+    padding-inline-start: 19px;
     width: 100%;
+    height: 100%;
     cursor: pointer;
+    flex: 9;
 
     // remove default arrow
     -webkit-appearance: none;
@@ -77,19 +87,21 @@ const isActive = ref(false);
 
     &:focus-visible {
       outline: none;
+      background-color: #fff;
+      border-radius: 0 50px 50px 0;
     }
 
     option {
-      color: var(--text-color);
+      color: #fff;
     }
   }
 }
 
 .input-border-active {
-  border: 2px solid var(--text-color-active);
+  border: 1px solid yellowgreen;
 }
 
 .label-color-active {
-  color: var(--text-color-active) !important;
+  color: yellowgreen !important;
 }
 </style>

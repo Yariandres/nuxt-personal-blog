@@ -1,19 +1,18 @@
 <template>
-  <LayoutFlexColumn>
+  <div :class="$style['container']">
+    <label
+      :class="{
+        [$style['label']]: true,
+        [$style['label-color-active']]: isActive,
+      }"
+      :for="id"
+      >{{ label }}</label
+    >
     <div
       :class="{
         [$style['input-base']]: true,
-        [$style['input-border-active']]: isActive,
       }"
     >
-      <label
-        :class="{
-          [$style['label']]: true,
-          [$style['label-color-active']]: isActive,
-        }"
-        :for="id"
-        >{{ label }}</label
-      >
       <textarea
         v-bind="$attrs"
         id="details"
@@ -24,7 +23,7 @@
         "
       />
     </div>
-  </LayoutFlexColumn>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -33,6 +32,8 @@ defineProps<{
   id: string;
   modelValue: string | number;
 }>();
+
+defineEmits(["update:modelValue"]);
 
 const isActive = ref(false);
 
@@ -46,43 +47,41 @@ const isInputEmpty = (e: Event) => {
 </script>
 
 <style lang="scss" module>
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #130f49;
+  margin-inline-start: 22px;
+  padding-block-start: 5px;
+}
 .input-base {
-  border-radius: 2.5rem;
-  border: 2px solid var(--border-color-light);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-
-  .label {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: inherit;
-    margin-inline-start: 2.2rem;
-    padding-block-start: 0.5rem;
-  }
+  gap: 5px;
 
   textarea {
-    border: 1px solid var(--color-gray-300);
-    border-radius: 2.5rem;
-    padding-inline-start: 2rem;
-    font-size: 1.6rem;
-    line-height: var(--line-height-100);
-    color: var(--color-gray-900);
-    background-color: inherit;
-
+    border: 1px solid #e9f8ff;
+    border-radius: 15px;
+    padding-inline-start: 20px;
+    font-size: 16px;
+    color: #130f49;
+    background-color: #fff;
     resize: none;
 
     &:focus-visible {
-      outline: none;
+      border: 1px solid #fff;
+      background-color: #fff;
+      border-radius: 25px;
     }
   }
 }
 
 .input-border-active {
-  border: 2px solid var(--text-color-active);
+  border: 1px solid yellowgreen;
 }
 
 .label-color-active {
-  color: var(--text-color-active) !important;
+  color: yellowgreen !important;
 }
 </style>
