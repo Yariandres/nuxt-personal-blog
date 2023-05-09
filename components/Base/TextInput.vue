@@ -2,23 +2,22 @@
   <div
     :class="{
       [$style['input-base']]: true,
-      [$style['input-border-active']]: isActive,
     }"
   >
-    <LayoutFlexColumn>
-      <label
-        :class="{
-          [$style['label']]: true,
-          [$style['label-color-active']]: isActive,
-        }"
-        for="name"
-        >{{ label }}</label
-      >
+    <label
+      :class="{
+        [$style['label']]: true,
+        [$style['label-color-active']]: isActive,
+      }"
+      for="name"
+      >{{ label }}</label
+    >
+    <div :class="$style['container']">
       <input
         v-bind="$attrs"
+        id="name"
         :class="$style['input']"
         type="text"
-        id="name"
         :value="modelValue"
         @input="
           isInputEmpty($event);
@@ -29,12 +28,14 @@
         "
       />
       <slot name="default" />
-    </LayoutFlexColumn>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
+
+defineEmits(["update:modelValue"]);
 
 defineProps<{
   label: string;
@@ -55,37 +56,43 @@ const isInputEmpty = (e: Event) => {
 
 <style lang="scss" module>
 .input-base {
-  border-radius: 5rem;
-  border: 2px solid var(--border-color-light);
+  border-radius: 50px;
   width: 100%;
+  .container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50px;
+  }
 
   .label {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 600;
-    color: inherit;
-    margin-inline-start: 2.2rem;
-    padding-block-start: 0.5rem;
+    color: #130f49;
+    margin-inline-start: 22px;
   }
 
   .input {
-    width: 100%;
-    height: 2.5rem;
+    height: 25px;
     border: none;
-    background-color: unset;
-    color: inherit;
-    padding-inline-start: 2.9rem;
+    background-color: transparent;
+    color: #130f49;
+    padding-inline-start: 29px;
+    width: 100%;
+    height: 100%;
 
     &:focus-visible {
-      outline: none;
+      background-color: white;
+      border-radius: 50px;
     }
   }
 }
 
 .input-border-active {
-  border: 2px solid var(--text-color-active);
+  border: 1px solid yellowgreen;
 }
 
 .label-color-active {
-  color: var(--text-color-active) !important;
+  color: yellowgreen !important;
 }
 </style>

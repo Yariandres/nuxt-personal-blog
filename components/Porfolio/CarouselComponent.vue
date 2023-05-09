@@ -110,9 +110,33 @@ onBeforeUnmount(() => {
   }
 
   &__name {
-    font-size: 16px;
+    font-size: 19px;
     color: black;
     font-weight: 700;
+    position: relative;
+    width: fit-content;
+
+    &:hover::before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: black;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      animation: slide-in 0.3s ease-in-out forwards;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    to {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
   }
 }
 </style>
