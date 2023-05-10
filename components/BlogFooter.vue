@@ -19,9 +19,8 @@
         ></NuxtLink>
       </li>
     </ul>
-
     <div :class="$style['text']">
-      <p>Yari's blog &copy; ALl Rights Reserved {{ year }}</p>
+      <p>&copy; {{ year }}</p>
     </div>
   </div>
 </template>
@@ -41,6 +40,7 @@ const year = today.getFullYear();
   gap: 16px;
   .social {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 

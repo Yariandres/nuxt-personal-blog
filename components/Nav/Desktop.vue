@@ -1,22 +1,13 @@
 <template>
   <div :class="$style['sidebar']">
-    <div>
-      <div :class="$style['image']">
-        <img src="~/assets/img/about/1.jpg" alt="about image" />
-        <!-- <div :class="$style['main']" data-img-url="~/assets/img/about/1.jpg"></div> -->
-      </div>
-      <div :class="$style['name']">
-        <h3>Codigo</h3>
-      </div>
-    </div>
     <NavMenu
       :items="[
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
-        { name: 'Services', path: '/services' },
-        { name: 'Portfolio', path: '/portfolio' },
-        { name: 'Blog', path: '/blog' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'Home', path: '/', icon: 'icon-home' },
+        { name: 'About', path: '/about', icon: 'icon-user' },
+        { name: 'Services', path: '/services', icon: 'icon-cogs' },
+        { name: 'Portfolio', path: '/portfolio', icon: 'icon-folder-open' },
+        { name: 'Blog', path: '/blog', icon: 'icon-cloud' },
+        { name: 'Contact', path: '/contact', icon: 'icon-phone' },
       ]"
     />
     <BlogFooter />
@@ -25,7 +16,8 @@
 
 <style lang="scss" module>
 .sidebar {
-  width: 300px;
+  padding-block: 23px;
+  min-width: 90px;
   border-right: 1px solid rgba(85, 82, 124, 0.1);
   display: flex;
   flex-direction: column;

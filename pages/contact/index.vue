@@ -1,7 +1,10 @@
 <template>
   <div :class="$style['container']">
     <div :class="$style['section']">
-      <h1 :class="$style['heading']">Let's do it!</h1>
+      <div>
+        <p :class="$style['title']">- Contact</p>
+        <h3 :class="$style['heading']">Tell me about your project!</h3>
+      </div>
       <form @onsubmit.prevent="handleSubmit">
         <div :class="$style['wrap']">
           <div :class="$style['row']">
@@ -156,6 +159,19 @@ const handleSubmit = () => {
     display: flex;
     flex-direction: column;
     gap: 52px;
+
+    .title {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      color: inherit;
+    }
+
+    .heading {
+      font-weight: 800;
+      font-size: 40px;
+      color: black;
+    }
   }
 
   .row {
