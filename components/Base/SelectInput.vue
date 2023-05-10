@@ -2,11 +2,10 @@
   <div
     :class="{
       [$style['input-base']]: true,
-      [$style['input-border-active']]: isActive,
     }"
   >
+    <label for="id" :class="$style['label']">{{ label }}:</label>
     <div :class="$style['container']">
-      <label for="id" :class="$style['label']">{{ label }}:</label>
       <select
         :id="id"
         :value="modelValue"
@@ -53,7 +52,6 @@ const isActive = ref(false);
 <style lang="scss" module>
 .input-base {
   border-radius: 50px;
-  border: 1px solid #130f49;
   width: 100%;
 
   .container {
@@ -72,7 +70,8 @@ const isActive = ref(false);
   }
   .field {
     border: none;
-    background-color: unset;
+    background-color: #fff;
+    border-radius: 50px;
     color: #130f49;
     padding-inline-start: 19px;
     width: 100%;
@@ -88,7 +87,7 @@ const isActive = ref(false);
     &:focus-visible {
       outline: none;
       background-color: #fff;
-      border-radius: 0 50px 50px 0;
+      border-radius: 50px;
     }
 
     option {
@@ -96,11 +95,6 @@ const isActive = ref(false);
     }
   }
 }
-
-.input-border-active {
-  border: 1px solid yellowgreen;
-}
-
 .label-color-active {
   color: yellowgreen !important;
 }

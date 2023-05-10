@@ -34,7 +34,7 @@
 
       <div :class="$style['buttons']">
         <div :class="$style['button']">
-          <NuxtLink to="/portfolio">Got a project?</NuxtLink>
+          <NuxtLink to="/contact">Got a project?</NuxtLink>
         </div>
 
         <div :class="$style['button']" data-style="border">
