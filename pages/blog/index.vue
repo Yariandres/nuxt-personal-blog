@@ -14,77 +14,11 @@
 
       <div :class="$style['right']">
         <div :class="$style['posts']">
-          <div>
-            <div :class="$style['top']">
-              <div :class="$style['svg-calendar']" />
-              <p :class="$style['date']">April 12, 2023</p>
-            </div>
-
-            <div :class="$style['middle']">
-              <h3 :class="$style['title']">
-                April 12, 2023 12 unique examples of portfolio websites
-              </h3>
-
-              <div :class="$style['action']">
-                <NuxtLink to="/portfolio">Read more </NuxtLink>
-                <div :class="$style['svg-arrow']"></div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div :class="$style['top']">
-              <div :class="$style['svg-calendar']" />
-              <p :class="$style['date']">April 12, 2023</p>
-            </div>
-
-            <div :class="$style['middle']">
-              <h3 :class="$style['title']">
-                April 12, 2023 12 unique examples of portfolio websites
-              </h3>
-
-              <div :class="$style['action']">
-                <NuxtLink to="/portfolio">Read more </NuxtLink>
-                <div :class="$style['svg-arrow']"></div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div :class="$style['top']">
-              <div :class="$style['svg-calendar']" />
-              <p :class="$style['date']">April 12, 2023</p>
-            </div>
-
-            <div :class="$style['middle']">
-              <h3 :class="$style['title']">
-                April 12, 2023 12 unique examples of portfolio websites
-              </h3>
-
-              <div :class="$style['action']">
-                <NuxtLink to="/portfolio">Read more </NuxtLink>
-                <div :class="$style['svg-arrow']"></div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div :class="$style['top']">
-              <div :class="$style['svg-calendar']" />
-              <p :class="$style['date']">April 12, 2023</p>
-            </div>
-
-            <div :class="$style['middle']">
-              <h3 :class="$style['title']">
-                April 12, 2023 12 unique examples of portfolio websites
-              </h3>
-
-              <div :class="$style['action']">
-                <NuxtLink to="/portfolio">Read more </NuxtLink>
-                <div :class="$style['svg-arrow']"></div>
-              </div>
-            </div>
-          </div>
+          <BlogPostItem
+            v-for="post in filteredPosts"
+            :key="post.id"
+            :post="post"
+          />
         </div>
       </div>
     </div>
@@ -94,7 +28,7 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { Post } from "~~/types/post";
-import Calendar from "~/assets/img/svg/calendar.svg";
+
 const search = ref("");
 
 const { data: posts } = await useWordpressApi().getPosts();
@@ -142,13 +76,13 @@ const filteredPosts = computed((): Post[] | null | undefined => {
         text-transform: uppercase;
         font-weight: 500;
         font-size: 14px;
-        color: inherit;
+        color: #130f49;
       }
 
       .heading {
         font-weight: 800;
         font-size: 40px;
-        color: black;
+        color: #130f49;
       }
 
       .button {
@@ -181,76 +115,6 @@ const filteredPosts = computed((): Post[] | null | undefined => {
         display: flex;
         flex-direction: column;
         gap: 36px;
-        .top {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-          .svg-calendar {
-            width: 18px;
-            height: 18px;
-            background-image: url("~/assets/img/svg/calendar.svg");
-            background-repeat: no-repeat;
-            background-size: contain;
-          }
-          .date {
-            font-size: 16px;
-            font-weight: 500;
-          }
-        }
-
-        .middle {
-          display: flex;
-          justify-content: space-between;
-
-          /* Tablet styles */
-          @media only screen and (min-width: 768px) and (max-width: 1023px) {
-            flex-direction: column;
-          }
-
-          @media only screen and (max-width: 767px) {
-            flex-direction: column;
-          }
-
-          .title {
-            flex: 6;
-            font-size: 25px;
-          }
-
-          .action {
-            flex: 6;
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            justify-content: flex-end;
-
-            a {
-              font-weight: 500;
-              font-size: 16px;
-              color: inherit;
-              position: relative;
-              align-items: center;
-              display: block;
-
-              &:hover::before {
-                content: "";
-                width: 100%;
-                height: 2px;
-                background-color: black;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                animation: slide-in 0.3s ease-in-out forwards;
-              }
-            }
-            .svg-arrow {
-              width: 18px;
-              height: 18px;
-              background-image: url("~/assets/img/svg/rightArrow.svg");
-              background-repeat: no-repeat;
-              background-size: contain;
-            }
-          }
-        }
       }
     }
   }
@@ -267,33 +131,3 @@ const filteredPosts = computed((): Post[] | null | undefined => {
   }
 }
 </style>
-
-<!-- <LayoutFlexColumn :gap="2.8">
-      <h1 :class="$style['title']">All posts</h1>
-      <div :class="$style['flex']">
-        <div :class="$style['flex-item-1']">
-          <BaseTextInput
-            :label="'Search by title'"
-            :id="'search'"
-            type="text"
-            v-model="search"
-          />
-        </div>
-      </div>
-
-      <LayoutFlexColumn :gap="3.2">
-        <ArticleCard
-          v-for="post in filteredPosts" 
-          :key="post.id" 
-          :date="post.date
-            .split('T')[0]
-            .split('-')
-            .reverse()
-            .join('.')" 
-          :title="post.title.rendered" 
-          :content="post.excerpt.rendered"
-          :slug="post.slug"
-          >
-        </ArticleCard>
-      </LayoutFlexColumn>
-    </LayoutFlexColumn> -->
