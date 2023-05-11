@@ -63,7 +63,7 @@
     }
 
     &:nth-child(2) {
-      background-color: #fce8d4;
+      background-color: #d6e9fd;
     }
 
     &:nth-child(3) {
