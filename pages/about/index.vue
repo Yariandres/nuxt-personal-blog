@@ -38,9 +38,9 @@
   height: 100vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  background-color: #25326ed6;
+  background-color: #e3f7e0;
   .about {
-    background-color: #fff;
+    background-color: #fce8d2;
     display: flex;
     flex-direction: column;
     gap: 70px;
@@ -86,12 +86,12 @@
       text-transform: uppercase;
       font-weight: 500;
       font-size: 14px;
-      color: #fff;
+      color: var(--main-color);
     }
     .heading {
       font-weight: 800;
       font-size: 40px;
-      color: #fff;
+      color: var(--main-color);
     }
 
     .flex-gap-16 {

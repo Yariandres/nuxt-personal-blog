@@ -25,6 +25,7 @@
   width: 100dvw;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  background-color: #d2f4ec;
 
   .section {
     padding-inline: 90px;
@@ -37,21 +38,20 @@
       text-transform: uppercase;
       font-weight: 500;
       font-size: 14px;
-      color: inherit;
+      color: ivar(--main-color);
     }
 
     .heading {
       font-weight: 800;
       font-size: 40px;
-      color: black;
+      color: var(--main-color);
     }
 
     .button {
       a {
-        color: inherit;
-        // background-color: #130F49;
+        color: var(--main-color);
         display: inline-block;
-        border: 1.5px solid #130f49;
+        border: 1.5px solid var(--main-color);
         border-radius: 50px;
         padding: 9px 40px;
         white-space: nowrap;
@@ -63,7 +63,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-          background-color: #130f49;
+          background-color: var(--main-color);
           color: #fff;
         }
       }

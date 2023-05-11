@@ -61,7 +61,7 @@ const isActive = ref(false);
   .label {
     font-size: 16px;
     font-weight: 600;
-    color: #130f49;
+    color: var(--main-color);
     margin-inline-start: 22px;
     padding-block-start: 0.5px;
     cursor: pointer;
@@ -72,7 +72,7 @@ const isActive = ref(false);
     border: none;
     background-color: #fff;
     border-radius: 50px;
-    color: #130f49;
+    color: var(--main-color);
     padding-inline-start: 19px;
     width: 100%;
     height: 100%;

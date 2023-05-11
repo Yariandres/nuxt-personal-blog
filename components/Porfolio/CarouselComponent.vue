@@ -106,12 +106,12 @@ onBeforeUnmount(() => {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
-    color: inherit;
+    color: solid var(--main-color);
   }
 
   &__name {
     font-size: 19px;
-    color: black;
+    color: var(--main-color);
     font-weight: 700;
     position: relative;
     width: fit-content;
@@ -120,7 +120,7 @@ onBeforeUnmount(() => {
       content: "";
       width: 100%;
       height: 2px;
-      background-color: black;
+      background-color: var(--main-color);
       position: absolute;
       bottom: 0;
       left: 0;

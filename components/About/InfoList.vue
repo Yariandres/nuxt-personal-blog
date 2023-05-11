@@ -55,7 +55,7 @@
       line-height: 30px;
 
       a {
-        color: #130f49;
+        color: var(--main-color);
         &:hover {
           color: orange;
         }

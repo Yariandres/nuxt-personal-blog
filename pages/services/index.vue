@@ -26,6 +26,7 @@
   width: 100dvw;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  background-color: #e3f8e0;
 
   .services {
     padding-inline: 90px;
@@ -37,13 +38,13 @@
       text-transform: uppercase;
       font-weight: 500;
       font-size: 14px;
-      color: inherit;
+      color: var(--main-color);
     }
 
     .heading {
       font-weight: 800;
       font-size: 40px;
-      color: black;
+      color: var(--main-color);
     }
 
     .services-cards {

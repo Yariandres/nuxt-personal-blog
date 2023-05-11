@@ -61,7 +61,7 @@ defineProps<{
       a {
         i {
           font-size: 25px;
-          color: #130f49;
+          color: var(--main-color);
           width: 100%;
 
           &:hover {

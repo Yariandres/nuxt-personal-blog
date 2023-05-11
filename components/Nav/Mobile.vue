@@ -151,7 +151,7 @@ onBeforeUnmount(() => {
   text-decoration: none;
   color: #000;
   text-transform: uppercase;
-  font-family: inherit;
+  font-family: solid var(--main-color);
   font-size: 28px;
   font-weight: 800;
   letter-spacing: 0px;
@@ -256,7 +256,7 @@ onBeforeUnmount(() => {
       text-align: right;
 
       a {
-        color: inherit;
+        color: solid var(--main-color);
         -webkit-transition: color 0.3s ease;
         -moz-transition: color 0.3s ease;
         -ms-transition: color 0.3s ease;

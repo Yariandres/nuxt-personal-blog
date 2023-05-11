@@ -50,7 +50,7 @@ const isInputEmpty = (e: Event) => {
 .label {
   font-size: 16px;
   font-weight: bold;
-  color: #130f49;
+  color: var(--main-color);
   margin-inline-start: 22px;
   padding-block-start: 5px;
 }
@@ -61,21 +61,26 @@ const isInputEmpty = (e: Event) => {
   gap: 5px;
 
   textarea {
-    border: 1px solid #e9f8ff;
+    border: 1.5px solid var(--main-color);
     border-radius: 15px;
     padding-inline-start: 20px;
     font-size: 16px;
-    color: #130f49;
+    color: var(--main-color);
     background-color: #fff;
     resize: none;
-    box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+      transform: translateY(-3px);
+      -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+    }
 
     &:focus-visible {
-      border: 1px solid #fff;
+      outline: unset;
+      border: 1.5px solid var(--main-color);
+
       background-color: #fff;
-      border-radius: 25px;
     }
   }
 }

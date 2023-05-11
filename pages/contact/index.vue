@@ -164,13 +164,13 @@ const handleSubmit = () => {
       text-transform: uppercase;
       font-weight: 500;
       font-size: 14px;
-      color: inherit;
+      color: solid var(--main-color);
     }
 
     .heading {
       font-weight: 800;
       font-size: 40px;
-      color: black;
+      color: var(--main-color);
     }
   }
 
@@ -191,18 +191,18 @@ const handleSubmit = () => {
     font-size: 32px;
     margin: 0;
     padding: 0;
-    color: #130f49;
+    color: var(--main-color);
   }
 
   .text-center {
     text-align: center;
-    color: #130f49;
+    color: var(--main-color);
   }
 
   .label-primary {
     font-size: 16px;
     font-weight: 600;
-    color: #130f49;
+    color: var(--main-color);
     margin: 0;
     padding: 0;
   }
@@ -213,7 +213,7 @@ const handleSubmit = () => {
 
     .button {
       background-color: #fff;
-      color: #130f49;
+      color: var(--main-color);
       border: 0;
       border-radius: 20px;
       letter-spacing: 2px;

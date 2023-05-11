@@ -54,19 +54,21 @@ watchEffect((onInvalidate) => {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
+    color: var(--main-color);
   }
 
   .heading {
     font-weight: 800;
     font-size: 40px;
+    color: var(--main-color);
   }
 }
 
 .button {
   a {
-    color: inherit;
+    color: solid var(--main-color);
     display: inline-block;
-    border: 1.5px solid #130f49;
+    border: 1.5px solid var(--main-color);
     border-radius: 50px;
     padding: 9px 40px;
     white-space: nowrap;
@@ -78,7 +80,7 @@ watchEffect((onInvalidate) => {
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: #130f49;
+      background-color: var(--main-color);
       color: #fff;
     }
   }

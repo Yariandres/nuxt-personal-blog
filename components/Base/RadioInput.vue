@@ -31,7 +31,7 @@ defineProps<{
 .label {
   font-size: 19px;
   font-weight: 600;
-  color: #130f49;
+  color: var(--main-color);
 }
 
 input[type="radio"] {
@@ -41,7 +41,7 @@ input[type="radio"] {
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  border: 1px solid #130f49;
+  border: 1px solid var(--main-color);
   outline: none;
   transition: border-color 0.2s;
 }

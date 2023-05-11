@@ -131,7 +131,7 @@ export default {
   padding-block: 100px;
   padding-inline: 100px;
   text-align: center;
-  background-color: #fff4f6;
+  background-color: #f9dee3;
   border-radius: 10px;
 
   &__top {
@@ -142,13 +142,13 @@ export default {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
-    color: inherit;
+    color: solid var(--main-color);
   }
 
   &__heading {
     font-weight: 800;
     font-size: 40px;
-    color: black;
+    color: var(--main-color);
   }
 }
 
@@ -181,7 +181,7 @@ export default {
   &__name {
     font-size: 30px;
     font-weight: 500;
-    color: black;
+    color: var(--main-color);
   }
 
   &__job {
