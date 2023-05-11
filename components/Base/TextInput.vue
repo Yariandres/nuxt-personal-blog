@@ -59,19 +59,30 @@ const isInputEmpty = (e: Event) => {
   border-radius: 50px;
   width: 100%;
   .container {
+    border: 1.5px solid var(--main-color);
     display: flex;
     align-items: center;
     background-color: #fff;
     border-radius: 50px;
-    box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+
+    -webkit-transition: box-shadow, transform 0.3s ease;
+    -moz-transition: box-shadow, transform 0.3s ease;
+    -ms-transition: box-shadow, transform 0.3s ease;
+    -o-transition: box-shadow, transform 0.3s ease;
+    transition: box-shadow, transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+    }
   }
 
   .label {
     font-size: 16px;
     font-weight: 600;
-    color: #130f49;
+    color: var(--main-color);
     margin-inline-start: 22px;
   }
 
@@ -79,12 +90,13 @@ const isInputEmpty = (e: Event) => {
     height: 25px;
     border: none;
     background-color: transparent;
-    color: #130f49;
+    color: var(--main-color);
     padding-inline-start: 29px;
     width: 100%;
     height: 100%;
 
     &:focus-visible {
+      outline: unset;
       background-color: white;
       border-radius: 50px;
     }

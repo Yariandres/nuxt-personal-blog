@@ -76,7 +76,7 @@ const handleDate = computed(() =>
     a {
       font-weight: 500;
       font-size: 16px;
-      color: inherit;
+      color: solid var(--main-color);
       position: relative;
       align-items: center;
       display: block;
@@ -85,7 +85,7 @@ const handleDate = computed(() =>
         content: "";
         width: 100%;
         height: 2px;
-        background-color: black;
+        background-color: var(--main-color);
         position: absolute;
         bottom: 0;
         left: 0;

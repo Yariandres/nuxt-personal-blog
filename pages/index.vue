@@ -162,6 +162,7 @@ const { data: categories } = await useWordpressApi().getCategories<
     .heading {
       font-size: 50px;
       line-height: 50px;
+      color: var(--main-color);
 
       @media (max-width: 768px) {
         text-align: center;
@@ -184,10 +185,9 @@ const { data: categories } = await useWordpressApi().getCategories<
 
       .button {
         a {
-          color: inherit;
-          // background-color: #130F49;
+          color: var(--main-color);
           display: inline-block;
-          border: 1.5px solid #130f49;
+          border: 1.5px solid var(--main-color);
           border-radius: 50px;
           padding: 9px 40px;
           white-space: nowrap;
@@ -199,7 +199,7 @@ const { data: categories } = await useWordpressApi().getCategories<
           transition: all 0.3s ease;
 
           &:hover {
-            background-color: #130f49;
+            background-color: var(--main-color);
             color: #fff;
           }
         }
@@ -211,7 +211,7 @@ const { data: categories } = await useWordpressApi().getCategories<
       padding-inline-start: 16px;
 
       a {
-        color: #130f49;
+        color: var(--main-color);
         font-weight: 600;
         font-size: 18px;
 

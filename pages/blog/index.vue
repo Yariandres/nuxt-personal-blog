@@ -6,7 +6,12 @@
           <p :class="$style['title']">- blog</p>
           <h3 :class="$style['heading']">Blog & News</h3>
         </div>
-
+        <BaseTextInput
+          :id="'search'"
+          v-model="search"
+          :label="'Search posts'"
+          type="text"
+        />
         <div :class="$style['button']">
           <NuxtLink to="/portfolio">Get in touch</NuxtLink>
         </div>
@@ -51,6 +56,7 @@ const filteredPosts = computed((): Post[] | null | undefined => {
   width: 100dvw;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  background-color: #fce8d3;
 
   .row {
     padding-inline: 100px;
@@ -72,28 +78,29 @@ const filteredPosts = computed((): Post[] | null | undefined => {
       display: flex;
       flex-direction: column;
       gap: 34px;
+
       .title {
         text-transform: uppercase;
         font-weight: 500;
         font-size: 14px;
-        color: #130f49;
+        color: var(--main-color);
       }
 
       .heading {
         font-weight: 800;
         font-size: 40px;
-        color: #130f49;
+        color: var(--main-color);
       }
 
       .button {
         a {
-          color: inherit;
-          // background-color: #130F49;
+          color: var(--main-color);
           display: inline-block;
-          border: 1.5px solid #130f49;
+          border: 1.5px solid var(--main-color);
           border-radius: 50px;
           padding: 9px 40px;
           white-space: nowrap;
+          background-color: #fff;
 
           -webkit-transition: all 0.3s ease;
           -moz-transition: all 0.3s ease;
@@ -102,8 +109,12 @@ const filteredPosts = computed((): Post[] | null | undefined => {
           transition: all 0.3s ease;
 
           &:hover {
-            background-color: #130f49;
+            background-color: var(--main-color);
             color: #fff;
+            transform: translateY(-5px);
+            box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
           }
         }
       }

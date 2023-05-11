@@ -100,8 +100,8 @@ const closeModal = () => {
     border: none;
     margin: 0;
     padding: 0;
-    font: inherit;
-    color: inherit;
+    font: solid var(--main-color);
+    color: solid var(--main-color);
     cursor: pointer;
     outline: none;
     text-align: left;
@@ -198,8 +198,8 @@ const closeModal = () => {
     border: none;
     margin: 0;
     padding: 0;
-    font: inherit;
-    color: inherit;
+    font: solid var(--main-color);
+    color: solid var(--main-color);
     cursor: pointer;
     outline: none;
 

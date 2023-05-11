@@ -94,7 +94,7 @@ const closeModal = () => {
   &__description {
     font-size: 16px;
     font-weight: 400;
-    color: #55527c;
+    color: var(--main-color);
     line-height: 30px;
   }
 
@@ -103,14 +103,14 @@ const closeModal = () => {
     border: none;
     margin: 0;
     padding: 0;
-    font: inherit;
-    color: inherit;
+    font: solid var(--main-color);
+    color: solid var(--main-color);
     cursor: pointer;
     outline: none;
     text-align: left;
 
     font-size: 16px;
-    color: black;
+    color: var(--main-color);
     font-weight: 700;
   }
 }
@@ -179,8 +179,8 @@ const closeModal = () => {
     border: none;
     margin: 0;
     padding: 0;
-    font: inherit;
-    color: inherit;
+    font: solid var(--main-color);
+    color: solid var(--main-color);
     cursor: pointer;
     outline: none;
 

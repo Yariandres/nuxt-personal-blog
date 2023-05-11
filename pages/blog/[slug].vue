@@ -16,7 +16,7 @@
 
     <div :class="$style['action']">
       <div :class="$style['svg-arrow']" />
-      <NuxtLink to="/blog">Go back posts</NuxtLink>
+      <NuxtLink to="/blog">Go back post</NuxtLink>
     </div>
   </div>
 </template>
@@ -49,20 +49,20 @@ const post = posts && posts.value && posts.value[0];
 .title {
   font-weight: 800;
   font-size: 40px;
-  color: #130f49;
+  color: var(--main-color);
   text-align: center;
 }
 
 .post-meta {
   font-size: 1.6rem;
-  color: #130f49;
+  color: var(--main-color);
 }
 
 .post-content {
   font-size: 19px;
   line-height: 28px;
   margin-block: 40px;
-  color: #130f49;
+  color: var(--main-color);
 }
 
 .action {
@@ -75,7 +75,7 @@ const post = posts && posts.value && posts.value[0];
   a {
     font-weight: 500;
     font-size: 16px;
-    color: inherit;
+    color: solid var(--main-color);
     position: relative;
     align-items: center;
     display: block;
@@ -84,7 +84,7 @@ const post = posts && posts.value && posts.value[0];
       content: "";
       width: 100%;
       height: 2px;
-      background-color: black;
+      background-color: var(--main-color);
       position: absolute;
       bottom: 0;
       left: 0;
