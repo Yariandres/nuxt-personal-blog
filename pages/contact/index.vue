@@ -116,7 +116,9 @@
           </div>
 
           <div :class="$style['btn-container']">
-            <button type="submit" :class="$style['button']"></button>
+            <div :class="$style['button']">
+              <NuxtLink to="/portfolio">Send it</NuxtLink>
+            </div>
           </div>
         </div>
       </form>
@@ -212,35 +214,29 @@ const handleSubmit = () => {
     align-items: center;
 
     .button {
-      background-color: #fff;
-      color: var(--main-color);
-      border: 0;
-      border-radius: 20px;
-      letter-spacing: 2px;
-      padding: 10px 25px;
-      font-size: 19px;
-      font-weight: 800;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: border 0.5s;
-      box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
-      -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+      a {
+        color: var(--main-color);
+        display: inline-block;
+        border: 1.5px solid var(--main-color);
+        border-radius: 50px;
+        padding: 9px 40px;
+        white-space: nowrap;
+        background-color: #fff;
 
-      &:before {
-        content: "Send it!";
-      }
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
 
-      &:hover {
-        transition: color 0.5s;
-
-        &:before {
-          content: "Boooom!";
+        &:hover {
+          background-color: var(--main-color);
+          color: #fff;
+          transform: translateY(-5px);
+          box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+          -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+          -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
         }
-      }
-
-      @media screen and (max-width: 768px) {
-        text-align: center;
       }
     }
   }
