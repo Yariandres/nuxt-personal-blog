@@ -9,7 +9,7 @@
       <porfolio-carousel-component />
 
       <div :class="$style['button']">
-        <NuxtLink to="/portfolio">Wiev all projects</NuxtLink>
+        <NuxtLink to="/portfolio">View all projects</NuxtLink>
       </div>
 
       <hr />
@@ -55,6 +55,7 @@
         border-radius: 50px;
         padding: 9px 40px;
         white-space: nowrap;
+        background-color: #fff;
 
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
@@ -65,6 +66,10 @@
         &:hover {
           background-color: var(--main-color);
           color: #fff;
+          transform: translateY(-5px);
+          box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+          -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+          -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
         }
       }
     }
