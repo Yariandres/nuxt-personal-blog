@@ -25,7 +25,7 @@
     background-color: #d2f4ec;
     text-align: center;
     padding: 60px 20px;
-    border-radius: 4px;
+    border-radius: 5px;
     overflow: hidden;
     width: 100%;
     position: relative;

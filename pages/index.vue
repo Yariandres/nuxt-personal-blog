@@ -71,24 +71,24 @@
 <script setup lang="ts">
 import { ref, watchEffect } from "vue";
 
-interface PostType {
-  id: number;
-  date: string;
-  title: {
-    rendered: string;
-  };
-  excerpt: {
-    rendered: string;
-  };
-  slug: string;
-}
+// interface PostType {
+//   id: number;
+//   date: string;
+//   title: {
+//     rendered: string;
+//   };
+//   excerpt: {
+//     rendered: string;
+//   };
+//   slug: string;
+// }
 
-interface CategoryType {
-  id: number;
-  name: string;
-  count: number;
-  slug: string;
-}
+// interface CategoryType {
+//   id: number;
+//   name: string;
+//   count: number;
+//   slug: string;
+// }
 
 const locationText = ref<HTMLElement>();
 const googleAddress = ref<string>();
@@ -112,10 +112,10 @@ const openLocation = () => {
   window.open(text + address);
 };
 
-const { data: posts } = await useWordpressApi().getPosts<any>();
-const { data: categories } = await useWordpressApi().getCategories<
-  CategoryType[]
->();
+// const { data: posts } = await useWordpressApi().getPosts<any>();
+// const { data: categories } = await useWordpressApi().getCategories<
+//   CategoryType[]
+// >();
 </script>
 
 <style lang="scss" module>
@@ -191,6 +191,7 @@ const { data: categories } = await useWordpressApi().getCategories<
           border-radius: 50px;
           padding: 9px 40px;
           white-space: nowrap;
+          background-color: #fff;
 
           -webkit-transition: all 0.3s ease;
           -moz-transition: all 0.3s ease;
@@ -201,6 +202,10 @@ const { data: categories } = await useWordpressApi().getCategories<
           &:hover {
             background-color: var(--main-color);
             color: #fff;
+            transform: translateY(-5px);
+            box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
           }
         }
       }
