@@ -2,12 +2,12 @@
   <div :class="$style['sidebar']">
     <NavMenu
       :items="[
-        { name: 'Home', path: '/', icon: 'icon-home' },
-        { name: 'About', path: '/about', icon: 'icon-user' },
-        { name: 'Services', path: '/services', icon: 'icon-cogs' },
-        { name: 'Portfolio', path: '/portfolio', icon: 'icon-folder-open' },
-        { name: 'Blog', path: '/blog', icon: 'icon-cloud' },
-        { name: 'Contact', path: '/contact', icon: 'icon-phone' },
+        { name: 'Home', path: '/', icon: 'home' },
+        { name: 'About', path: '/about', icon: 'user' },
+        { name: 'Services', path: '/services', icon: 'rocket' },
+        { name: 'Portfolio', path: '/portfolio', icon: 'megaphone' },
+        { name: 'Blog', path: '/blog', icon: 'thinking' },
+        { name: 'Contact', path: '/contact', icon: 'phone' },
       ]"
     />
     <BlogFooter />

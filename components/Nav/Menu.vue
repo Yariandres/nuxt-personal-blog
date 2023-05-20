@@ -3,7 +3,7 @@
     <ul>
       <li v-for="item in items" :key="item.name">
         <NuxtLink class="tooltip" :data-tooltip="item.name" :to="item.path">
-          <i :class="item.icon"></i>
+          <p :class="item.icon">{{ item.name }}</p>
         </NuxtLink>
       </li>
     </ul>
