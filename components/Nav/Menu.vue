@@ -2,8 +2,13 @@
   <div class="menu">
     <ul>
       <li v-for="item in items" :key="item.name">
-        <NuxtLink class="tooltip" :data-tooltip="item.name" :to="item.path">
-          <p :class="item.icon">{{ item.name }}</p>
+        <NuxtLink
+          class="tooltip"
+          :data-tooltip="item.name"
+          :to="item.path"
+          :class="item.icon"
+        >
+          <div :class="item.icon"></div>
         </NuxtLink>
       </li>
     </ul>
@@ -59,10 +64,16 @@ defineProps<{
 
     li {
       a {
-        i {
-          font-size: 25px;
-          color: var(--main-color);
-          width: 100%;
+        div.home {
+          background-image: url("~/assets/img/svg/calendar.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 40px;
+          height: 40px;
+
+          // font-size: 25px;
+          // color: var(--main-color);
+          // width: 100%;
 
           &:hover {
             color: var(--blue-color);
