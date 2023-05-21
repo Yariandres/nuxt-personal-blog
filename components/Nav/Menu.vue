@@ -65,16 +65,66 @@ defineProps<{
     li {
       a {
         div.home {
-          background-image: url("~/assets/img/svg/calendar.svg");
+          background-image: url("~/assets/img/svg/IconHouse.svg");
           background-repeat: no-repeat;
           background-size: cover;
-          width: 40px;
-          height: 40px;
-
-          // font-size: 25px;
-          // color: var(--main-color);
-          // width: 100%;
-
+          width: 30px;
+          height: 30px;
+          &:hover {
+            color: var(--blue-color);
+            transition: 0.3s ease-in-out;
+          }
+        }
+        div.user {
+          background-image: url("~/assets/img/svg/IconPeople.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 30px;
+          height: 30px;
+          &:hover {
+            color: var(--blue-color);
+            transition: 0.3s ease-in-out;
+          }
+        }
+        div.rocket {
+          background-image: url("~/assets/img/svg/IconRocket.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 30px;
+          height: 30px;
+          &:hover {
+            color: var(--blue-color);
+            transition: 0.3s ease-in-out;
+          }
+        }
+        div.megaphone {
+          background-image: url("~/assets/img/svg/IconMegaphone.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 34px;
+          height: 34px;
+          &:hover {
+            color: var(--blue-color);
+            transition: 0.3s ease-in-out;
+          }
+        }
+        div.thinking {
+          background-image: url("~/assets/img/svg/IconThinking.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 34px;
+          height: 34px;
+          &:hover {
+            color: var(--blue-color);
+            transition: 0.3s ease-in-out;
+          }
+        }
+        div.phone {
+          background-image: url("~/assets/img/svg/IconMailHeart.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 34px;
+          height: 34px;
           &:hover {
             color: var(--blue-color);
             transition: 0.3s ease-in-out;
