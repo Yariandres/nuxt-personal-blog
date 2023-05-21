@@ -90,6 +90,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" module>
+@import "~/css/animations.scss";
 .carousel {
   cursor: pointer;
 }
@@ -125,17 +126,6 @@ onBeforeUnmount(() => {
       bottom: 0;
       left: 0;
       animation: slide-in 0.3s ease-in-out forwards;
-    }
-  }
-
-  @keyframes slide-in {
-    from {
-      transform: scaleX(0);
-      transform-origin: left;
-    }
-    to {
-      transform: scaleX(1);
-      transform-origin: left;
     }
   }
 }

@@ -31,6 +31,7 @@ const handleDate = computed(() =>
 </script>
 
 <style lang="scss" module>
+@import "~/css/animations.scss";
 .top {
   display: flex;
   gap: 10px;
