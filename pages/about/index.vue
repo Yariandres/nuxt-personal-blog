@@ -76,11 +76,19 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   .experience {
     padding-inline: 90px;
     padding-block: 90px;
+
+    @media only screen and (max-width: 767px) {
+      padding-inline: 20px;
+    }
 
     .greetings {
       text-transform: uppercase;

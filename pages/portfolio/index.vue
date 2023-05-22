@@ -14,7 +14,7 @@
 
       <hr />
 
-      <porfolio-testimonial-component />
+      <PorfolioTestimonialComponent />
     </div>
   </section>
 </template>
@@ -33,6 +33,10 @@
     display: flex;
     flex-direction: column;
     gap: 54px;
+
+    @media only screen and (max-width: 767px) {
+      padding-inline: 20px;
+    }
 
     .title {
       text-transform: uppercase;

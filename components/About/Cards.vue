@@ -21,6 +21,10 @@
   justify-content: space-around;
   gap: 32px;
 
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+
   .card {
     background-color: #d2f4ec;
     text-align: center;

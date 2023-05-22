@@ -162,6 +162,10 @@ const handleSubmit = () => {
     flex-direction: column;
     gap: 52px;
 
+    @media only screen and (max-width: 767px) {
+      padding-inline: 20px;
+    }
+
     .title {
       text-transform: uppercase;
       font-weight: 500;
@@ -181,6 +185,10 @@ const handleSubmit = () => {
     gap: 16px;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+    }
   }
 
   .wrap {
@@ -212,6 +220,10 @@ const handleSubmit = () => {
   .btn-container {
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: 767px) {
+      justify-content: center;
+    }
 
     .button {
       a {

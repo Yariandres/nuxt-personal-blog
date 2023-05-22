@@ -34,6 +34,11 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @media only screen and (max-width: 767px) {
+      padding-inline: 20px;
+    }
+
     .title {
       text-transform: uppercase;
       font-weight: 500;

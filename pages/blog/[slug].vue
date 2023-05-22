@@ -45,6 +45,10 @@ const post = posts && posts.value && posts.value[0];
 .container {
   padding-inline: var(--space-400);
   padding-block: 100px;
+
+  @media only screen and (max-width: 767px) {
+    padding-inline: 20px;
+  }
 }
 .title {
   font-weight: 800;

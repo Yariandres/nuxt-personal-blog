@@ -64,6 +64,10 @@ const filteredPosts = computed((): Post[] | null | undefined => {
     display: flex;
     gap: 50px;
 
+    @media only screen and (max-width: 767px) {
+      padding-inline: 20px;
+    }
+
     /* Tablet styles */
     @media only screen and (min-width: 768px) and (max-width: 1023px) {
       flex-direction: column;

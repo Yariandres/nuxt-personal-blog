@@ -134,6 +134,10 @@ export default {
   background-color: #f9dee3;
   border-radius: 10px;
 
+  @media only screen and (max-width: 767px) {
+    padding-inline: 20px;
+  }
+
   &__top {
     margin-block-end: 50px;
   }

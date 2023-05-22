@@ -39,6 +39,10 @@
   display: flex;
   gap: 25px;
 
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+
   &__items {
     display: flex;
     flex-direction: column;
