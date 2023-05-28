@@ -1,12 +1,12 @@
 <template>
   <div :class="$style['card']">
-    <p :class="$style['card__index']">- 1</p>
-    <h3 :class="$style['card__title']">Web development</h3>
+    <p :class="$style['card__index']">{{ Number(service.id) + 1 }}</p>
+    <h3 :class="$style['card__title']">{{ service.heading }}</h3>
     <p :class="$style['card__description']">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      {{ service.content }}
     </p>
     <button :class="$style['card__action']" @click="openModal">
-      read more ->
+      Read more ->
     </button>
   </div>
 
@@ -24,37 +24,24 @@
       alt=""
     />
 
-    <p :class="$style['modal__title']">Web developement</p>
+    <p :class="$style['modal__title']">{{ service.heading }}</p>
 
     <div :class="$style['modal__description']">
-      <p>
-        Elisc is a leading web design agency with an award-winning design team
-        that creates innovative, effective websites that capture your brand,
-        improve your conversion rates, and maximize your revenue to help grow
-        your business and achieve your goals.
-      </p>
-      <p>
-        In today’s digital world, your website is the first interaction
-        consumers have with your business. That's why almost 95 percent of a
-        user’s first impression relates to web design. It’s also why web design
-        services can have an immense impact on your company’s bottom line.
-      </p>
-      <p>
-        That’s why more companies are not only reevaluating their website’s
-        design but also partnering with Elisc, the web design agency that’s
-        driven more than $2.4 billion in revenue for its clients. With over 50
-        web design awards under our belt, we're confident we can design a custom
-        website that drives sales for your unique business.
-      </p>
+      <P>{{ service.description }}</P>
     </div>
   </dialog>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
+import Service from "~/types/services";
 
 const modal = ref<HTMLDialogElement | null>(null);
 const isNotOpen = ref<boolean>(true);
+
+defineProps<{
+  service: Service;
+}>();
 
 const openModal = () => {
   modal.value?.showModal();

@@ -7,18 +7,19 @@
       </div>
 
       <div :class="$style['services-cards']">
-        <ServicesCardComponent />
-        <ServicesCardComponent />
-        <ServicesCardComponent />
-        <ServicesCardComponent />
-        <ServicesCardComponent />
-        <ServicesCardComponent />
+        <ServicesCardComponent
+          v-for="service in services"
+          :key="service.id"
+          :service="service"
+        />
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { services } from "~/helpers/services/index";
+</script>
 
 <style lang="scss" module>
 .container {
