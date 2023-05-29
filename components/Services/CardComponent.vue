@@ -20,14 +20,14 @@
 
     <img
       :class="$style['modal__image']"
-      src="~/assets/img/experience/1.jpg"
-      alt=""
+      :src="imagesArray[index]"
+      alt="modal image"
     />
 
     <p :class="$style['modal__title']">{{ service.heading }}</p>
 
     <div :class="$style['modal__description']">
-      <P>{{ service.description }}</P>
+      {{ service.description }}
     </div>
   </dialog>
 </template>
@@ -35,13 +35,29 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import Service from "~/types/services";
+import optDevImg from "~/assets/img/service/web-dev.png";
+import webDevImg from "~/assets/img/service/opt-dev.png";
+import legDevImg from "~/assets/img/service/leg-dev.png";
+import choDevImg from "~/assets/img/service/cho-dev.png";
+import topDevImg from "~/assets/img/service/top-dev.png";
+import hosDevImg from "~/assets/img/service/hos-dev.png";
 
 const modal = ref<HTMLDialogElement | null>(null);
 const isNotOpen = ref<boolean>(true);
 
 defineProps<{
   service: Service;
+  index: number;
 }>();
+
+const imagesArray = [
+  webDevImg,
+  optDevImg,
+  legDevImg,
+  choDevImg,
+  topDevImg,
+  hosDevImg,
+];
 
 const openModal = () => {
   modal.value?.showModal();
@@ -130,6 +146,8 @@ const closeModal = () => {
   &__image {
     border-radius: 5px;
     height: 375px; // to be removed
+    width: auto;
+    object-fit: cover;
   }
 
   &__time {

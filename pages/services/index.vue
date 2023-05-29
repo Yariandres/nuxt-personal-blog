@@ -8,9 +8,10 @@
 
       <div :class="$style['services-cards']">
         <ServicesCardComponent
-          v-for="service in services"
+          v-for="(service, index) in services"
           :key="service.id"
           :service="service"
+          :index="index"
         />
       </div>
     </div>

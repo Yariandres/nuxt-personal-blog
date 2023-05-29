@@ -3,4 +3,5 @@ export interface Service {
   heading: string;
   content: string;
   description: string;
+  image_path: string;
 }
