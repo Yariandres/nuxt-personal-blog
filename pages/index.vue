@@ -3,32 +3,33 @@
     <div :class="$style['left']">
       <div :class="$style['description']">
         <h1 :class="$style['heading']">
-          Hi, I'm Yari <br />
+          Empowering Businesses through Custom Software <br />
           <span class="cd-headline rotate-1">
-            <span>Creative </span>
             <span class="cd-words-wrapper">
               <b
                 :class="[isActive[0] ? 'is-visible' : 'is-hidden']"
                 height="200"
-                >Designer</b
+                style="color: burlywood"
+                >Excellence</b
               >
               <b
                 :class="[isActive[1] ? 'is-visible' : 'is-hidden']"
-                style="color: orange"
-                >Coder</b
+                style="color: chocolate"
+                >Innovation</b
               >
               <b
                 :class="[isActive[2] ? 'is-visible' : 'is-hidden']"
-                style="color: red"
-                >Player</b
+                style="color: palevioletred"
+                >Success</b
               >
             </span>
           </span>
         </h1>
 
         <p class="subtitle">
-          I'm a Florida based web designer &amp; front‑end developer with
-          <span class="blueColor">10+ years</span> of experience
+          Trust in our unwavering commitment to quality, reliability, and
+          unparalleled support. Together, we'll embark on a transformative
+          journey, paving the way for your success.
         </p>
       </div>
 
@@ -44,8 +45,8 @@
 
       <div :class="$style['info']">
         <ul>
-          <li><a href="tel:+77 022 444 05 05">+77 022 444 05 05</a></li>
-          <li><a href="mailto:support@elisc.com">support@elisc.com</a></li>
+          <li><a href="tel:+77 022 444 05 05">+48 008 301 990</a></li>
+          <li><a href="mailto:support@elisc.com">support@codigo.com</a></li>
           <li>
             <p
               ref="locationText"
@@ -53,7 +54,7 @@
               :class="$style['address']"
               @click="openLocation"
             >
-              Ave Street Avenue, New York
+              Poznan, Greater Poland
             </p>
           </li>
         </ul>
@@ -170,6 +171,7 @@ const openLocation = () => {
 
       .blue-text {
         color: pink !important;
+        color: chocolate;
       }
     }
 
