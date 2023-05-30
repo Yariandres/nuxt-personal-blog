@@ -5,7 +5,7 @@
         <div :class="$style['card']">
           <img
             :class="$style['card__image']"
-            src="~/assets/img/experience/1.jpg"
+            src="~/assets/img/experience/1.png"
             alt=""
           />
           <p :class="$style['card__title']">Vimeo 1</p>
@@ -16,7 +16,7 @@
         <div :class="$style['card']">
           <img
             :class="$style['card__image']"
-            src="~/assets/img/experience/1.jpg"
+            src="~/assets/img/experience/1.png"
             alt=""
           />
           <p :class="$style['card__title']">Vimeo 2</p>
@@ -27,7 +27,7 @@
         <div :class="$style['card']">
           <img
             :class="$style['card__image']"
-            src="~/assets/img/experience/1.jpg"
+            src="~/assets/img/experience/1.png"
             alt=""
           />
           <p :class="$style['card__title']">Vimeo 3</p>
@@ -38,7 +38,7 @@
         <div :class="$style['card']">
           <img
             :class="$style['card__image']"
-            src="~/assets/img/experience/1.jpg"
+            src="~/assets/img/experience/1.png"
             alt=""
           />
           <p :class="$style['card__title']">Vimeo 4</p>
@@ -49,7 +49,7 @@
         <div :class="$style['card']">
           <img
             :class="$style['card__image']"
-            src="~/assets/img/experience/1.jpg"
+            src="~/assets/img/experience/1.png"
             alt=""
           />
           <p :class="$style['card__title']">Vimeo 5</p>

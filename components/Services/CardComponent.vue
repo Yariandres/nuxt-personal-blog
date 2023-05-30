@@ -178,7 +178,7 @@ const closeModal = () => {
 
   &__close-icon {
     position: absolute;
-    right: 0;
+    right: 12px;
     top: 12px;
     background: none;
     border: none;

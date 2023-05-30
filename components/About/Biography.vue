@@ -3,22 +3,22 @@
     <p :class="$style['greetings']">- Nice to meet you</p>
     <h3 :class="$style['heading']">Yari Herrera</h3>
     <span class="cd-headline rotate-1">
-      <span class="blc">Web designer &amp; </span>
+      <span class="blc">Web Developer &amp; </span>
       <span class="cd-words-wrapper">
         <b
           :class="[isActive[0] ? 'is-visible' : 'is-hidden']"
           style="color: blue"
-          >Designer</b
+          >SAAS</b
         >
         <b
           :class="[isActive[1] ? 'is-visible' : 'is-hidden']"
           style="color: orange"
-          >Coder</b
+          >Ecommerce</b
         >
         <b
           :class="[isActive[2] ? 'is-visible' : 'is-hidden']"
           style="color: red"
-          >Player</b
+          >Wordpress</b
         >
       </span>
     </span>

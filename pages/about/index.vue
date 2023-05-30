@@ -59,10 +59,18 @@
         flex-direction: column;
         gap: 46px;
       }
+
+      .width-100 {
+        width: 100% !important;
+      }
       .flex-col {
         display: flex;
         flex-direction: column;
         gap: 32px;
+
+        &:first-child {
+          width: 100%;
+        }
 
         @media only screen and (min-width: 768px) and (max-width: 1023px) {
           text-align: center;

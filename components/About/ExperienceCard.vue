@@ -29,7 +29,7 @@
 
       <img
         :class="$style['modal__image']"
-        src="~/assets/img/experience/1.jpg"
+        src="~/assets/img/experience/1.png"
         alt=""
       />
 
@@ -192,7 +192,7 @@ const closeModal = () => {
 
   &__close-icon {
     position: absolute;
-    right: 0;
+    right: 12px;
     top: 12px;
     background: none;
     border: none;

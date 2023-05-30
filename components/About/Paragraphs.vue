@@ -1,16 +1,17 @@
 <template>
   <div :class="$style['paragraphs']">
     <p>
-      Hello there! My name is
-      <span :class="$style['text-orange']">Yari Herrera</span>. I am a web
-      designer &amp; developer, and I'm very passionate and dedicated to my
-      work.
+      Redefining Software Development:
+      <span :class="$style['text-orange']">Unleashing Growth </span>through
+      Intelligent Solutions
     </p>
     <p>
-      With 20 years experience as a professional a graphic designer, I have
-      acquired the skills and knowledge necessary to make your project a
-      success. I enjoy every step of the design process, from discussion and
-      collaboration.
+      Experience the power of intelligent software development. Whether your
+      goal is to modernize, gain a competitive edge, or overcome operational
+      obstacles, our expert team excels in crafting tailor-made solutions that
+      deliver tangible business value. We understand the challenges you face,
+      and our bespoke software solutions are meticulously designed to drive your
+      growth forward.
     </p>
   </div>
 </template>

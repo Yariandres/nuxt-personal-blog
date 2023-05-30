@@ -28,7 +28,7 @@
           <div :class="$style['testimonial__row']">
             <img
               :class="$style['testimonial__image']"
-              src="~/assets/img/experience/1.jpg"
+              src="~/assets/img/experience/1.png"
               alt=""
             />
             <div>
@@ -48,7 +48,7 @@
           <div :class="$style['testimonial__row']">
             <img
               :class="$style['testimonial__image']"
-              src="~/assets/img/experience/1.jpg"
+              src="~/assets/img/experience/1.png"
               alt=""
             />
             <div>
@@ -68,7 +68,7 @@
           <div :class="$style['testimonial__row']">
             <img
               :class="$style['testimonial__image']"
-              src="~/assets/img/experience/1.jpg"
+              src="~/assets/img/experience/1.png"
               alt=""
             />
             <div>
@@ -88,7 +88,7 @@
           <div :class="$style['testimonial__row']">
             <img
               :class="$style['testimonial__image']"
-              src="~/assets/img/experience/1.jpg"
+              src="~/assets/img/experience/1.png"
               alt=""
             />
 
