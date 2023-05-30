@@ -124,8 +124,9 @@ const openLocation = () => {
 
 .container {
   padding: 50px;
-  height: 100vh;
-  width: 100dvw;
+
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 
   overflow-y: scroll;
   scroll-behavior: smooth;
