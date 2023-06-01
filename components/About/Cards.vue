@@ -1,15 +1,15 @@
 <template>
   <ul :class="$style['cards']">
     <li :class="$style['card']">
-      <h3>10+</h3>
+      <h3>5+</h3>
       <span>Years of Experience</span>
     </li>
     <li :class="$style['card']">
-      <h3>50+</h3>
+      <h3>7+</h3>
       <span>Projects Completed</span>
     </li>
     <li :class="$style['card']">
-      <h3>30+</h3>
+      <h3>5+</h3>
       <span>Happy Clients</span>
     </li>
   </ul>

@@ -19,19 +19,20 @@
         <p :class="$style['greetings']">- Experience</p>
         <h3 :class="$style['heading']">Everything about me!</h3>
         <div :class="$style['card-row']">
-          <AboutExperienceCard />
-          <AboutExperienceCard />
-          <AboutExperienceCard />
-          <AboutExperienceCard />
-          <AboutExperienceCard />
-          <AboutExperienceCard />
+          <AboutExperienceCard
+            v-for="info in about"
+            :key="info.id"
+            :about="about"
+          />
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { about } from "~/helpers/about";
+</script>
 
 <style lang="scss" module>
 .container {

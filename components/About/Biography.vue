@@ -1,9 +1,9 @@
 <template>
   <div :class="$style['text-group']">
     <p :class="$style['greetings']">- Nice to meet you</p>
-    <h3 :class="$style['heading']">Yari Herrera</h3>
+    <h3 :class="$style['heading']">I am Yari Herrera</h3>
     <span class="cd-headline rotate-1">
-      <span class="blc">Web Developer &amp; </span>
+      <span class="blc">Lead Software Developer experience with <br /> </span>
       <span class="cd-words-wrapper">
         <b
           :class="[isActive[0] ? 'is-visible' : 'is-hidden']"
@@ -20,6 +20,11 @@
           style="color: red"
           >Wordpress</b
         >
+        <b
+          :class="[isActive[3] ? 'is-visible' : 'is-hidden']"
+          style="color: green"
+          >AI</b
+        >
       </span>
     </span>
   </div>
@@ -31,13 +36,13 @@
 
 <script setup lang="ts">
 import { ref, watchEffect } from "vue";
-const isActive = ref([true, false, false]);
+const isActive = ref([true, false, false, false]);
 
 watchEffect((onInvalidate) => {
   const interval = setInterval(() => {
-    const [first, second, third] = isActive.value;
+    const [first, second, third, forth] = isActive.value;
 
-    isActive.value = [second, third, first];
+    isActive.value = [forth, second, third, first];
   }, 2500);
 
   onInvalidate(() => {
