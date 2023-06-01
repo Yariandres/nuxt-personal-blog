@@ -34,7 +34,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import Service from "~/types/services";
+import Services from "~/types/services";
 import optDevImg from "~/assets/img/service/web-dev.png";
 import webDevImg from "~/assets/img/service/opt-dev.png";
 import legDevImg from "~/assets/img/service/leg-dev.png";
@@ -46,7 +46,7 @@ const modal = ref<HTMLDialogElement | null>(null);
 const isNotOpen = ref<boolean>(true);
 
 defineProps<{
-  service: Service;
+  service: Services;
   index: number;
 }>();
 

@@ -3,8 +3,8 @@
     <div :class="$style['card']">
       <button :class="$style['card__btn']" @click="openModal">
         <div :class="$style['card__header']">
-          <p :class="$style['text-orange']">-2018 - Present</p>
-          <p>-Envato Market</p>
+          <p :class="$style['text-orange']">-{{ about.date }}</p>
+          <p>-{{ about.company }}</p>
         </div>
 
         <div :class="$style['flex-gap-16']">
@@ -33,8 +33,8 @@
         alt=""
       />
 
-      <p :class="$style['modal__time']">-2018 - Present</p>
-      <p :class="$style['modal__company']">-Envato Market</p>
+      <p :class="$style['modal__time']">-{{ about.date }}</p>
+      <p :class="$style['modal__company']">-{{ about.company }}</p>
 
       <div :class="$style['modal__description']">
         <p>
@@ -63,6 +63,11 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
+import About from "~/types/about/index";
+
+defineProps<{
+  about: About;
+}>();
 
 const modal = ref<HTMLDialogElement | null>(null);
 const isNotOpen = ref<boolean>(true);
