@@ -1,72 +1,48 @@
 <template>
-  <div :class="$style['row']">
-    <div :class="$style['card']">
-      <button :class="$style['card__btn']" @click="openModal">
-        <div :class="$style['card__header']">
-          <p :class="$style['text-orange']">-{{ about.date }}</p>
-          <p>-{{ about.company }}</p>
-        </div>
-
-        <div :class="$style['flex-gap-16']">
-          <h3 :class="$style['card__title']">Web Developer</h3>
-          <div :class="$style['card__text']">
-            <p>
-              Website development is the process of building, programming,
-              coding and maintaining websites and web applications.
-            </p>
-          </div>
-        </div>
-      </button>
-    </div>
-
-    <dialog
-      ref="modal"
-      :class="{ [$style['modal']]: true, [$style['modal__isOpen']]: isNotOpen }"
-    >
-      <button :class="$style['modal__close-icon']" @click="closeModal">
-        <i class="icon-cancel"></i>
-      </button>
-
-      <img
-        :class="$style['modal__image']"
-        src="~/assets/img/experience/1.png"
-        alt=""
-      />
-
-      <p :class="$style['modal__time']">-{{ about.date }}</p>
-      <p :class="$style['modal__company']">-{{ about.company }}</p>
-
-      <div :class="$style['modal__description']">
-        <p>
-          Elisc is a leading web design agency with an award-winning design team
-          that creates innovative, effective websites that capture your brand,
-          improve your conversion rates, and maximize your revenue to help grow
-          your business and achieve your goals.
-        </p>
-        <p>
-          In today’s digital world, your website is the first interaction
-          consumers have with your business. That's why almost 95 percent of a
-          user’s first impression relates to web design. It’s also why web
-          design services can have an immense impact on your company’s bottom
-          line.
-        </p>
-        <p>
-          That’s why more companies are not only reevaluating their website’s
-          design but also partnering with Elisc, the web design agency that’s
-          driven more than $2.4 billion in revenue for its clients. With over 50
-          web design awards under our belt, we're confident we can design a
-          custom website that drives sales for your unique business.
-        </p>
+  <div :class="$style['card']">
+    <button :class="$style['card__btn']" @click="openModal">
+      <div :class="$style['card__header']">
+        <p :class="$style['text-orange']">-{{ info.date }}</p>
+        <p>-{{ info.company }}</p>
       </div>
-    </dialog>
+
+      <div :class="$style['flex-gap-16']">
+        <h3 :class="$style['card__title']">{{ info.heading }}</h3>
+        <div :class="$style['card__text']">
+          <p>{{ info.description.substring(0, 150) }}...</p>
+        </div>
+      </div>
+    </button>
   </div>
+
+  <dialog
+    ref="modal"
+    :class="{ [$style['modal']]: true, [$style['modal__isOpen']]: isNotOpen }"
+  >
+    <button :class="$style['modal__close-icon']" @click="closeModal">
+      <i class="icon-cancel"></i>
+    </button>
+
+    <img
+      :class="$style['modal__image']"
+      src="~/assets/img/experience/1.png"
+      alt=""
+    />
+
+    <p :class="$style['modal__time']">-{{ info.date }}</p>
+    <p :class="$style['modal__company']">-{{ info.company }}</p>
+
+    <div :class="$style['modal__description']">
+      {{ info.description }}
+    </div>
+  </dialog>
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
 import About from "~/types/about/index";
 
 defineProps<{
-  about: About;
+  info: About;
 }>();
 
 const modal = ref<HTMLDialogElement | null>(null);
@@ -84,13 +60,7 @@ const closeModal = () => {
 </script>
 
 <style lang="scss" module>
-.card-row {
-  display: flex;
-  flex-direction: column;
-}
-
 .card {
-  flex-basis: 50%;
   background-color: #fff;
   padding-inline: 40px;
   padding-block: 40px;
