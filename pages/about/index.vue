@@ -22,7 +22,7 @@
           <AboutExperienceCard
             v-for="info in about"
             :key="info.id"
-            :about="about"
+            :info="info"
           />
         </div>
       </div>
