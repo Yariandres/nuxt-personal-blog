@@ -5,33 +5,35 @@
         <div :class="$style['card']">
           <img
             :class="$style['card__image']"
-            src="~/assets/img/experience/1.png"
+            src="~/assets/img/portfolio/tasty-task.png"
             alt=""
           />
-          <p :class="$style['card__title']">Vimeo 1</p>
-          <p :class="$style['card__name']">Front fortune Ltd.</p>
+          <div @click="$router.push('/portfolio/1')">
+            <p :class="$style['card__title']">Verseo</p>
+            <p :class="$style['card__name']">Tasty Tasks</p>
+          </div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div :class="$style['card']">
           <img
             :class="$style['card__image']"
-            src="~/assets/img/experience/1.png"
+            src="~/assets/img/portfolio/maybelline.png"
             alt=""
           />
-          <p :class="$style['card__title']">Vimeo 2</p>
-          <p :class="$style['card__name']">Front fortune Ltd.</p>
+          <p :class="$style['card__title']">Loreal</p>
+          <p :class="$style['card__name']">Maybelline</p>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div :class="$style['card']">
           <img
             :class="$style['card__image']"
-            src="~/assets/img/experience/1.png"
+            src="~/assets/img/portfolio/interflora.png"
             alt=""
           />
-          <p :class="$style['card__title']">Vimeo 3</p>
-          <p :class="$style['card__name']">Front fortune Ltd.</p>
+          <p :class="$style['card__title']">Interflora</p>
+          <p :class="$style['card__name']">Interflora France</p>
         </div>
       </swiper-slide>
       <swiper-slide>
@@ -65,6 +67,7 @@ import { ref } from "vue";
 import { Thumbs } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
+import { NuxtLink } from "~~/.nuxt/components";
 // https://swiperjs.com/vue
 
 const slides = ref<number>(3);
@@ -101,6 +104,7 @@ onBeforeUnmount(() => {
 
   &__image {
     border-radius: 5px;
+    object-fit: cover;
   }
 
   &__title {
