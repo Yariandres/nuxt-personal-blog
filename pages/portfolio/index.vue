@@ -6,7 +6,7 @@
         <h3 :class="$style['heading']">Recent completed works</h3>
       </div>
 
-      <porfolio-carousel-component />
+      <PorfolioCarouselComponent />
 
       <div :class="$style['button']">
         <NuxtLink to="/portfolio">View all projects</NuxtLink>
