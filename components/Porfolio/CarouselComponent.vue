@@ -8,7 +8,7 @@
             src="~/assets/img/portfolio/tasty-task.png"
             alt=""
           />
-          <div @click="$router.push('/portfolio/1')">
+          <div @click="$router.push('/portfolio/0')">
             <p :class="$style['card__title']">Verseo</p>
             <p :class="$style['card__name']">Tasty Tasks</p>
           </div>
@@ -21,8 +21,10 @@
             src="~/assets/img/portfolio/maybelline.png"
             alt=""
           />
-          <p :class="$style['card__title']">Loreal</p>
-          <p :class="$style['card__name']">Maybelline</p>
+          <div @click="$router.push('/portfolio/1')">
+            <p :class="$style['card__title']">Loreal</p>
+            <p :class="$style['card__name']">Maybelline</p>
+          </div>
         </div>
       </swiper-slide>
       <swiper-slide>
@@ -32,30 +34,10 @@
             src="~/assets/img/portfolio/interflora.png"
             alt=""
           />
-          <p :class="$style['card__title']">Interflora</p>
-          <p :class="$style['card__name']">Interflora France</p>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div :class="$style['card']">
-          <img
-            :class="$style['card__image']"
-            src="~/assets/img/experience/1.png"
-            alt=""
-          />
-          <p :class="$style['card__title']">Vimeo 4</p>
-          <p :class="$style['card__name']">Front fortune Ltd.</p>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div :class="$style['card']">
-          <img
-            :class="$style['card__image']"
-            src="~/assets/img/experience/1.png"
-            alt=""
-          />
-          <p :class="$style['card__title']">Vimeo 5</p>
-          <p :class="$style['card__name']">Front fortune Ltd.</p>
+          <div @click="$router.push('/portfolio/2')">
+            <p :class="$style['card__title']">Interflora</p>
+            <p :class="$style['card__name']">Interflora France</p>
+          </div>
         </div>
       </swiper-slide>
     </swiper>
@@ -67,7 +49,6 @@ import { ref } from "vue";
 import { Thumbs } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
-import { NuxtLink } from "~~/.nuxt/components";
 // https://swiperjs.com/vue
 
 const slides = ref<number>(3);
