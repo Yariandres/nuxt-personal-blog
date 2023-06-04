@@ -1,42 +1,12 @@
 <template>
   <div :class="$style['carousel']">
     <swiper :slides-per-view="slides" :space-between="30" :modules="[Thumbs]">
-      <swiper-slide>
+      <swiper-slide v-for="(item, index) in portfolio" :key="item.id">
         <div :class="$style['card']">
-          <img
-            :class="$style['card__image']"
-            src="~/assets/img/portfolio/tasty-task.png"
-            alt=""
-          />
+          <img :class="$style['card__image']" :src="imagesArr[index]" alt="" />
           <div @click="$router.push('/portfolio/0')">
-            <p :class="$style['card__title']">Verseo</p>
-            <p :class="$style['card__name']">Tasty Tasks</p>
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div :class="$style['card']">
-          <img
-            :class="$style['card__image']"
-            src="~/assets/img/portfolio/maybelline.png"
-            alt=""
-          />
-          <div @click="$router.push('/portfolio/1')">
-            <p :class="$style['card__title']">Loreal</p>
-            <p :class="$style['card__name']">Maybelline</p>
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div :class="$style['card']">
-          <img
-            :class="$style['card__image']"
-            src="~/assets/img/portfolio/interflora.png"
-            alt=""
-          />
-          <div @click="$router.push('/portfolio/2')">
-            <p :class="$style['card__title']">Interflora</p>
-            <p :class="$style['card__name']">Interflora France</p>
+            <p :class="$style['card__title']">{{ item.company }}</p>
+            <p :class="$style['card__name']">{{ item.project }}</p>
           </div>
         </div>
       </swiper-slide>
@@ -45,11 +15,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { Thumbs } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 // https://swiperjs.com/vue
+import Portfolio from "~~/types/portfolio";
+
+import tastyTask from "~/assets/img/portfolio/tasty-task.png";
+import maybellin from "~/assets/img/portfolio/maybelline.png";
+import interflora from "~/assets/img/portfolio/interflora.png";
+
+const imagesArr = [tastyTask, maybellin, interflora];
+
+defineProps<{
+  portfolio: Portfolio[];
+}>();
 
 const slides = ref<number>(3);
 
