@@ -6,7 +6,7 @@
         <h3 :class="$style['heading']">Recent completed works</h3>
       </div>
 
-      <PorfolioCarouselComponent />
+      <PortfolioCarouselComponent :portfolio="portfolio" />
 
       <div :class="$style['button']">
         <NuxtLink to="/portfolio">View all projects</NuxtLink>
@@ -14,11 +14,13 @@
 
       <hr />
 
-      <PorfolioTestimonialComponent />
+      <PortfolioTestimonialComponent />
     </div>
   </section>
 </template>
-
+<script setup lang="ts">
+import { portfolio } from "~/helpers/portfolio/index";
+</script>
 <style lang="scss" module>
 .container {
   height: 100dvh;
