@@ -12,8 +12,6 @@
         <NuxtLink to="/portfolio">View all projects</NuxtLink>
       </div>
 
-      <hr />
-
       <PortfolioTestimonialComponent />
     </div>
   </section>

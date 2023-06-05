@@ -4,7 +4,7 @@
       <swiper-slide v-for="(item, index) in portfolio" :key="item.id">
         <div :class="$style['card']">
           <img :class="$style['card__image']" :src="imagesArr[index]" alt="" />
-          <div @click="$router.push('/portfolio/0')">
+          <div @click="$router.push(`/portfolio/${item.id}`)">
             <p :class="$style['card__title']">{{ item.company }}</p>
             <p :class="$style['card__name']">{{ item.project }}</p>
           </div>
