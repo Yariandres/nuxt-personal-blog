@@ -8,9 +8,9 @@
 
       <PortfolioCarouselComponent :portfolio="portfolio" />
 
-      <div :class="$style['button']">
+      <!-- <div :class="$style['button']">
         <NuxtLink to="/portfolio">View all projects</NuxtLink>
-      </div>
+      </div> -->
 
       <PortfolioTestimonialComponent />
     </div>
@@ -51,32 +51,32 @@ import { portfolio } from "~/helpers/portfolio/index";
       color: var(--main-color);
     }
 
-    .button {
-      a {
-        color: var(--main-color);
-        display: inline-block;
-        border: 1.5px solid var(--main-color);
-        border-radius: 50px;
-        padding: 9px 40px;
-        white-space: nowrap;
-        background-color: #fff;
+    // .button {
+    //   a {
+    //     color: var(--main-color);
+    //     display: inline-block;
+    //     border: 1.5px solid var(--main-color);
+    //     border-radius: 50px;
+    //     padding: 9px 40px;
+    //     white-space: nowrap;
+    //     background-color: #fff;
 
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        transition: all 0.3s ease;
+    //     -webkit-transition: all 0.3s ease;
+    //     -moz-transition: all 0.3s ease;
+    //     -ms-transition: all 0.3s ease;
+    //     -o-transition: all 0.3s ease;
+    //     transition: all 0.3s ease;
 
-        &:hover {
-          background-color: var(--main-color);
-          color: #fff;
-          transform: translateY(-5px);
-          box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
-          -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
-          -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-      }
-    }
+    //     &:hover {
+    //       background-color: var(--main-color);
+    //       color: #fff;
+    //       transform: translateY(-5px);
+    //       box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+    //       -webkit-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+    //       -moz-box-shadow: -1px 9px 25px -5px rgba(0, 0, 0, 0.1);
+    //     }
+    //   }
+    // }
   }
 }
 </style>

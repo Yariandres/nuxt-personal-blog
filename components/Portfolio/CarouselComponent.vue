@@ -25,8 +25,9 @@ import Portfolio from "~~/types/portfolio";
 import tastyTask from "~/assets/img/portfolio/tasty-task.png";
 import maybellin from "~/assets/img/portfolio/maybelline.png";
 import interflora from "~/assets/img/portfolio/interflora.png";
+import floristTool from "~/assets/img/portfolio/florist-tool.png";
 
-const imagesArr = [tastyTask, maybellin, interflora];
+const imagesArr = [tastyTask, maybellin, interflora, floristTool];
 
 defineProps<{
   portfolio: Portfolio[];
