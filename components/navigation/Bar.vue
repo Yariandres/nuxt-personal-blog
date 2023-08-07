@@ -10,8 +10,14 @@ const toggleLightTheme = () => {
 
 <template>
   <div :class="$style['switcher']">
-    <navigation-moon-icon v-if="mode === 'light'" @click="toggleLightTheme" />
-    <navigation-sun-icon v-if="mode === 'dark'" @click="toggleLightTheme" />
+    <button
+      :class="{
+        [$style['button']]: true,
+      }"
+      @click="toggleLightTheme"
+    >
+      {{ mode === 'dark' ? 'Light' : 'Dark' }} Mode
+    </button>
   </div>
 </template>
 
@@ -21,11 +27,18 @@ const toggleLightTheme = () => {
   justify-content: flex-end;
   padding-inline: 40px;
 
-  svg {
+  .button {
+    background-color: #41414ac9;
+    color: #fff;
+    padding-inline: 10px;
+    padding-block: 10px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 50px;
+
     z-index: 1;
     cursor: pointer;
   }

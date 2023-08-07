@@ -49,7 +49,7 @@ useIntervalFn(() => {
   .hero {
     .img {
       @include setBackgound('~/assets/images/hero-dark-mode.png');
-      height: 800px;
+      height: 700px;
       opacity: 0.3;
     }
     .title {
@@ -63,7 +63,7 @@ useIntervalFn(() => {
   .hero {
     .img {
       @include setBackgound('~/assets/images/hero-light-mode.png');
-      height: 800px;
+      height: 700px;
       opacity: 0.2;
     }
 

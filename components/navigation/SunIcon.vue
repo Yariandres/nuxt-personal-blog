@@ -6,14 +6,14 @@
       cy="128"
       fill="none"
       r="60"
-      stroke="#06C1C3"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="12"
     />
     <line
       fill="none"
-      stroke="#06C1C3"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="12"
@@ -24,7 +24,7 @@
     />
     <line
       fill="none"
-      stroke="#06C1C3"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="12"
@@ -35,7 +35,7 @@
     />
     <line
       fill="none"
-      stroke="#06C1C3"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="12"
@@ -46,7 +46,7 @@
     />
     <line
       fill="none"
-      stroke="#06C1C3"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="12"
@@ -57,7 +57,7 @@
     />
     <line
       fill="none"
-      stroke="#06C1C3"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="12"
@@ -68,7 +68,7 @@
     />
     <line
       fill="none"
-      stroke="#06C1C3"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="12"
@@ -79,7 +79,7 @@
     />
     <line
       fill="none"
-      stroke="#06C1C3"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="12"
@@ -90,7 +90,7 @@
     />
     <line
       fill="none"
-      stroke="#06C1C3"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="12"
