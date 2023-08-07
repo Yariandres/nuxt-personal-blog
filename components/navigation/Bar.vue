@@ -9,7 +9,7 @@ const toggleLightTheme = () => {
 </script>
 
 <template>
-  <button @click="toggleLightTheme">Toggle light mode</button>
+  <button @click="toggleLightTheme">Mode {{ mode }}</button>
 </template>
 
 <style lang="scss"></style>
