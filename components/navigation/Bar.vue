@@ -11,11 +11,7 @@ const toggleLightTheme = () => {
 <template>
   <div :class="$style['switcher']">
     <navigation-moon-icon v-if="mode === 'light'" @click="toggleLightTheme" />
-    <navigation-sun-icon
-      v-if="mode === 'dark'"
-      @click="toggleLightTheme"
-      :mode="mode"
-    />
+    <navigation-sun-icon v-if="mode === 'dark'" @click="toggleLightTheme" />
   </div>
 </template>
 
