@@ -18,14 +18,14 @@ const toggleLightTheme = () => {
     >
       <img
         v-if="mode === 'dark'"
-        src="~/assets/images/hero-light-mode.png"
+        src="~/assets/images/light.png"
         alt="ligth icon"
         width="70"
         height="70"
       />
       <img
         v-if="mode === 'light'"
-        src="~/assets/images/hero-dark-mode.png"
+        src="~/assets/images/dark.png"
         alt="ligth icon"
         width="70"
         height="70"
@@ -91,7 +91,6 @@ const toggleLightTheme = () => {
     padding-block: 10px;
     border-radius: 4px;
     outline: none;
-
     border: none;
     position: absolute;
     top: 20px;
@@ -102,9 +101,9 @@ const toggleLightTheme = () => {
 
     img {
       border-radius: 50%;
-      -webkit-box-shadow: -0.5px 4.5px 12px 1px #c3c3c3;
-      -moz-box-shadow: -0.5px 4.5px 12px 1px #c3c3c3;
-      box-shadow: -0.5px 4.5px 12px 1px #c3c3c3;
+      -webkit-box-shadow: 3px 3px 10px 3px #c3c3c3;
+      -moz-box-shadow: 3px 3px 10px 3px #c3c3c3;
+      box-shadow: 3px 3px 10px 3px #c3c3c3;
       transition: transform 0.2s;
       position: relative;
 
