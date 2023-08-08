@@ -18,14 +18,14 @@ const toggleLightTheme = () => {
     >
       <img
         v-if="mode === 'dark'"
-        src="~/assets/images/light.png"
+        src="~/assets/images/hero-light-mode.png"
         alt="ligth icon"
         width="70"
         height="70"
       />
       <img
         v-if="mode === 'light'"
-        src="~/assets/images/dark.png"
+        src="~/assets/images/hero-dark-mode.png"
         alt="ligth icon"
         width="70"
         height="70"
@@ -35,56 +35,6 @@ const toggleLightTheme = () => {
 </template>
 
 <style lang="scss" module>
-@mixin clearfix {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
-// MEDIA QUERY MANAGER
-/*
-0 - 600px: Phone
-600 - 900px: Tablet portrait
-900 - 1200px: tablets landscape
-[1200 - 1800] is where the normal style apply
-1800px + : Big screen
-
-
-$breakpoint arguement:
-- phone
-- tab-port
-- tab-land
-- big-desktop
-*/
-
-@mixin respond($breakpoint) {
-  @if $breakpoint == phone {
-    @media (max-width: 37.5em) {
-      @content;
-    } // 600px
-  }
-
-  @if $breakpoint == tab-port {
-    @media (max-width: 56.25em) {
-      @content;
-    } // 900px
-  }
-
-  @if $breakpoint == tab-land {
-    @media (max-width: 75em) {
-      @content;
-    } // 1200px
-  }
-
-  @if $breakpoint == big-desktop {
-    @media (min-width: 112.5em) {
-      @content;
-    } // 1800px
-  }
-}
-
 // ANIMATION
 @keyframes moveInLeft {
   // start
@@ -141,6 +91,7 @@ $breakpoint arguement:
     padding-block: 10px;
     border-radius: 4px;
     outline: none;
+
     border: none;
     position: absolute;
     top: 20px;
@@ -151,9 +102,9 @@ $breakpoint arguement:
 
     img {
       border-radius: 50%;
-      -webkit-box-shadow: 3px 3px 10px 3px #c3c3c3;
-      -moz-box-shadow: 3px 3px 10px 3px #c3c3c3;
-      box-shadow: 3px 3px 10px 3px #c3c3c3;
+      -webkit-box-shadow: -0.5px 4.5px 12px 1px #c3c3c3;
+      -moz-box-shadow: -0.5px 4.5px 12px 1px #c3c3c3;
+      box-shadow: -0.5px 4.5px 12px 1px #c3c3c3;
       transition: transform 0.2s;
       position: relative;
 
