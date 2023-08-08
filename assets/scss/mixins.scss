@@ -37,3 +37,12 @@
     transform: translateX(0);
   }
 }
+
+// IMAGE BACKGROUND
+@mixin setBackgound($url: true) {
+  background-image: url($url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}

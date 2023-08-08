@@ -10,4 +10,8 @@
   background-color: #111827;
   color: #fff;
 }
+
+body {
+  scroll-snap-type: mandatory;
+}
 </style>
