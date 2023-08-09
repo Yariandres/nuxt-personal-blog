@@ -119,8 +119,8 @@ useIntervalFn(() => {
 .scroller {
   position: absolute;
   bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 44%;
+  transform: translateX(-5%);
   cursor: pointer;
   @include bounce-animation(2s);
   border-radius: 50px;
