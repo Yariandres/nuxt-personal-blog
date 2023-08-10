@@ -50,7 +50,6 @@ useIntervalFn(() => {
     @include setBackgound('~/assets/images/hero-dark-mode.png');
     .title {
       color: aqua;
-      font-weight: 500;
     }
   }
 }
@@ -65,7 +64,7 @@ useIntervalFn(() => {
 
     .title {
       color: rgb(255, 0, 0);
-      font-weight: 500;
+      font-weight: 100;
     }
 
     .name {
@@ -91,13 +90,21 @@ useIntervalFn(() => {
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
 
-    .name {
-      font-size: 26px;
-    }
-
     .greet {
       height: 100px;
       font-size: 62px;
+    }
+
+    .title {
+      font-weight: 100;
+      text-transform: uppercase;
+    }
+
+    .name {
+      margin-block-start: 16px;
+      font-size: 20px;
+      font-weight: 100;
+      text-transform: uppercase;
     }
   }
 }
