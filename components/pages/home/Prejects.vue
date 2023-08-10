@@ -54,6 +54,10 @@
     flex-direction: column;
     gap: 35px;
 
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+
     .heading {
       letter-spacing: 10px;
       font-weight: 100;
@@ -80,6 +84,9 @@
   }
 
   .right {
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
     .image {
       max-width: 445px;
       border-radius: 25px;
