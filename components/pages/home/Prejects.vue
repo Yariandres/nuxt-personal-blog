@@ -1,29 +1,30 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+type Projects = {
+  id: string;
+  name: string;
+  description: string;
+  tech: any;
+};
+defineProps<{
+  project: Projects;
+}>();
+</script>
 
 <template>
   <section class="section">
     <div class="left">
-      <h2 class="uppercase heading">Progect Name</h2>
+      <h2 class="uppercase heading">{{ project.name }}</h2>
       <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-        nesciunt ratione quo iusto quasi consequatur quos molestiae ipsam
-        blanditiis cupiditate excepturi voluptatibus neque quaerat nisi
-        reprehenderit, deserunt explicabo laudantium tempore! Lorem ipsum, dolor
-        sit amet consectetur adipisicing elit. Laborum quae sint beatae ullam
-        velit. Ex ut consequatur commodi harum iste animi et. Quod aspernatur
-        iure, doloremque aliquid dicta quaerat adipisci? Lorem ipsum, dolor sit
-        amet consectetur adipisicing elit. Laudantium sint cumque, quod earum
-        placeat deleniti soluta! Rerum possimus quis ad perferendis vel
-        expedita, id distinctio quisquam, odio unde incidunt necessitatibus?
+        {{ project.description }}
       </p>
       <ul class="group">
-        <li class="item">Javascript</li>
-        <li class="item">React.js</li>
+        <li v-for="tech in project.tech" class="item">Javascript</li>
+        <!-- <li class="item">React.js</li>
         <li class="item">Vue.js</li>
         <li class="item">Material UI</li>
         <li class="item">CSS Module</li>
         <li class="item">Nuxt.js</li>
-        <li class="item">Next.js</li>
+        <li class="item">Next.js</li> -->
       </ul>
     </div>
 
