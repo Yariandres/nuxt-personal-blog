@@ -5,9 +5,18 @@ type Projects = {
   description: string;
   tech: any;
 };
-defineProps<{
+const props = defineProps<{
   project: Projects;
+  index: number;
 }>();
+
+const isRowReverse = computed(() => {
+  if (props.index % 2 === 0) {
+    return 'row-reverse';
+  } else {
+    return 'row';
+  }
+});
 </script>
 
 <template>
@@ -18,13 +27,9 @@ defineProps<{
         {{ project.description }}
       </p>
       <ul class="group">
-        <li v-for="tech in project.tech" class="item">Javascript</li>
-        <!-- <li class="item">React.js</li>
-        <li class="item">Vue.js</li>
-        <li class="item">Material UI</li>
-        <li class="item">CSS Module</li>
-        <li class="item">Nuxt.js</li>
-        <li class="item">Next.js</li> -->
+        <li v-for="(tech, index) in project.tech" class="item" :key="index">
+          Javascript
+        </li>
       </ul>
     </div>
 
@@ -41,6 +46,7 @@ defineProps<{
   padding-inline: 70px;
   display: flex;
   justify-content: space-around;
+  flex-direction: v-bind(isRowReverse);
   gap: 116px;
 
   @media (max-width: 1130px) {

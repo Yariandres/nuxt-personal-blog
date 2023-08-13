@@ -5,6 +5,7 @@ type Projects = {
   id: string;
   name: string;
   description: string;
+  tech: string[];
 };
 
 const data = ref<Projects[]>(projects.data);
@@ -14,9 +15,10 @@ const data = ref<Projects[]>(projects.data);
   <main>
     <pages-home-hero />
     <pages-home-prejects
-      v-for="project in data"
+      v-for="(project, index) in data"
       :key="project.id"
       :project="project"
+      :index="index"
     />
   </main>
 </template>
