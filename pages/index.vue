@@ -14,11 +14,14 @@ const data = ref<Projects[]>(projects.data);
 <template>
   <main>
     <pages-home-hero />
+    <section-title :title="'Projects'" />
     <pages-home-prejects
       v-for="(project, index) in data"
       :key="project.id"
       :project="project"
       :index="index"
     />
+    <section-title :title="'Contact'" />
+    <pages-home-form />
   </main>
 </template>

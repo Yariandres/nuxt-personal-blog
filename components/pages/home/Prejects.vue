@@ -28,7 +28,7 @@ const isRowReverse = computed(() => {
       </p>
       <ul class="group">
         <li v-for="(tech, index) in project.tech" class="item" :key="index">
-          Javascript
+          {{ tech }}
         </li>
       </ul>
     </div>
@@ -53,6 +53,7 @@ const isRowReverse = computed(() => {
     flex-direction: column;
     align-items: center;
     gap: 70px;
+    padding-block-start: 60px;
   }
 
   .left {
@@ -80,6 +81,10 @@ const isRowReverse = computed(() => {
       flex-wrap: wrap;
       gap: 16px;
 
+      @media (max-width: 1130px) {
+        justify-content: center;
+      }
+
       .item {
         list-style: none;
         border: 1px solid unset;
@@ -102,25 +107,25 @@ const isRowReverse = computed(() => {
 }
 // https://coolors.co/gradient-maker/c471f2-f76cc6
 .dark {
-  .section {
+  body {
     background: hsla(310, 23%, 10%, 1);
 
     background: linear-gradient(
-      90deg,
+      160deg,
       hsla(310, 23%, 10%, 1) 0%,
       hsla(306, 20%, 10%, 1) 0%,
       hsla(9, 38%, 20%, 1) 100%
     );
 
     background: -moz-linear-gradient(
-      90deg,
+      160deg,
       hsla(310, 23%, 10%, 1) 0%,
       hsla(306, 20%, 10%, 1) 0%,
       hsla(9, 38%, 20%, 1) 100%
     );
 
     background: -webkit-linear-gradient(
-      90deg,
+      180deg,
       hsla(310, 23%, 10%, 1) 0%,
       hsla(306, 20%, 10%, 1) 0%,
       hsla(9, 38%, 20%, 1) 100%
