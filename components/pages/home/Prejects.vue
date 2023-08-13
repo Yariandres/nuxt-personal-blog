@@ -41,19 +41,15 @@ const isRowReverse = computed(() => {
 
 <style lang="scss">
 .section {
-  padding-block-start: 140px;
-  padding-block-end: 70px;
-  padding-inline: 70px;
   display: flex;
   justify-content: space-around;
   flex-direction: v-bind(isRowReverse);
-  gap: 116px;
 
   @media (max-width: 1130px) {
     flex-direction: column;
     align-items: center;
+    padding-inline: 25px;
     gap: 70px;
-    padding-block-start: 60px;
   }
 
   .left {

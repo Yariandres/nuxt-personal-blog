@@ -16,6 +16,10 @@ defineProps<{
   font-size: 28px;
   text-align: center;
   text-transform: uppercase;
-  padding-block-start: 140px;
+  padding-block: 140px;
+
+  @media (max-width: 1130px) {
+    padding-block: 100px;
+  }
 }
 </style>
