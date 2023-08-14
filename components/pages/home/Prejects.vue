@@ -22,7 +22,7 @@ const isRowReverse = computed(() => {
 <template>
   <section class="section">
     <div class="left">
-      <h2 class="uppercase heading">{{ project.name }}</h2>
+      <h2 class="heading">{{ project.name }}</h2>
       <p class="description">
         {{ project.description }}
       </p>
@@ -65,6 +65,7 @@ const isRowReverse = computed(() => {
     .heading {
       letter-spacing: 10px;
       font-weight: 100;
+      text-transform: uppercase;
     }
 
     .description {
