@@ -16,7 +16,8 @@
             />
             <label for="name" class="form__label">Full name</label>
           </div>
-          <div class="form-group">
+
+          <div class="form__group">
             <input
               type="email"
               class="form__input"
@@ -25,6 +26,39 @@
               id="email"
             />
             <label for="email" class="form__label">Email Address</label>
+          </div>
+
+          <div class="form__group-radio">
+            <div class="form__radio-group">
+              <input
+                type="radio"
+                class="form__radio-input"
+                id="cv"
+                name="size"
+              />
+              <label for="cv" class="form__radio-label">
+                <span class="form__radio-button"></span>
+                CV request
+              </label>
+            </div>
+            <div class="form__radio-group">
+              <input
+                type="radio"
+                class="form__radio-input"
+                id="project"
+                name="size"
+              />
+              <label for="project" class="form__radio-label">
+                <span class="form__radio-button"></span>
+                Project request
+              </label>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <button class="btn btn--primary" type="submit">
+              Send request &rarr;
+            </button>
           </div>
         </form>
       </div>
@@ -42,6 +76,7 @@
 
 .section {
   padding-inline: 150px;
+  padding-block-end: 150px;
 }
 
 .dark {
@@ -64,7 +99,7 @@
         rgba(#fff, 0.9) 50%,
         transparent 50%
       ),
-      url('~/assets/images/hero-ligth-mode.png');
+      url('~/assets/images/hero-light-mode.png');
   }
 }
 
@@ -135,6 +170,85 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-40px);
+  }
+
+  &__group-radio {
+    display: flex;
+    align-items: center;
+  }
+
+  &__radio-group {
+    width: 50%;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    font-size: 16px;
+    cursor: pointer;
+    color: #221520;
+    position: relative;
+    padding-left: 55px;
+  }
+
+  &__radio-button {
+    height: 20px;
+    width: 20px;
+    border: 5px solid #c99862;
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    left: -1px;
+    top: -5px;
+
+    &::after {
+      content: '';
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffae00;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+
+  .btn {
+    border: none;
+    cursor: pointer;
+    padding: 15px 19px;
+    margin-top: 56px;
+    background-color: #c99862;
+    color: #fff;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 20px rgba(black, 0.2);
+
+      &::after {
+        transform: scaleX((1.4)) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 5px 16px rgba(#000000, 0.2);
+    }
   }
 }
 </style>
