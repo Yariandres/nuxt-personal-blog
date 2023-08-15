@@ -1,6 +1,7 @@
 <template>
   <navigation-bar />
   <NuxtPage />
+  <footer-section />
 </template>
 
 <style lang="scss">
