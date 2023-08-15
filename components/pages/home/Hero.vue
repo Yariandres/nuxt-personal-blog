@@ -27,7 +27,7 @@ useIntervalFn(() => {
   <section class="hero">
     <div class="box">
       <h1 class="greet">{{ word }}</h1>
-      <h3 class="name">I am Yari Herrera</h3>
+      <h2 class="name">I am Yari Herrera</h2>
       <p class="name">
         A <span class="title">software developer</span> living in Poland
       </p>

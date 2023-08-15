@@ -12,13 +12,13 @@
       <div class="col-1">
         <div class="footer__navigation">
           <ul class="footer__list">
-            <li class="footer__item">
+            <li>
               <a href="#" class="footer__link">About</a>
             </li>
-            <li class="footer__item">
+            <li>
               <a href="#" class="footer__link">Blog</a>
             </li>
-            <li class="footer__item">
+            <li>
               <a href="#" class="footer__link">Contact me</a>
             </li>
           </ul>
@@ -31,7 +31,9 @@
           <a href="#" class="footer__link"> Yari Andres </a>
           For my personal site. <br />
           Copyright &copy; by
-          <a href="#" class="footer__link">Codigo </a>
+          <a href="#" class="footer__link" width="100px" height="auto"
+            >Codigo
+          </a>
         </p>
       </div>
     </div>
@@ -53,6 +55,8 @@
   .row {
     display: flex;
     align-items: flex-center;
+    flex-wrap: wrap;
+    gap: 70px;
     justify-content: space-between;
   }
 
@@ -76,9 +80,6 @@
     display: flex;
     flex-direction: row;
     gap: 15px;
-  }
-
-  &__item {
   }
 
   &__copy-right {

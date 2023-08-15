@@ -29,7 +29,7 @@
           </div>
 
           <div class="form__group-radio">
-            <div class="form__radio-group">
+            <div class="form__radio-group" aria-hidden="true">
               <input
                 type="radio"
                 class="form__radio-input"
@@ -41,7 +41,7 @@
                 CV request
               </label>
             </div>
-            <div class="form__radio-group">
+            <div class="form__radio-group" aria-hidden="true">
               <input
                 type="radio"
                 class="form__radio-input"

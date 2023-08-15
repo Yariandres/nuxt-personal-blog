@@ -10,7 +10,8 @@ const toggleLightTheme = () => {
 
 <template>
   <div :class="$style['switcher']">
-    <button
+    <div
+      role="button"
       :class="{
         [$style['button']]: true,
       }"
@@ -30,7 +31,7 @@ const toggleLightTheme = () => {
         width="70"
         height="70"
       />
-    </button>
+    </div>
   </div>
 </template>
 
