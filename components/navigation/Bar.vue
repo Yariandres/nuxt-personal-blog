@@ -23,6 +23,7 @@ const toggleLightTheme = () => {
         alt="ligth icon"
         width="70"
         height="70"
+        loading="lazy"
       />
       <img
         v-if="mode === 'light'"
@@ -30,6 +31,7 @@ const toggleLightTheme = () => {
         alt="ligth icon"
         width="70"
         height="70"
+        loading="lazy"
       />
     </div>
   </div>

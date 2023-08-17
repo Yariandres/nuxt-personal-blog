@@ -38,6 +38,7 @@ useIntervalFn(() => {
       alt="mouse scroller"
       width="84"
       height="84"
+      loading="lazy"
     />
   </section>
 </template>

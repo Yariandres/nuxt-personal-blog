@@ -34,7 +34,14 @@ const isRowReverse = computed(() => {
     </div>
 
     <div class="right">
-      <img class="image" src="~/assets/images/dashboard.png" alt="" />
+      <img
+        class="image"
+        src="~/assets/images/dashboard.png"
+        alt="sample dashboard"
+        width="445"
+        height="445"
+        loading="lazy"
+      />
     </div>
   </section>
 </template>
@@ -96,6 +103,7 @@ const isRowReverse = computed(() => {
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
+
     .image {
       max-width: 445px;
       border-radius: 25px;
