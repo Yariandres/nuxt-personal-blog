@@ -21,7 +21,7 @@
             <input
               type="email"
               class="form__input"
-              placeholder="Full name"
+              placeholder="Email address"
               required
               id="email"
             />
@@ -115,7 +115,6 @@
 
 .form-container {
   background-size: cover;
-  height: 500px;
   width: 100%;
   box-shadow: 0 1.5px 40px rgba(#000000, 0.3);
   border-radius: 25px;
