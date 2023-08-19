@@ -124,6 +124,10 @@
 .form-items {
   width: 50%;
   padding: 60px;
+
+  @media (max-width: 1130px) {
+    width: 100%;
+  }
 }
 
 .form {
@@ -177,6 +181,11 @@
   &__group-radio {
     display: flex;
     align-items: center;
+
+    @media (max-width: 1130px) {
+      flex-direction: column;
+      gap: 25px;
+    }
   }
 
   &__radio-group {
@@ -193,6 +202,10 @@
     color: #221520;
     position: relative;
     padding-left: 55px;
+
+    @media (max-width: 600px) {
+      color: #fff;
+    }
   }
 
   &__radio-button {
