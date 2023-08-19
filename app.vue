@@ -1,7 +1,7 @@
 <template>
   <navigation-bar />
   <NuxtPage />
-  <footer-section />
+  <lazy-footer-section />
 </template>
 
 <style lang="scss">

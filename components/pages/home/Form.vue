@@ -68,16 +68,6 @@
 
 <style lang="scss" scoped>
 @import '~/assets/scss/mixins.scss';
-.light {
-  .section {
-    color: #221520;
-  }
-}
-
-.section {
-  padding-inline: 150px;
-  padding-block-end: 150px;
-}
 
 .dark {
   .form-container {
@@ -92,6 +82,9 @@
 }
 
 .light {
+  .section {
+    color: #221520;
+  }
   .form-container {
     background-image: linear-gradient(
         105deg,
@@ -100,6 +93,15 @@
         transparent 50%
       ),
       url('~/assets/images/hero-light-mode.png');
+  }
+}
+
+.section {
+  padding-inline: 150px;
+  padding-block-end: 150px;
+
+  @media (max-width: 1130px) {
+    padding-inline: 25px;
   }
 }
 
