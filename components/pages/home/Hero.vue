@@ -23,6 +23,7 @@ useIntervalFn(() => {
   word.value = greetings[rand(0, greetings.length - 1)];
 }, interval);
 </script>
+
 <template>
   <section class="hero">
     <div class="box">
