@@ -86,7 +86,7 @@
   }
 
   &__copy-right {
-    color: inherit;
+    color: rgb(173, 173, 173);
     border-top: 1px solid rgb(53, 53, 53);
     padding-block-start: 20px;
   }
