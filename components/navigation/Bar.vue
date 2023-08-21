@@ -20,7 +20,7 @@ const toggleLightTheme = () => {
       <nuxt-img
         v-if="mode === 'dark'"
         src="/light.png"
-        alt="dark icon"
+        alt="light icon"
         width="70"
         height="70"
         quality="100"
@@ -31,7 +31,7 @@ const toggleLightTheme = () => {
       <nuxt-img
         v-if="mode === 'light'"
         src="/dark.png"
-        alt="ligth icon"
+        alt="dark icon"
         width="70"
         height="70"
         quality="100"
