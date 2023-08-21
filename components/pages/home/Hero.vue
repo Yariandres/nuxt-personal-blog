@@ -33,12 +33,12 @@ useIntervalFn(() => {
         A <span class="title">software developer</span> living in Poland
       </p>
     </div>
-    <img
+    <nuxt-img
+      src="/mouse-dark.png"
       class="scroller"
-      src="~/assets/images/mouse-dark.png"
-      alt="mouse scroller"
       width="84"
       height="84"
+      alt="mouse scroller"
       loading="lazy"
     />
   </section>
