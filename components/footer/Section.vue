@@ -1,13 +1,13 @@
 <template>
   <footer class="footer">
     <div class="footer__logo-box">
-      <img
-        src="~/assets/images/logo.png"
-        alt="full logo"
+      <nuxt-img
+        src="/logo.png"
         class="footer__logo"
         width="100"
         height="100"
         loading="lazy"
+        format="webp"
       />
     </div>
 

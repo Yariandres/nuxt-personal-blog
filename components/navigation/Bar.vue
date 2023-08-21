@@ -17,21 +17,26 @@ const toggleLightTheme = () => {
       }"
       @click="toggleLightTheme"
     >
-      <img
+      <nuxt-img
         v-if="mode === 'dark'"
-        src="~/assets/images/light.png"
-        alt="ligth icon"
+        src="/light.png"
+        alt="dark icon"
         width="70"
         height="70"
+        quality="100"
         loading="lazy"
+        format="webp"
       />
-      <img
+
+      <nuxt-img
         v-if="mode === 'light'"
-        src="~/assets/images/dark.png"
+        src="/dark.png"
         alt="ligth icon"
         width="70"
         height="70"
+        quality="100"
         loading="lazy"
+        format="webp"
       />
     </div>
   </div>
