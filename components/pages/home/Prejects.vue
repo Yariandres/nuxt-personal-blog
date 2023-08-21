@@ -34,10 +34,10 @@ const isRowReverse = computed(() => {
     </div>
 
     <div class="right">
-      <img
+      <nuxt-img
+        src="/dashboard.png"
+        alt="sample project"
         class="image"
-        src="~/assets/images/dashboard.png"
-        alt="sample dashboard"
         width="445"
         height="445"
         loading="lazy"
