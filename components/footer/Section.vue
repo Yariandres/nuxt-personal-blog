@@ -3,6 +3,7 @@
     <div class="footer__logo-box">
       <nuxt-img
         src="/logo.png"
+        alt="footer logo icon"
         class="footer__logo"
         width="100"
         height="100"
