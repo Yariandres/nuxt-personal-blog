@@ -17,25 +17,9 @@ const toggleLightTheme = () => {
       }"
       @click="toggleLightTheme"
     >
-      <nuxt-img
-        v-if="mode === 'dark'"
-        src="/light.png"
-        :alt="`${mode}-icon`"
-        width="70"
-        height="70"
-        quality="100"
-        format="webp"
-      />
-
-      <nuxt-img
-        v-if="mode === 'light'"
-        src="/dark.png"
-        :alt="`${mode}-icon`"
-        width="70"
-        height="70"
-        quality="100"
-        format="webp"
-      />
+      <p :class="[$style['trigger'], $style[`border-${mode}`]]">
+        Switch to {{ mode === 'light' ? 'dark' : 'light' }}
+      </p>
     </div>
   </div>
 </template>
@@ -68,23 +52,18 @@ const toggleLightTheme = () => {
     z-index: 1;
     cursor: pointer;
 
-    img {
-      border-radius: 50%;
-      -webkit-box-shadow: 3px 3px 10px 3px #c3c3c3;
-      -moz-box-shadow: 3px 3px 10px 3px #c3c3c3;
-      box-shadow: 3px 3px 10px 3px #c3c3c3;
-      transition: transform 0.2s;
-      position: relative;
+    .trigger {
+      padding-inline: 16px;
+      padding-block: 10px;
+      border-radius: 25px;
+    }
 
-      &:hover {
-        transform: translateY(-3px);
-        box-shadow: 1 1rem 2rem rgba(#000, 0.2);
+    .border-light {
+      border: 2px solid #0c0d0d;
+    }
 
-        &::after {
-          transform: scaleX(1.4) scaleY(1.6);
-          opacity: 0;
-        }
-      }
+    .border-dark {
+      border: 2px solid #00fdfc;
     }
   }
 }
